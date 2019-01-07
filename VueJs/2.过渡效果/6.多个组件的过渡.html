@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动态组件</title>
+	<script type="text/javascript" src="../js/velocity.min.js"></script>
+	<script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<transition name="component-fade" mode="out-in">
+		  <component v-bind:is="view"></component>
+		</transition>
+	</div>
+	<script type="text/javascript">
+		new Vue{
+			el:"#app",
+			data:{
+				view:'v-a'
+			},
+			component:{
+				'v-a':{
+					template:"<div>Component A</div>"
+				},
+				'v-b':{
+					template:"<div>Component B</div>"
+				}
+			}
+		}
+	</script>
+	<style type="text/css">
+		.component-fade-enter-active, .component-fade-leave-active {
+		  transition: opacity .3s ease;
+		}
+		.component-fade-enter, .component-fade-leave-to{
+		  opacity: 0;
+		}
+	</style>
+</body>
+</html>

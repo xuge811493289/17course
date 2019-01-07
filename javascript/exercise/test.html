@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .tab{
+      width:200px;
+      height: 200px;
+      background-color: #eee;
+      position: relative;
+    }
+    .line{
+      width:100px;
+      height:50px;
+      text-align: center;
+      line-height: 50px;
+      float: left;
+    }
+    .line:hover{
+      color:white;
+      background-color: green;
+    }
+    .active{
+      color:white;
+      background-color: green;
+    }
+    .tab-card{
+      display: none;
+      width:200px;
+      height: 150px;
+      position: absolute;
+      top:50px;
+      left:0px;
+    }
+    .first-card{
+      background-color: pink;
+    }
+    .last-card{
+      background-color: yellow;
+    }
+    .first:hover~.first-card{
+      display: block;
+    }
+    .last:hover~.last-card{
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="tab">
+    <div class="line first">今日疯抢</div>
+    <div class="line last">量贩装</div>
+    <div class="tab-card first-card"></div>
+    <div class="tab-card last-card"></div>
+  </div>
+  <script type="text/javascript">
+    window.onload = function(){
+      var line0 = document.getElementsByClassName("line")[0];
+      var line1 = document.getElementsByClassName("line")[1];
+      var tabCard0 = document.getElementsByClassName("tab-card")[0];
+      var tabCard1 = document.getElementsByClassName("tab-card")[1];
+      function line(){
+        line0.onclick=function(){
+          line0.setAttribute('class', "active line first");
+          line1.setAttribute('class', "line first");
+          tabCard0.style.display="block";
+          tabCard1.style.display="none";
+        }
+      }
+      function linetest(){
+        line1.onclick=function(){
+          line1.setAttribute('class', "active line last");
+          line0.setAttribute('class', "line last");
+          tabCard0.style.display="none";
+          tabCard1.style.display="block";
+        }
+      }
+      line();
+      linetest();
+      setInterval(function(){
+        if(line0.classList.contains('active')){
+          line1.onclick()
+        }else{
+          line0.onclick()
+        }
+      },2000)
+    }
+  </script>
+</body>
+</html>

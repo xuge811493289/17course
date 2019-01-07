@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function add(a,b){
+				console.log(a+b);
+				console.log(arguments);
+				/*arguments可以接收传入的参数，是一个类数组对象，可以用下标提取。*/
+				console.log(arguments[2,3,4]);
+				console.log(arguments[0]);
+				console.log(arguments[1]);
+				console.log(arguments[2]);
+				console.log(arguments[3]);
+				console.log(arguments[4]);
+				console.log(arguments.callee);//function add(a,b){}
+			}
+			add(1,2,2,4,5);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

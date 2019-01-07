@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title></title>
+    <script src="../3.组件/jquery.min.js"></script>
+    <script src="../3.组件/frameworks/bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../3.组件/frameworks/bootstrap-3.3.0-dist/dist/css/bootstrap.css">
+    </head>
+</head>
+<body>
+    <div class="container">
+       <!--1.基础面板-->
+        <div class="panel panel-default">
+            <div class="panel-body">
+                我是基础面板。
+            </div>
+        </div>
+        <!--2.带有头和尾的面板-->
+        <div class="panel panel-default">
+            <div class="panel-heading">面板header</div>
+            <div class="panel-body">这是面板内容</div>
+            <div class="panel-footer">面板footer</div>
+        </div>
+        <!--3.多彩面板-->
+        <div class="panel panel-primary">primary</div>
+        <div class="panel panel-success">success</div>
+        <div class="panel panel-danger">danger</div>
+        <div class="panel panel-info">info</div>
+        <div class="panel panel-warning">warning</div>
+        <!--4.面板与表格进行嵌套-->
+        <div class="panel panel-default">
+            <div class="panel-heading">panel-heading</div>
+            <div class="panel-body">
+                <table class="table table-bordered">
+                    <tr>
+                        <td>姓名</td>
+                        <td>性别</td>
+                        <td>年龄</td>
+                        <td>爱好</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!--5.面板与列表组进行嵌套-->
+        <div class="panel panel-success">
+            <div class="panel-heading">汤姆大叔的书屋</div>
+            <p>
+                <br/>一些书籍 <br/>
+            </p>
+            <ul class="list-group">
+                <li class="list-group-item">JavaScript编程精解</li>
+                <li class="list-group-item">JavaScript设计模式</li>
+                <li class="list-group-item">JavaScript启示录</li>
+                <li class="list-group-item">当前正在读的书</li>
+                <li class="list-group-item">正在写的书</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>导航和打开窗口</title>
+<script type="text/javascript">
+	window.onload = function(){
+		var btn = document.getElementById("button");
+		btn.onclick = function(){
+			window.open("1.BOM.html","_blank","height=400,width=400,menubar=no,left=200")
+			window.moveTo(200,200);
+		}
+	}
+</script>
+</head>
+<body>
+	<button id="button">点击</button>
+</body>
+</html>

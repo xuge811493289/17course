@@ -1,0 +1,16 @@
+1.如果写./默认找相对路径，如果没有./的话，直接引用node_modules文件夹,node_modules文件夹必须和当前文件处于同一文件夹下面
+
+2.如果定义好一个数据，可以使用exports关键字进行暴露
+
+3.如果引入一个模块，需要使用require("./foo.js"),或者require("./test/foo.js")引入文件,或者require("foo"),表示引入node_modules下面的文件foo.jd或者文件夹foo/index.js
+
+4.每一个模块文件夹中推荐写一个package.json文件，这个文件名字不能改，内容为：
+      {
+       "name": "kaoladebar",
+       "version": "1.0.1",
+       "main" : "app.js"
+      }
+5.使用npm init可以在当前文件中初始化一个package.json文件;
+6.当引用一个模块的时候，模块里面的代码会顺序执行
+7.读文件时候的相对路径可以使用__dirname
+8.读出来的文件是二进制buffer格式，只需要加toString()方法即可

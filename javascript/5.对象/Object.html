@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+		/*对象的创建-构造函数*/
+			var obj = new Object();
+			obj.name = "terry";
+			obj.age = 12;
+			obj.sayHi:function(){
+				console.log();
+			}
+			console.log(obj);//Object {name: "terry", age: 12}
+		/*对象字面量*/
+			var obj2 = {
+				name:"terry",
+				age:12
+			}
+			console.log(obj2);//Object {name: "terry", age: 12}
+			
+			console.log(obj == obj2);//false
+			console.log(obj === obj2);//false
+			
+		//对象属性的遍历，有些属性可以遍历，有些不可以，一般情况遍历的属性是自有属性。
+		for(var key in obj){
+			//key对应的是对象中所对应的属性名
+			console.log(key);
+			//obj[key]代表的是对象中的属性值，[]可以解析变量
+			console.log(obj[key]);
+		}
+		
+		//属性的访问
+		var a = "name";
+		console.log(obj.name);
+		console.log(obj["name"]);
+		console.log(obj[a]);//中括号可以用来访问变量
+			
+		
+		//属性的删除
+		//delete obj.name;
+		//console.log(obj);
+		
+		//属性的访问
+		console.log("name" in obj);//true
+		var name = "name";
+		console.log(name in obj);//true,必须加引号
+		
+		/*in可以检测出继承的属性*/
+		console.log("contructor","constructor" in obj);//true
+		/*hasOwnProperty不能检测出继承的属性*/
+		console.log(obj.hasOwnProperty("constructor"));//false
+		console.log(obj.propertyIsEnumerable("name"));//true
+		console.log(obj.propertyIsEnumerable("age"));//true
+		console.log(obj.propertyIsEnumerable("toString"));//false
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			
+			
+		</script>
+	</body>
+</html>

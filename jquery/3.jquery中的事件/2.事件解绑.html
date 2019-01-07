@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>事件解绑</title>
+		<script type="text/javascript" src="../jquery.min.js" ></script>
+		<script>
+			$(function(){
+//1.bind解绑
+		/*var alertT = function(){
+			console.log("你好");
+		}
+		$("button:eq(0)").bind("click",function(){
+			console.log("你好");
+		})
+		//匿名函数没办法解绑
+		$("button:eq(0)").unbind("click",function(){
+			console.log("你好");
+		})*/
+		//使用unbind解绑函数的时候，注意匿名函数在不同的作用域是不同的函数，内容相同也不一定能够解绑
+//1.bind解绑(1)		
+		/*$("button:eq(0)").bind("click",function(){
+			alert();
+		});
+		$("button:eq(1)").bind("click",function(){
+				$("button:eq(0)").unbind("click");
+		})*/
+//1.bind解绑(2)		
+		/*  $("button:eq(0)").bind("click",alertT);
+			$("button:eq(1)").bind("click",function(){
+				$("button:eq(0)").unbind("click",alertT);
+			})*/
+//2.on解绑(1)
+		/*$("button:eq(2)").on("click",alertT);
+		$("button:eq(3)").on("click",function(){
+			$("button:eq(2)").off("click",alertT);
+		})*/
+//2.on解绑(2)		
+		/*$("button:eq(2)").on("click",function(){
+			alert();
+		})
+		$("button:eq(3)").on("click",function(){
+			$("button:eq(2)").off("click");
+		})*/
+		
+				
+				
+				
+				
+				
+			})
+		</script>
+	</head>
+	<body>
+		<button>bind绑定</button>
+		<button>bind解绑</button>
+		<button>on绑定</button>
+		<button>on解绑</button>
+		<div style="width:100px;height:100px;border:1px solid red;">123</div>
+		<button>模拟点击</button>
+	</body>
+</html>

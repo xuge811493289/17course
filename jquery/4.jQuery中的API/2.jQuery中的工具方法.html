@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery中的工具方法</title>
+		<script type="text/javascript" src="../jquery.min.js" ></script>
+		<script>
+			$(function(){
+//1.get()得到所有匹配元素的DOM节点，这些节点包含在一个标准的数组中
+	//var arr1 = $("div").get();
+	//console.log(arr1);// [div#one, div#two, div#three, div#four, div#five, div#six]
+//1.get(index)得到下标为index的元素
+	//var div = $("div").get(0);
+	//console.log(div);// <div id="one">
+	
+//2.toArray()无参数，返回一个包含jQuery对象集合中的所有DOM元素的数组
+	//var arr2 = $("div").toArray();
+	//console.log(arr2);
+//3.eq(index)用于只是元素的索引,返回的是jquery对象
+	//var div = $("div").eq(2);
+	//console.log(div);//Object[div#three]
+//4.filter()过滤器函数
+	//var div = $("div").filter(":contains('three')");
+	//console.log(div);//Object[div#three]   返回一个jquery对象
+
+	/*var arr3 = $("div").filter(function(index,element){
+		console.log("index:"+index);//0-5
+		console.log(element);// <div id="one">-- <div id="six">
+		//如果下标是奇数，那么返回该元素
+		if(index % 2 == 0){
+			return element;
+		}
+	})
+	console.log(arr3);// Object[div#one, div#three, div#five]*/
+	
+//5.map()
+	/*var arr5 = $("div").map(function(index,elem){
+		console.log(index);
+		console.log(elem);
+		if(index>3){
+			return elem;
+		}
+	}).get();
+	console.log(arr5);//[div#five, div#six]*/
+//6.each()遍历一个jquery对象，为每个匹配元素执行一个函数
+	/*var arr = $("div").each(function(index,element){
+		console.log(index);
+		console.log(element);
+		if(index>=2){
+			console.log(element);
+		}
+	})
+	console.log(arr);*/
+//7.first()获取匹配元素集合中第一个元素
+	//var div = $("div").first();
+	//console.log(div);//Object[div#one]
+//8.last()获取匹配元素集合中最后一个元素
+	//var div = $("div").last();
+	//console.log(div);//Object[div#six]
+//9.has()筛选匹配元素结合中的那些有相匹配的选择器，DOM元素	
+	//var div = $("div").has("p");
+	//console.log(div);//Object[div#one]
+//10.is()判断当前匹配的元素集合中的元素，是否为一个选择器，DOM元素，或者jquery对象
+	//var $p = $("P");
+	//var boo = $p.is("p");
+	//console.log(boo);//true
+	//var div = $("div").not(":has('p')");
+	//console.log(div);// Object[div#two, div#three, div#four, div#five, div#six]
+//11.slice()根据指定的下标范围，过滤匹配的元素集合，并生成一个新的jquery对象[2,4)
+	//var arr = $("div").slice(2,4);
+	//console.log(arr);//Object[div#three, div#four]
+			})
+		</script>
+	</head>
+	<body>
+		<form action="#" method="get">
+			<input type="text" name="username" value="username"/>
+			<input type="submit" name="form" value="提交"/>
+		</form>
+		<div id="one"><p>one</p></div>
+		<div id="two">two</div>
+		<div id="three">three</div>
+		<div id="four">four</div>
+		<div id="five">five</div>
+		<div id="six">six</div>
+	</body>
+</html>

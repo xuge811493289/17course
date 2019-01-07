@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动态组件</title>
+	<script type="text/javascript" src="../js/vue.min.js"></script>
+	<script type="text/javascript" src="../js/velocity.min.js"></script>
+	<script type="text/javascript" src="../js/velocity.ui.js"></script>
+</head>
+<body>
+	<div id="app">
+		<button @click='current="my-one"'>one</button>
+		<button @click='current="my-two"'>two</button>
+		<button @click='current="my-three"'>three</button>
+
+		<!-- 动态组件 -->
+		<component :is='current'></component>
+	</div>
+	<script type="text/javascript">
+		new Vue({
+			el:'#app',
+			data:{
+				current:'my-one'
+			},
+			methods:{
+				enter:function(el,done){
+					Velocity(el,'callout.bounce',{
+						duration:1000
+					})
+				},
+				leave:function(el,done){
+					Velocity(el,'callout.bounce',{
+						duration:1000
+					})
+				}
+			},
+			components:{
+				'my-one':{
+					template:`
+						<div>
+							<h2>one</h2>
+							<p>this is one</p>
+						</div>
+					`
+				},
+				'my-two':{
+					template:`
+						<div>
+							<h2>two</h2>
+              <p>this is two</p>
+						</div>
+					`
+				},
+        'my-three':{
+          template:`
+            <div>
+              <h2>three</h2>
+              <p>this is three</p>
+            </div>
+          `
+        }
+			}
+		})
+	</script>
+</body>
+</html>

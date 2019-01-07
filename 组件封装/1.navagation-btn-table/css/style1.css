@@ -1,0 +1,32 @@
+@charset "utf-8";
+section.one{
+  height: 80px;
+  border:1px solid grey;
+}
+section.one .nav{
+  width:970px;
+  height: 55px;
+  margin:0 auto;
+  display: flex;
+}
+section.one .nav .item{
+  width: 20px;
+  flex:1;
+  height:55px;
+}
+section.one .nav .item .item-a{
+  line-height:55px;
+  text-align: center;
+  display: block;
+  color: RGB(51,122,183);
+  height: 55px;
+}
+section.one .nav div.current{
+  border-radius: 15px;
+}
+section.one .nav div.current .item-a,section.one .nav div .item-a:hover{
+  display:block;
+  border-radius: 10px;
+  color:white;
+  background-color:RGB(51,122,183);
+}

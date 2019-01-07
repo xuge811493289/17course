@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>xml</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			table{
+				text-align: center;
+				barder:1px solid grey;
+				width:500px;
+				margin: auto;
+			}
+			td{
+				border:1px solid grey;
+				width:120px;
+				text-align: center;
+			}
+		</style>
+		<script>
+			
+		var request = new XMLHttpRequest();
+		request.open("GET","students.xml");
+		request.send(null);
+		request.onreadystatechange=function(){
+			if(request.readyState === 4 && request.status === 200){
+//			var val = request.responseText;
+//			console.log(val);
+//			console.log(typeof val);//string
+
+			var val = request.responseXML;
+			addElement1(val);
+			
+			}
+			
+		}
+	function addElement1(val){
+		var tbody = document.getElementsByTagName("tbody")[0];
+		//请求到的元素val[object XMLDocument]
+		var stus = val.children[0];
+		//拿到所有的孩子    是类数组stus[object Element]
+		var stus2 = stus.children;
+		//将类数组转换为数组形式stus2[object HTMLCollection]
+		var stus3 = Array.prototype.slice.call(stus2,0);
+		//
+		stus3.forEach(function(item){
+			var tr = document.createElement("tr");
+			//分别得到每一个孩子的属性集合
+			var stus4 = item.children;
+			//console.log(stus4);//HTMLCollection[id, name, age]
+			//将类数组转换为数组
+			var stus5 = Array.prototype.slice.call(stus4,0);
+			stus5.forEach(function(item){
+				//每个遍历到的属性都要创建一个td
+				var td = document.createElement("td");
+				//创建好的TD中的内容是请求到的每一项的数据
+				td.innerHTML = item.innerHTML;
+				//将每一个格子追加在行后面
+				tr.appendChild(td);
+			})
+			//将每一行追加在表格上面
+			tbody.appendChild(tr);
+		})
+	}		
+			
+		</script>
+	</head>
+	<body>
+		<table>
+			<thead>
+				<tr>
+					<td>id</td>
+					<td>name</td>
+					<td>age</td>
+				</tr>
+			</thead>
+			<tbody>
+				
+			</tbody>
+			<tfoot>
+				
+			</tfoot>
+			
+		</table>
+	</body>
+</html>

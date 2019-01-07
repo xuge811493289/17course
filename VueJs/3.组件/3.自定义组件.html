@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自定义组件</title>
+	<script type="text/javascript" src="../js/vue.js"></script>
+	<style>
+		li.one{
+			background-color: orange;
+			width: 100px;
+			margin:10px 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<h2>{{title}}</h2>
+		<ul>
+			<li @click="handle($event)" v-for="student in students" class="one">{{student}}</li>
+		</ul>
+		<my-component></my-component>
+		<my-component></my-component>
+		<my-component></my-component>
+	</div>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			components:{
+				'my-component':{
+					template:'<button>hello vue</button>'
+				}
+			},
+			data:{
+				title:'自定义组件',
+				students:[
+					"terry","jacky","tom"
+				],
+				classes:['web1702','web1702','web1703']
+			},
+			methods:{
+				handle:function(event){
+					alert(event.target.innerText);
+				}
+			}
+		})
+	</script>
+</body>
+</html>

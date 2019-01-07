@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>特殊特性</title>
+	<style type="text/css">
+		#two{
+		  	height:100px;
+		  	width:200px;
+		  	background-color:red
+		}
+	</style>
+</head>
+<body>
+	<div id="one" title="这是个div" class="one" name="one" style="height:100px;width:200px;background-color:red">
+   	  你好
+   	  你好
+    </div>
+    <div id="two"  class="two" name="two"  onclick="test()" >
+   	  你好
+   	  你好
+    </div>
+<script type="text/javascript">
+
+	var div2 = document.getElementById("two");
+	var attr = div2.attributes;
+	console.log(attr["id"]);//id="two"
+	console.log(attr["name"]);//name="two"
+	function test(){
+		alert("你好");
+	}
+
+	/*onclick类似的事件处理程序,通过getAttribute()访问时，返回相应代码字符串;访问onclick属性时，返回一个javascript函数*/
+	console.log(div2.onclick);// onclick(event)
+	var xx = div2.getAttribute("onclick");//test()
+	console.log(xx);
+
+</script>
+</body>
+</html>

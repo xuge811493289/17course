@@ -1,0 +1,31 @@
+[{
+	"id":101,
+	"couName":"语言",
+	"couTime":"52",
+	"couTea":"张伟",
+	"couAddress":"博学楼601"
+},{
+	"id":102,
+	"couName":"数学",
+	"couTime":"52",
+	"couTea":"张瑶",
+	"couAddress":"博学楼104"
+},{
+	"id":103,
+	"couName":"物理",
+	"couTime":"52",
+	"couTea":"张璐",
+	"couAddress":"博学楼121"
+},{
+	"id":104,
+	"couName":"化学",
+	"couTime":"52",
+	"couTea":"王远",
+	"couAddress":"博学楼301"
+},{
+	"id":105,
+	"couName":"历史",
+	"couTime":"48",
+	"couTea":"刘雯",
+	"couAddress":"博学楼103"
+}]

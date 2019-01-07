@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>复选框</title>
+	<script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+	<div id="demo">
+		<input type="checkbox" id="checkbox" v-model="checked">
+		<label for="checkbox">{{checked}}</label>
+	</div>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el:"#demo",
+			data:{
+				checked:true
+			}
+		})
+	</script>
+</body>
+</html>

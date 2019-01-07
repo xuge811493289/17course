@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../jquery.min.js" ></script>
+		<script>
+			$(function(){
+				var password = $("input:password");
+				console.log(password);
+			})
+		</script>
+	</head>
+	<body>
+		<form action="#" method="get">
+			username: <input type="text" /><br />
+			password: <input type="password" /><br />
+			gender:   <input type="radio" />男 <input type="radio" />女<br />
+			passion:  <input type="checkbox"/>篮球
+					  <input type="checkbox"/>足球     
+					  <input type="checkbox"/>乒乓<br />
+			country:
+				<select name="country">
+					<option value="1">中国</option>
+					<option value="1">美国</option>
+					<option value="1">日本</option>
+				</select><br />
+			<input type="submit" value="提交"/>
+		</form>
+	</body>
+</html>

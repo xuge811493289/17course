@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var person={
+			name:"lisi",
+			age:21
+		}
+		function outer(){
+			var name="outer";
+			console.log(name);//outer
+			console.log(this.name);//lisi
+			function inner(){
+				var name="inner";
+				console.log(name);//inner
+			}
+			inner();
+		}
+
+		/*谁调用，指向谁*/
+		person.outer=outer;
+		person.outer();
+
+		
+
+
+	</script>
+</body>
+</html>

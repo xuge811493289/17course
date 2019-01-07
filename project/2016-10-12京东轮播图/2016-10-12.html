@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>京东商城滚动页面</title>
+<style type="text/css">
+	*{
+		margin: 0px;
+        padding: 0px;
+	}
+	.box{
+		height:454px ;
+		width:730px;
+		margin: 100px auto 0px;/*auto左右平铺*/
+		position: relative;/*相对定位*/
+
+	}
+	.box ul li{
+		position: absolute;/*绝对定位*/
+		top: 0px;
+		left: 0px;
+		list-style: none;/*去掉小圆点*/
+		height:454px ;
+		width:730px;
+		display: none;/*隐藏*/
+		cursor: pointer;
+	}
+	.box ul li.on{
+		display: block;/*显示*/
+
+	}
+	.left,.right{
+		position: absolute;
+		top:195px;
+		width:32px ;
+		height:64px;
+		background: rgba(0,0,0,.2);/*red green blue,000代表黑色 0-255，a是透明度0-1*/
+		color: white;/*文字提示*/
+        font-size: 24px;/*文字大小*/
+        text-align: center;/*文字左右居中*/
+        line-height: 64px;/*行高*/
+        cursor: pointer;/*鼠标的箭头变手指*/
+        display: none;
+	}
+	.left{
+		left: 0px;
+	}
+	.right{
+		right: 0px;
+	}
+	.box p{
+		position: absolute;
+		bottom: 10px;
+		left: 293px;
+		width: 144px;
+		height: 20px;
+		/*border: 2px solid red;*/
+	}
+	.box p span{
+		width: 20px;
+		height: 20px;
+		background:#3E3E3E;
+		float: left;
+		color: #FFF;
+		border-radius: 50%;/*边角的弧度 变成圆形*/
+		text-align: center;
+		font-family: 'Microsoft Yahei';/*文字样式*/
+		font-size: 12px;
+		line-height: 20px;
+		margin: 0px 2px ;
+		cursor: pointer;/*鼠标的箭头变手指*/
+	}
+	.box p span.hover{
+		background: #B61B1F;
+	}
+</style>
+</head>
+<body>
+	<div class="box">
+	    <ul>
+	    	<li class="on"><img src="img/1.jpg" /></li>
+	    	<li><img src="img/2.jpg" /></li>
+	    	<li><img src="img/3.jpg" /></li>
+	    	<li><img src="img/4.jpg" /></li>
+	    	<li><img src="img/5.jpg" /></li>
+	    	<li><img src="img/6.jpg" /></li>
+	    </ul>
+	    <div class="left"><</div>
+	    <div class="right">></div>
+	    <p>
+	    	<span class="hover">1</span>
+	    	<span>2</span>
+	    	<span>3</span>
+	    	<span>4</span>
+	    	<span>5</span>
+	    	<span>6</span>
+	    </p>
+	</div>
+	<script src="js/jquery.js"></script>
+	<script>
+		var index =0;
+		$('.box p span').hover(function(){
+			index = $(this).index();//获取当前的序列号
+			$(this).addClass('hover').siblings('span').removeClass('hover');//相邻的hover被清除
+			$('.box ul li ').eq(index).fadeIn(500).siblings('li').fadeOut();//获取图片li,fadeIn  淡入的效果  $()  获取的意思
+		});
+		$('.box').hover(function(){
+            $('.left').show();//滑入显示
+            $('.right').show();
+		},function(){
+            $('.left').hide();//滑入隐藏
+            $('.right').hide();
+		});
+		$('.right').click(function(){//点击事件
+			index ++;//往旁边加一个
+			if (index >5) {
+				index=0;
+			}
+			$('.box p span').eq(index).addClass('hover').siblings('span').removeClass('hover');//相邻的hover被清除
+			$('.box ul li ').eq(index).fadeIn(500).siblings('li').fadeOut();//获取图片li,fadeIn  淡入的效果  $()  获取的意思
+		});
+		$('.left').click(function(){//点击事件
+			index --;//往旁边加一个
+			if (index < 0) {
+				index = 5;
+			}
+			$('.box p span').eq(index).addClass('hover').siblings('span').removeClass('hover');//相邻的hover被清除
+			$('.box ul li ').eq(index).fadeIn(500).siblings('li').fadeOut();//获取图片li,fadeIn  淡入的效果  $()  获取的意思
+		});
+		//给轮播图定时
+		var timer=null;   //定时器返回值，主要用于关闭定时器
+		timer=setInterval(function(){        //打开定时器
+            index++;                          //让图片的索引值次序加1，这样就可以实现顺序轮播图片
+            if(index>5){    //当到达最后一张图的时候，让iNow赋值为第一张图的索引值，轮播效果跳转到第一张图重新开始
+                index=0;
+            }
+            $('.box p span').eq(index).addClass('hover').siblings('span').removeClass('hover');//相邻的hover被清除
+			$('.box ul li ').eq(index).fadeIn(500).siblings('li').fadeOut();//获取图片li,fadeIn  淡入的效果  $()  获取的意思
+        },3000);   //2000为轮播的时间
+	</script>
+</body>
+</html>

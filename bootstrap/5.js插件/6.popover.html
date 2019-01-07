@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.js"></script>
+    <link href="bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<br><br>
+    <div class="container">
+        <a  class="btn btn-danger" data-toggle="popover" data-original-title="这里是弹出内容的标题" data-placement="auto right"
+           data-content="这是弹出的内容" title="this is title">
+            这是一个提示框
+        </a>
+    </div>
+    <script>
+        $("[data-toggle=popover]").popover();
+    </script>
+</body>
+</html>

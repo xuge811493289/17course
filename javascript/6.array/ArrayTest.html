@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+//1.数组特性
+	// (1)每一项都可以保存任何类型的数据
+	// (2)数组的大小都可以动态调整
+	// (3)数组的length属性可读可写
+//2.数组的创建方法
+	//1.使用Array构造函数
+		// var arr = new Array();
+		// var arr1 = new Array(21);//预先指定数组的大小
+	//2.使用数组字面量
+		// var arr2 = ["terry",21,"男"]	//	可以在数组中放入任意类型的数据
+		// var arr3 = []	//空数组
+//3.访问数组变量	数组变量名【索引】
+		//1.如果索引值小于数组的长度,返回对应的值
+		// console.log(1);//1
+		// console.log(arr2[2]);//男
+		//2.如果索引值超过数组长度，返回undefined
+		// console.log(arr2[9]);//undefined
+		//3.如果索引大于数组的长度，数组自动增加到该索引值加1的长度
+		// var arr = ["terry","larry","boss"];
+		// arr[3] = "jacky";//自动添加到数组的末尾
+		// console.log(arr);
+//4.检查数组 Array.isArray();
+		// var arr = [];
+		// console.log(typeof(arr));//Object
+		// var boo = Array.isArray(arr);//判断arr是否是数组类型
+		// console.log(boo);//true
+//5.转换数组为字符串  
+//数组名.toString()		在默认情况下都会以逗号分隔字符串的像是返回数组项
+		// var arr = ["terry","larry","mary"];
+		// console.log(arr.toString());//terry,larry,mary
+//数组名.valueOf()	 在默认情况下一数组字面量的方式显示
+		// var arr = ["terry","larry","mary"];
+		// var newArr = arr.valueOf();
+		// console.log(newArr);//["terry", "larry", "mary"]
+//数组名.join()		使用指定的字符串用来分隔数组字符串
+		// var arr = ["terry","larry","mary"];
+		// var newArr =  arr.join("||");
+		// console.log(newArr)//terry||larry||mary
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

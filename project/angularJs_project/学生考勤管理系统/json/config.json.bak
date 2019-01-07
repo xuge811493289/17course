@@ -1,0 +1,61 @@
+[{
+	"categoryId":3,
+	"categoryName":"课程信息",
+	"categoryCode":3,
+	"url":"",
+	"parentCategory":null
+},{
+	"categoryId":5,
+	"categoryName":"课程安排",
+	"categoryCode":301,
+	"url":"#/infoCourseMan",
+	"parentCategory":3
+},{
+	"categoryId":4,
+	"categoryName":"学生信息",
+	"categoryCode":4,
+	"url":"",
+	"parentCategory":null
+},{
+	"categoryId":6,
+	"categoryName":"学生基本信息",
+	"categoryCode":401,
+	"url":"#/infoStuMan",
+	"parentCategory":4
+},{
+	"categoryId":7,
+	"categoryName":"在线请假",
+	"categoryCode":7,
+	"url":"",
+	"parentCategory":null
+},{
+	"categoryId":8,
+	"categoryName":"请假条",
+	"categoryCode":701,
+	"url":"#/infoPlePinNoteMan",
+	"parentCategory":7
+},{
+	"categoryId":11,
+	"categoryName":"批示信息记录",
+	"categoryCode":702,
+	"url":"#/infoPlePinStateMan",
+	"parentCategory":7
+},{
+	"categoryId":9,
+	"categoryName":"考勤信息",
+	"categoryCode":9,
+	"url":"",
+	"parentCategory":null
+},{
+	"categoryId":10,
+	"categoryName":"考勤信息",
+	"categoryCode":901,
+	"url":"#/infoAttMan",
+	"parentCategory":9
+},{
+	"categoryId":11,
+	"categoryName":"文化宣传",
+	"categoryCode":10,
+	"url":"",
+	"parentCategory":null
+}]

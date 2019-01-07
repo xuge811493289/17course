@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>学生信息系统登录平台</title>
+  <link rel="stylesheet" href="./css/bootstrap.css" />
+  <link rel="stylesheet" href="./css/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+  <div class="container">
+    <div class="login-box">
+      <div class="login-word">User Login</div>
+      <form action="http://127.0.0.1:3000/login">
+        <div class="line">
+          <i class="fa fa-user"></i>
+          <input class="input" name="username" type="text" placeholder="请输入用户名">
+        </div>
+        <div class="line">
+          <i class="fa fa-lock"></i>
+          <input class="input" name="password"  type="password" placeholder="请输入密码">
+        </div>
+        <div class="line">
+          <button type="submit" class="btn btn-primary">登录</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>子元素过滤选择器</title>
+		<script type="text/javascript" src="../jquery.min.js" ></script>
+		<script>
+	$(function(){
+	// :nth-child()
+		//$("#big :nth-child(2)").css("background-color","#00FFFF");
+	// :first-child
+		//$("div span:first-child").css("background-color","#00FFFF");
+	// :last-child
+		//$("div span:last-child").css("background-color","#B6EA29");
+	// :only--child
+		//$("span :only-child").css("background-color","#B6EA29");
+	//
+	
+	})
+			
+		</script>
+	</head>
+	<body>
+		<div id="big">
+			<span id="one">one
+				<div id="one_one">one_one</div>
+				<div id="one_two">one_two</div>
+			</span>
+			<span id="two">two
+				<div id="two_one">two_one</div>
+				<div id="two_two">two_two</div>
+			</span>
+			<span id="three">three
+				<div id="three_one">three_one</div>
+			</span>
+		</div>
+	</body>
+</html>

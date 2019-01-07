@@ -1,0 +1,34 @@
+@charset "utf-8";
+.form{
+  padding:5px;
+  height: 100%;
+}
+.input{
+  outline:none;
+  border:1px solid #ddd;
+  font-size: 16px;
+  display: inline-block;
+  text-indent: 5px;
+  width:100%;
+  height: 30px;
+  border-radius: 5px;
+  margin:5px 0;
+}
+.input-inline{
+  outline:none;
+  border:1px solid #ddd;
+  font-size: 16px;
+  display: inline-block;
+  text-indent: 5px;
+  height: 30px;
+  border-radius: 5px;
+  margin:5px 0;
+}
+/*鼠标聚焦时候的阴影*/
+.input:focus,.input-inline:focus{
+  box-shadow: 1px 1px 1px skyblue,-1px 1px 1px skyblue,1px -1px 1px skyblue,-1px -1px 1px skyblue ;
+}
+.button{
+  clear:right;
+  float: right;
+}

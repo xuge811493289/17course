@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+    (function(){
+      var a = 10;
+      function $(){
+        alert(a);
+      }
+      // 将变量放在了全局  外面可以获取的到
+      window.$ = $;
+    })()
+    // alert(a)    //如果不把这个变量暴露在window中的话显示未定义
+
+    $();
+
+  </script>
+</body>
+</html>

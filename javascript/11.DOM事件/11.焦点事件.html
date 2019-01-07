@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>焦点事件</title>
+<script type="text/javascript">
+	window.onload=function(){
+		var input = document.getElementsByTagName("input");
+		input[0].onfocus=function(){
+			console.log("focus");
+		}
+		input[0].onblur = function(){
+			console.log("blur");
+		}
+	}
+</script>
+</head>
+<body>
+	username:<input type="text" name="username">
+	password:<input type="text" name="password">
+</body>
+</html>

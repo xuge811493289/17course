@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>弹出问候语</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var btn = document.getElementsByTagName("button");
+			btn[0].onclick=function(){
+				alert("先生，您好！");
+			}
+			btn[1].onclick=function(){
+				alert("小姐，您好！");
+			}
+		}
+	</script>
+</head>
+<body>
+	<button class="sayhello">问候先生</button>
+	<button class="sayhello">问候小姐</button>
+</body>
+</html>

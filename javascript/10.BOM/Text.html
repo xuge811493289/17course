@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Text类型</title>
+</head>
+<body>
+	<div id="one">
+		<div id="two">two two</div>
+		<div id="three"></div>
+		<div id="four">four</div>
+		<div id="five">five</div>
+	</div>
+	<script type="text/javascript">
+//1.length  获取到文本节点后，文本节点的长度
+		var two = document.getElementById("two");
+		//console.log(two.childNodes[0].length);//7
+		var three = document.getElementById("three");
+		//console.log(three.childNodes.length);//0
+//2.appendData()追加文本
+		two.childNodes[0].appendData("我是追加的文字");
+//3.deleteData(beginIndex,count)删除文本
+		two.childNodes[0].deleteData(1,2);
+//4.insertData(beginIndex,text)插入文本
+		two.childNodes[0].insertData(1,"我是插入的文本");
+//5.replaceData(beginIndex,count,text)替换文本	
+		two.childNodes[0].replaceData(1,2,"我是替换的文本")
+//6.splitText(beiginIndex)从beginIndex位置将当前文本节点分成两个文本节点
+		// two.childNodes[0].splitText(3);
+		// console.log(two.childNodes[0].length);//3
+		// console.log(two.childNodes[1].length);//21
+//7.substringData(beiginIndex,count)从beginIndex开始提取count个子字符串
+		var data = two.childNodes[0].substringData(2,10);
+		console.log(data);
+//8.document.createTextNode()创建文本节点，参数为要插入节点中的文本
+		var text1 = document.createTextNode("hello")	
+		console.log(text1);
+		var five = document.getElementById("five");
+		five.childNodes[0].appendData(text1);
+	</script>
+
+</body>
+</html>

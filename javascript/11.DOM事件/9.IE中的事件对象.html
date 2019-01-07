@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IE中的事件对象</title>
+<script type="text/javascript">
+	window.onload=function(){
+		var btn = document.getElementById("button");
+		btn.onclick = function(){
+			var event = window.event;
+			alert(event.type);//click
+			alert(event.srcElement==this);//true
+		}
+		/*btn.attachEvent("onclick",function(event){
+			alert(event.type);//click
+			alert(event.srcElement==this);//false
+			alert(event.srcElement);//button
+			alert(this);//window
+		})*/
+	}
+</script>
+</head>
+<body>
+	<button id="button">按钮</button>
+</body>
+</html>

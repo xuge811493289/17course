@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>四种形式的九九乘法表</title>
+	<script type="text/javascript">
+//九九乘法表(1)
+		document.write("九九乘法表(1):<br>");
+		document.write("<br>");
+		for(var i=1;i<10;i++){
+			for(var j=1;j<=i;j++){
+				if(i*j<10){
+					document.write(j+"*"+i+"="+(i*j)+"&nbsp;&nbsp;&nbsp;&nbsp;");
+				}else{
+					document.write(j+"*"+i+"="+(i*j)+"&nbsp;&nbsp;&nbsp;");
+				}
+			}
+			document.write("<br/>");
+		}
+//九九乘法表(2)
+		document.write("<br>");
+ 		document.write("九九乘法表(2):<br>");
+		for(var i=9;i>0;i--){
+			document.write("<br/>");
+			for(var j=1;j<=i;j++){
+				if(i*j<10){
+					document.write(j+"*"+i+"="+(i*j)+"&nbsp;&nbsp;&nbsp;&nbsp;");
+				}else{
+					document.write(j+"*"+i+"="+(i*j)+"&nbsp;&nbsp;&nbsp;");
+				}
+			}
+		}
+//九九乘法表(3)
+		document.write("<br>");
+ 		document.write("九九乘法表(3):<br>");
+ 		for(var i=1;i<10;i++){
+ 			var  xx="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp";
+		 	for(var j=1;j<10-i;j++){
+		 		document.write(xx);
+		 	}
+		 	for(var k=1;k<=i;k++){
+
+				if(i*k<10){
+		 			document.write(k+"*"+i+"="+(i*k)+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+				}else{
+		 			document.write(i+"*"+k+"="+(i*k)+"&nbsp;&nbsp;&nbsp;&nbsp;");
+		 		}
+		 	}
+		 	document.write("<br/>");
+		}
+//九九乘法表(4)
+		document.write("<br>");
+ 		document.write("九九乘法表(4):<br>");
+ 		for(var i=9;i>0;i--){
+			document.write("<br/>");
+			var  xx="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;";
+		 	for(var j=1;j<10-i;j++){
+		 		document.write(xx);
+		 	}
+			for(var j=1;j<=i;j++){
+				if(i*j<10){
+					document.write(j+"*"+i+"="+(i*j)+"&nbsp;&nbsp;&nbsp;&nbsp;");
+				}else{
+					document.write(j+"*"+i+"="+(i*j)+"&nbsp;&nbsp;&nbsp;");
+				}
+			}
+
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

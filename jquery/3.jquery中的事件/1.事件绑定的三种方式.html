@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>事件绑定的三种方式</title>
+		<script type="text/javascript" src="../jquery.min.js" ></script>
+		<script>
+		$(function(){
+		//1.直接绑定
+			/*var $btn = $("#btn1");
+			$btn.click(function(event,name){
+				console.log(arguments);
+				console.log(event.target);// <button id="btn1">
+				console.log(this);//<button id="btn1">
+				console.log(event.pageX);
+				console.log(event.pageY);
+			})*/
+		//2.bind绑定(1)   绑定不同的事件必须使用同样的执行函数
+				/*$("#btn2").bind("click mouseover",{
+					name:"lisi",
+					age:20
+				},function(event){
+					console.log(event.currentTarget);
+					console.log(event.target);//<button id="btn2">
+					console.log(this);//<button id="btn2">
+					//data传递给一个事件方法的数据对象
+					console.log(event.data.age);//20
+					console.log(event.metaKey);//false
+					console.log(event.pageX);
+					console.log(event.pageY);
+				})
+					* */
+		//2.bind绑定(2)  绑定不同的事件可以使用不同的执行函数
+				/*$("#btn2").bind({
+					click:function(event){
+						console.log(event.target);//<button id="btn2">
+						console.log(this);
+						console.log(event.currentTarget);
+					},
+					mouseout:function(event){
+						console.log(event.target);//<button id="btn2">
+						$("#btn1").css("background-color","aquamarine");
+					}
+				})
+				*/
+		//3.on绑定事件(1)
+				$("#btn3").on("click",{
+					name:"lisi",
+					age:21
+				},function(event){
+					/*this->event.currentTarget
+					 *currentTarget始终指向出发某个函数的那个标签
+					 *target:始终指向事件源
+					 * */
+					console.log(this);//<button id="btn3">
+					console.log(event.target);//<button id="btn3">
+					console.log(event.currentTarget);//<button id="btn1">
+					console.log(event.data.age);//21
+				});
+		//3.链式调用	事件代理(2)
+			var child = $("div:eq(0)").children();
+			//console.log(child);// Object[div, button]
+			$("div:eq(0)").on("click","button",{
+				name:"lisi",
+				age:21
+			},function(event){
+				console.log(this);// <button>
+				console.log(event.target);// <button>
+				console.log(event.currentTarget);// <button>
+				if(event.target.nodeName=="BUTTON"){
+					alert();
+				}
+			});
+		//3.on 一个元素绑定多个事件，每个事件处理函数不一样
+			$("div:eq(0)").on({
+				click:function(){
+					alert();
+				},
+				mouseover:function(){
+					alert(123);
+				}
+			},"button");	
+		})
+		</script>
+	</head>
+	<body>
+		<button id="btn1">直接绑定</button>
+		<button id="btn2">bind绑定</button>
+		<button id="btn3">on绑定</button>
+		<div style="width:100px; height: 100px;border:1px solid red;">
+	  		<div style="width:20px; height: 20px;border:1px solid red; "></div>
+	  		<button>被代理的button</button>
+	  	</div>
+	</body>
+</html>

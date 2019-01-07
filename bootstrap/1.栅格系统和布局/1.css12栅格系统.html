@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>栅格布局</title>
+		<link rel="stylesheet" href="../bootstrap3.2.2/css/bootstrap.css" />
+		<style type="text/css">
+			.red{
+				background-color: red;
+			}
+			.yellow{
+				background-color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<!--栅格布局-->
+			<div class="row">
+				<div class="col-md-1 red">col-md-1</div>
+				<div class="col-md-1 yellow">col-md-1</div>
+				<div class="col-md-1 red">col-md-1</div>
+				<div class="col-md-1 yellow">col-md-1</div>
+				<div class="col-md-1 red">col-md-1</div>
+				<div class="col-md-1 yellow">col-md-1</div>
+				<div class="col-md-1 red">col-md-1</div>
+				<div class="col-md-1 yellow">col-md-1</div>
+				<div class="col-md-1 red">col-md-1</div>
+				<div class="col-md-1 yellow">col-md-1</div>
+				<div class="col-md-1 red">col-md-1</div>
+				<div class="col-md-1 yellow">col-md-1</div>
+			</div>
+			<div class="row">
+				<div class="col-md-2 red">col-md-2</div>
+				<div class="col-md-10 yellow">col-md-10</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 red">col-md-2</div>
+				<div class="col-md-6 yellow">col-md-10</div>
+			</div>
+			<!--列偏移-->
+			<div class="row">
+				<div class="col-md-4 red">left</div>
+				<!--向右偏移4个列的宽度-->
+				<div class="col-md-4 col-md-offset-4 yellow">right</div>
+			</div>
+			<!--列嵌套-->
+			<div class="row">
+				<div class="col-md-6">
+					<div class="col-md-2">
+						111
+					</div>
+					<div class="col-md-3">
+						333
+					</div>
+				</div>
+				<div class="col-md-6">
+					666
+				</div>
+			</div>
+			<!--列排序-->
+			<div class="row">
+				<div class="col-md-3 red col-md-push-9">
+					red
+				</div>
+				<div class="col-md-9 yellow col-md-pull-3">
+					yellow
+				</div>
+			</div>
+			<!--清除浮动-->
+			<div class="row">
+				<div class="col-md-3 col-sm-6 red">
+					1内容区内容区
+					内容区内容区
+					内容区内容区
+					内容区内容区
+					内容区内容区
+					内容区内容区
+					内容区内容区
+				</div>
+				<div class="col-md-3 col-sm-6 yellow">2</div>
+				<!--清除浮动-->
+				<div class="clearfix visible-sm"></div>
+				<div class="col-md-3 col-sm-6 red">3</div>
+				<div class="col-md-3 col-sm-6 yellow">4</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选择按钮</title>
+	<script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<select v-model="selected">
+			<option>A</option>
+			<option>B</option>
+			<option>C</option>
+		</select>
+		<span>Select:{{selected}}</span>
+	</div>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				selected:null
+			}
+		})
+	</script>
+</body>
+</html>

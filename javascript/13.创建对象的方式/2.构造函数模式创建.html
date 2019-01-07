@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+		/*1.构造函数模式，本质是函数*/	
+		function Student(num,name,address){
+			//默认创建新的对象
+			this.stuNum = num;
+			this.name = name;
+			this.address = address;
+			//return this;
+		}
+
+		var stu2 = new Student(1002,"lerry","江西");
+
+		//打印实例化对象
+		console.log(stu2);//Object { stuNum: 1002, name: "lerry", address: "江西" }
+
+		//检测实例的类型
+		console.log(typeof stu2);//object
+
+		//相互指向实例的构造器指向对象
+		console.log(stu2.constructor);//function Student()
+
+		//stu2是Student的实例化对象
+		console.log(stu2 instanceof Student);//true
+		console.log(stu2 instanceof Object);//true
+
+		/*原理
+			1.创建一个新对象
+			2.this->新对象
+			3.执行构造函数中的代码
+			4.返回新对象
+		*/	
+
+		/*构造函数的问题：
+			1.每个方法在每个实例上重新创建了一遍，但是没必要
+			2.可在全局中声明函数的,但是体现不了对象的封装性
+		*/
+		</script>
+	</body>
+</html>

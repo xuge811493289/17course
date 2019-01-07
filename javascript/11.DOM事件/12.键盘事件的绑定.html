@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>键盘事件的绑定</title>
+<script type="text/javascript">
+	/*键盘事件的绑定*/
+	window.onload=function(){
+		var input1 = document.getElementById("inp1");
+		inp1.onkeydown = function(event){
+			var num = event.keyCode;
+			console.log(num);
+			if(num==65){
+				alert("a");
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	 <input type="text" name="userrname" id="inp1">
+</body>
+</html>

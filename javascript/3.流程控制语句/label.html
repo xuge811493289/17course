@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+	outer:for(var i=1;i<5;i++){
+		document.write("i="+i);
+		for(var j=1;j<5;j++){
+			if(j==3){
+				continue outer;
+			}else{
+				document.write("j="+j);
+			}
+		}
+		document.write("</br>");
+	}
+
+	for(var i=1;i<5;i++){
+		document.write("i="+i);
+		for(var j=1;j<5;j++){
+			if(j==3){
+				continue;
+			}else{
+				document.write("j="+j);
+			}
+		}
+		document.write("</br>");
+	}
+
+
+
+
+
+	for(var i=1;i<5;i++){
+		document.write("i="+i);
+		for(var j=1;j<5;j++){
+			if(j==3){
+				break;
+			}else{
+				document.write("j="+j);
+			}
+		}
+		document.write("</br>");
+	}
+
+
+	outer:for(var i=1;i<5;i++){
+		document.write("i="+i);
+		for(var j=1;j<5;j++){
+			if(j==3){
+				break outer;
+			}else{
+				document.write("j="+j);
+			}
+		}
+		document.write("</br>");
+	}
+
+		</script>
+	</body>
+</html>

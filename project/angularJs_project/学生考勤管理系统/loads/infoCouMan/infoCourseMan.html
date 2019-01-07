@@ -1,0 +1,167 @@
+<style type="text/css">
+	#btns{
+		float:right;
+		margin:40px;
+		width:35%
+	}
+	.btn{
+		margin-right:15px;
+	}
+	.table{
+		margin-top:45px;
+		text-align:center;
+		color:RGB(40,24,17);
+		font-size:14px;
+	}
+	.button {
+    width :70px;
+    height :35px;
+    color : #ffffff;
+    margin-top : 10px;
+    margin-left : 10% ;
+    display : inline-block;
+    outline : none;
+    cursor : pointer;
+    text-align : center;
+    text-decoration : none;
+    font : 14px/ 100% Arial , Helvetica, sans-serif;
+    padding : .5em 2 em .55em;
+    text-shadow : 0 1px 1 px rgba( 0,0 ,0, .3);
+    -webkit-border-radius : .5em;
+    -moz-border-radius : .5em;
+    border-radius : .5em;
+    -webkit-box-shadow : 0 1px 2 px rgba( 0,0 ,0, .2);
+    -moz-box-shadow : 0 1px 2 px rgba( 0,0 ,0, .2);
+    box-shadow : 0 1px 2 px rgba( 0,0 ,0, .2);
+}
+.button: hover {
+    text-decoration : none;
+}
+.button: active {
+    position : relative;
+    top : 1px;
+}
+.blue{
+    color :#ffffff;
+    border :solid 1 px #0076a3;
+    background : #0095cd;
+    background : -webkit-gradient( linear,left top, left bottom, from(#00adee ),to( #0078a5));
+}
+.blur: hover{
+    background : #007edd;
+    background : -webkit-gradient( linear,left top, left bottom, from(#0095cc ),to( #00678e));
+}
+.blue: active{
+    color :#80bed6;
+    background : -webkit-gradient( linear,left top, left bottom, from(#0078a5 ),to( #00adee));
+}
+.green{
+    color :#ffffff;
+    border :solid 1 px RGB( 50,135 ,18);
+    background : RGB( 77,206 ,29);
+    background : -webkit-gradient( linear,left top, left bottom, from(RGB (107, 231,72 )),to( RGB(50 ,135, 18)));
+}
+.green: hover{
+    background : RGB( 77,206 ,29);
+    background : -webkit-gradient( linear,left top, left bottom, from(RGB (107, 231,72 )),to( RGB(65 ,173, 28)));
+}
+.green: active{
+    color :RGB( 150,238 ,125);
+    background : -webkit-gradient( linear,left top, left bottom, from(RGB (65, 173,28 )),to( RGB(107 ,231, 72)));
+}
+.orange {
+    color : #ffffff;
+    border : solid 1 px #da7c0c;
+    background : #f78d1d;
+    background : -webkit-gradient( linear, left top, left bottom, from(#faa51a ), to( #f47a20));
+    background : -moz-linear-gradient(top,  #faa51a,  #f47a20 );
+    filter :  progid :DXImageTransform. Microsoft.gradient (startColorstr= '#faa51a', endColorstr ='#f47a20');
+}
+.orange: hover {
+    background : #f47c20;
+    background : -webkit-gradient( linear, left top, left bottom, from(#f88e11 ), to( #f06015));
+    background : -moz-linear-gradient(top,  #f88e11,  #f060 );
+    filter :  progid :DXImageTransform. Microsoft.gradient (startColorstr= '#f88e11', endColorstr ='#f06015');
+}
+.orange: active {
+    color : #fcd3a5;
+    background : -webkit-gradient( linear, left top, left bottom, from(#f47a20 ), to( #faa51a));
+    background : -moz-linear-gradient(top,  #f47a20,  #faa51a );
+    filter :  progid :DXImageTransform. Microsoft.gradient (startColorstr= '#f47a20', endColorstr ='#faa51a');
+}
+.form-coutrol{width: 489px;}
+
+</style>
+<div>
+	<table class="table table-striped table-bordered">
+		<thead>
+			<tr style="color:black;font-size:18px;border:bold">
+				<td>编号</td>
+				<td>课程</td>
+				<td>任课教师</td>
+				<td>课时</td>
+				<td>教室</td>
+			</tr>
+		</thead>
+		<tbody style=" font-size:14px">
+			<tr ng-repeat="item in couData.course">
+				<td>
+					<input type="checkbox" ng-model="item.checked"></td>
+				<td>{{item.couName}}</td>
+				<td>{{item.couTea}}</td>
+				<td>{{item.couTime}}</td>
+				<td>{{item.couAddress}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div class="btn-group" id="btns">
+	<button class="button green" ng-click="couData.addcou()">添加</button>
+	<button class="button orange" ng-click="couData.delcou()">删除</button>
+	<button class="button blue" ng-click="couData.showUpdcou()">修改</button>
+</div>
+<script>
+$(function(){
+	$('#identifier').modal({
+		backdrop:true,
+		keyboard:true,
+		show:false
+	})
+});
+</script>
+<!--模态框-->
+<div class="modal fade" id="couModal" tabindex="-1" >
+	  <div class="modal-dialog">
+	    <div class="modal-coutent">
+		<div class="modal-header">
+		    <button class="close" data-dismiss="modal">&times;</button>
+		    <h4 class="modal-title">{{couData.modalTitle}}</h4>
+		</div>
+		<div class="modal-body">
+			<form action="javascript:void(0)" method="post">
+				<div class="input-group">
+					<span class="input-group-addon" style="letter-spacing:14px">课程</span>
+					<input type="" ng-model="newCou.couName" class="form-coutrol">
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon" style="letter-spacing:14px">课时</span>
+					<input type="" ng-model="newCou.couTime" class="form-coutrol">
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon">任课教师</span>
+					<input type="" ng-model="newCou.couTea"  class="form-coutrol">
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon" style="letter-spacing:14px">教室</span>
+					<input type="" ng-model="newCou.couAddress"  class="form-coutrol">
+				</div>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-primary" ng-click="couData.option=='upd1'?couData.updcou():couData.savecou()">提交</button>
+		    <button class="btn btn-primary" data-dismiss="modal">关闭</button>
+
+		</div>
+	    </div>
+	  </div>
+    </div>

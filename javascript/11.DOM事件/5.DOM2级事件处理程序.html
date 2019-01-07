@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM2级事件处理程序</title>
+<script type="text/javascript">
+/*DOM2级事件处理程序
+IE9、Firefox、Safari、Chrome和Opera支持DOM2级事件处理程序
+	addEventListener：添加事件监听
+		参数一:事件类型
+		参数二:事件处理函数，可以是匿名函数，也可以是函数名
+		参数三:boolean  
+			ture 表示在捕获阶段调用
+			false表示在冒泡阶段调用
+	removeEventListener:移除事件
+		【注意】
+			1.添加的事件类型必须一致(click);
+			2.如果是匿名函数将无法移除
+		      如果不是匿名函数，则函数名必须相同
+		    3.同true或同false
+*/
+	window.onload=function(){
+		function test(){
+			console.log(this);
+		}
+		var btn = document.getElementById("btn");
+		btn.addEventListener("click",test,true);
+		btn.removeEventListener("click",test,true);
+	}
+</script>
+</head>
+<body>
+	<button id="btn">按钮</button>
+</body>
+</html>

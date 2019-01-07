@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+/*判断101-200之间有多少个素数，并输出所有素数（只能被1和它本身整除的自然数为素数）*/
+	var count=0;
+	for(var i=101;i<=200;i++){
+        for(var j=2;j<i;j++){
+            if(i%j==0){
+                break;
+            }
+	        if(j==i-1){
+		        console.log(i);
+		        count++;    
+	        }    
+        } 
+     }
+	console.log("总共有"+count+"个素数");
+</script>
+</body>
+</html>

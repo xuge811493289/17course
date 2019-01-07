@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>elemenrio实现效果</title>
+	<script type="text/javascript" src="../js/vue.min.js"></script>
+	<script type="text/javascript" src="../js/element-ui.js"></script>
+	<link rel="stylesheet" href="../css/element-ui.css">
+</head>
+<body>
+	<div id="app">
+		 <h2>{{title}}</h2>
+    <hr>
+    <h3>学生信息</h3>
+    <el-table :data="students" style="width: 100%">
+      <el-table-column
+        prop="name"
+        label="姓名"
+        width="200">
+      </el-table-column>
+      <el-table-column
+        prop="age"
+        label="年龄"
+        width="100">
+      </el-table-column>
+      <el-table-column
+        prop="gender"
+        label="性别">
+      </el-table-column>
+      <el-table-column label="操作">
+        <template scope="scope">
+          <el-button
+            size="small"
+            @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+          <el-button
+            size="small"
+            type="danger"
+            @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+        </template>
+      </el-table-column>
+    </el-table>
+    
+		<el-dialog title="修改学生信息" :visible.sync="dialogFormVisible">
+      <el-form :model="form">
+        <el-form-item label="姓名" >
+          <el-input v-model="form.name" auto-complete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="年龄" >
+          <el-input v-model="form.age" auto-complete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="性别" >
+          <el-radio class="radio" v-model="form.gender" name='gender' label="男">男</el-radio>
+          <el-radio class="radio" v-model="form.gender" name='gender' label="女">女</el-radio>
+        </el-form-item>
+      </el-form>
+      <div slot="footer" class="dialog-footer">
+        <el-button @click="dialogFormVisible = false">取 消</el-button>
+        <el-button type="primary" @click="dialogFormVisible = false">确 定</el-button>
+      </div>
+    </el-dialog>
+
+
+	</div>
+
+
+
+	<script>
+    new Vue({
+      el:'#app',
+      methods:{
+        handleDelete:function(index,item){
+          this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+            confirmButtonText: '确定',
+            cancelButtonText: '取消',
+            type: 'warning'
+          }).then(() => {
+            this.$message({
+              type: 'success',
+              message: '删除成功!'
+            });
+          }).catch(() => {
+            this.$message({
+              type: 'info',
+              message: '已取消删除'
+            });          
+          });
+        },
+        handleEdit:function(index,item){
+          this.form = item;
+          this.dialogFormVisible = true
+        }
+      },
+      data:{
+        title:'使用饿了么公司提供的组件库 element-ui',
+        dialogFormVisible:false,
+        form:{
+
+        },
+        formLabelWidth:50,
+        courses:[{
+          name:'Java',
+          credit:4
+        },{
+          name:'Javascript',
+          credit:4
+        },{
+          name:'Html',
+          credit:2
+        }],
+        students:[{
+          name:'terry',
+          age:12,
+          gender:'男'
+        },{
+          name:'larry',
+          age:13,
+          gender:'男'
+        },{
+          name:'vicky',
+          age:12,
+          gender:'女'
+        }]
+      }
+    })
+  </script>
+</body>
+</html>

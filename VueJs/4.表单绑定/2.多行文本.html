@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>多行文本</title>
+	<script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+	<div id="demo">
+		<form>
+			<span>Multiline message is:</span>
+			<p style="white-space:pre">{{message}}</p>
+			<textarea v-model="message" placeholder="add Multiline lines"></textarea>
+		</form>
+	</div>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el:"#demo",
+			data:{
+				message:''
+			}
+		})
+	</script>
+</body>
+</html>

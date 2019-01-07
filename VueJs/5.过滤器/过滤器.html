@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>过滤器</title>
+	<script type="text/javascript" src="../js/vue.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		<h2>过滤器</h2>
+    原值：{{msg}} <br>
+    大写：{{msg | upper}} <br>
+    小写：{{msg | lower}} <br>
+    <h2>计算属性</h2>
+    大写：{{upperMsg}} <br>
+	</div>
+	<script type="text/javascript">
+		new Vue({
+      el:'#app',
+      data:{
+        msg:'Hello World'
+      },
+      filters:{
+        upper:function(data){
+          return data.toUpperCase();
+        },
+        lower:function(data){
+          return data.toLowerCase();
+        }
+      },
+      computed:{
+        upperMsg:function(){
+          return this.msg.toUpperCase();
+        } 
+      }
+    });
+	</script>
+</body>
+</html>

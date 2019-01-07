@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	1、简介
+		JavaScript 是一种轻量级的编程语言。
+		JavaScript 是可插入 HTML 页面的编程代码。
+		JavaScript 插入 HTML 页面后,可由所有的现代浏览器执行。
+	2、javascript其特点是:
+		(1)解释性语言，解释执行
+		(2)弱类型语言
+			var a=3;
+			a=false;
+
+			强类型语言:
+				int a=3;
+				a=false//报错
+				float a=1.22;
+				boolean f=false;
+		(3)从上往下解释执行
+		(4)脚本语言
+			/*脚本在这里有两层含义：
+		第一：简单（注意相对于其他编成语言），你可以用脚本语言控制计算机的操作。这里你不是用编程语言去实现这些复杂操作，而是在一个很高的层面上告诉计算机应该做什么。早期的脚本语言象DOS下面的批处理程序，IBM大型机上的作业控制语言(JCL)等。
+		第二：在高层次上控制操作。这点在上面也已经提到。
+		脚本语言的有几个显著特点。其中之一就是它是解释执行的。*/
+	3、javascript的实现
+		一个完整的javascript的实现应该包含:
+			核心: 	ECMAScript(标准)
+			文档对象模型 	DOM
+			浏览器对象模型	BOM
+			(1)ECMAScript,是一个标准，扩展如DOMECMA规定了这门语言的组成部分
+				1、语法
+				2、类型
+				3、语句
+				4、关键字
+				5、保留字
+				6、操作符
+				7、对象
+			(2)DOM是针对XML但经过扩展用于HTML的应用程序接口。DOM将整个页面映射成一个多节点结构
+				dom树
+			(3)BOM浏览器对象模型
+				BOM开发人员可以使用BOM控制浏览器页面以外的部分。弹出新浏览器窗口；移动，缩放，关闭浏览器的功能；提供浏览器详细信息的navigator对象;提供浏览器所加载页面的详细信息的location对象；提供用户显示器分辨率详细信息的screen对象；对cookies的支持；支持XMLHttpRequest,IE中的ActiveXObject自定义对象
+	4、兼容性
+		JavaScript的三个组成部分，在当前五个主要浏览器（IE,Firefox,Chrom,Safari,Opera）中得到了不同程度支持，其中，所有浏览器对ECMAScript3支持大体都还不错，对ECMAScript支持程度越来越高，但对DOM的支持彼此相差较多，对已经正式纳入HTML5标准的BOM来说，尽管各浏览器都实现了某些总所周知的共同特性，但其他特性还因浏览器而异。
+	5、在HTML中使用javascript
+		(1)通过<script>标签
+			type属性
+				默认必须是text/JavaScript
+			src 
+				表示将要引进的源文件
+			async
+				是HMTL5中的属性，一旦可用就会异步执行
+
+				async 属性仅适用于外部脚本（只有在使用 src 属性时）
+			<script type="text/javascript" src="demo_async.js" async="async"></script>
+			charset
+				指定src属性指定的额代码字符集，大多数浏览器会忽略这个值。
+			defer
+				表示脚本可以延迟到文档全部被解析和显示之后再执行
+			language
+				已经废弃
+		(2)引入javascript代码的方式
+			(1)直接嵌入在页面中
+				<script type="text/javascript"></script>
+			(2)引入外部文件
+				<script type="text/javascript" src="test.js"></script>
+			注意事项:
+				(1)不要在引入外面文件标签<script type="text/javascript"></script>标签中再写其他代码
+				(2)src可以实现跨域访问
+				(3)标签位置在<head>标签中:等到全部的js代码都被下载，解释，和执行完成后才能开始呈现页面内容，可将<script>标签写在<body>后面
+				(4)延迟脚本
+					延迟脚本 defer="defer"，延迟至浏览器遇到html标签后再执行。如果有多个延迟脚本，并不会按照顺序执行。最好包含一个延迟脚本，并且将其放在页面最底部，该属性适用于外部引用的js
+	
+
+
+
+	
+
+
+
+
+
+
+	
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

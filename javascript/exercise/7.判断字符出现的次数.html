@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>判断某个字符出现的次数</title>
+	<script type="text/javascript">
+		var val = prompt("请输入字母或者数字");
+		var str = val;
+		var s = "a";
+		var count = 0;
+		//如果有字符没有进行比较久进入循环
+		while(str.indexOf(s)!=-1){
+			//拿到a所在下标
+			var temp = str.indexOf(s);
+			//读取到a的次数+1
+			count++;
+			//截取a之后的部分继续进行比较
+			str = str.substr(temp+1);
+		}
+		document.write("a共出现:"+count+"次");
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

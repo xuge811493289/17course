@@ -1,0 +1,255 @@
+1. 获取所有题目类型
+	URL:
+		http://172.16.0.5:7777/test/exam/manager/getAllSubjectType.action
+	params:
+		none
+	return:
+		[{
+			"id":1,
+			"name":"radio",
+			"realName":"单选题"
+		},{
+			"id":2,
+			"name":"check",
+			"realName":"多选题"
+		},{
+			"id":3,
+			"name":"question",
+			"realName":"简答题"
+		}]
+2. 获取所有题目难度级别
+	URL:
+		http://172.16.0.5:7777/test/exam/manager/getAllSubjectLevel.action
+	params:
+		none
+	return:
+		[{
+			"id":1,
+			"name":"easy",
+			"realName":"简单"
+		},{
+			"id":2,
+			"name":"medium",
+			"realName":"中等"
+		},{
+			"id":3,
+			"name":"difficult",
+			"realName":"难"
+		}]
+3. 获取所有的方向
+	URL:
+		http://172.16.0.5:7777/test/exam/manager/getAllDepartmentes.action
+	params:
+		none
+	return:
+		[{
+			"id":1,
+			"name":"WebUI"
+		},{
+			"id":2,
+			"name":"JavaEE"
+		},{
+			"id":3,
+			"name":"Android"
+		},{
+			"id":5,
+			"name":"IOS"
+		}]
+4. 获取所有的知识点
+	URL:
+		http://172.16.0.5:7777/test/exam/manager/getAllTopics.action
+	params:
+		none
+	return:
+		[{
+			"id":1,
+			"title":"HTML",
+			"department":{
+				"id":1,
+				"name":"WebUI"
+			}
+		},{
+			"id":2,
+			"title":"Javascript",
+			"department":{
+				"id":1,
+				"name":"WebUI"
+			}
+		},{
+			"id":3,
+			"title":"CSS",
+			"department":{
+				"id":1,
+				"name":"WebUI"
+			}
+		},{
+			"id":4,
+			"title":"CoreJava",
+			"department":{
+				"id":2,
+				"name":"JavaEE"
+			}
+		}]
+5. 根据方向id获取该方向下的所有知识点
+	URL:
+		http://172.16.0.5:7777/test/exam/manager/getDepartmentTopics.action
+	params:
+		topic.department.id
+	return:
+		[{
+			"id":1,
+			"title":"HTML"
+		}]
+6. 保存题目信息
+	URL:
+		http://172.16.0.5:7777/test/exam/manager/saveSubject.action
+	params:
+	 	subject.department.id
+	 	subject.topic.id
+	 	subject.subjectType.id
+	 	subject.subjectLevel.id
+	 	subject.stem
+	 	subject.answer
+	 	subject.analysis
+	 	
+	 	choiceContent:	["choice1","choice2","choice3"]
+	 	choiceCorrect:	[true,true,false]
+                   
+	return:
+		none
+6. 查询所有题目信息
+	URL:
+		http://172.16.0.5:7777/test/exam/manager/getAllSubjects.action
+	params 
+		subject.department.id:type		方向id
+	 	subject.topic.id			知识点id
+	 	subject.subjectType.id		类型id
+	 	subject.subjectLevel.id		级别id
+	 	subject.stem				题干
+	return
+		[{
+			"id":1,
+			"examPaper":null,
+			"uploadTime":"2016-09-21",
+			"user":null,
+			"analysis":"f",
+			"answer":"",
+			"stem":"以下选项哪个不是Corejava中数据类型？",
+			"department":{
+				"id":2,
+				"name":"JavaEE"
+			},
+			"subjectLevel":{
+				"id":1,
+				"name":"easy",
+				"realName":"简单"
+			},
+			"subjectType":{
+				"id":2,
+				"name":"check",
+				"realName":"复选题"
+			},
+			"topic":{
+				"id":4,
+				"title":"CoreJava",
+				"department":{
+					"id":2,
+					"name":"JavaEE"
+				}
+			},
+			"choices":[{
+					"id":1,
+					"content":"int",
+					"correct":true
+				},{
+					"id":2,
+					"content":"number",
+					"correct":false
+				},{
+					"id":3,
+					"content":"string",
+					"correct":false
+				},{
+					"id":4,
+					"content":"float",
+					"correct":true
+			}]
+		},{
+			"id":2,
+			"examPaper":null,
+			"uploadTime":"2016-09-22",
+			"user":null,
+			"analysis":"分析",
+			"answer":"",
+			"stem":"ECMASCript中typeof的取值有哪些？",
+			"department":{
+				"id":1,
+				"name":"WebUI"
+			},
+			"subjectLevel":{
+				"id":1,
+				"name":"easy",
+				"realName":"简单"
+			},
+			"subjectType":{
+				"id":2,
+				"name":"check",
+				"realName":"复选题"
+			},
+			"topic":{
+				"id":2,
+				"title":"Javascript",
+				"department":{
+					"id":1,
+					"name":"WebUI"
+				}
+			},
+			"choices":[{
+					"id":5,
+					"content":"int",
+					"correct":false
+				},{
+					"id":6,
+					"content":"number",
+					"correct":true
+				},{
+					"id":7,
+					"content":"string",
+					"correct":true
+				},{
+					"id":8,
+					"content":"NaN",
+					"correct":false
+			}]
+		}]
+7. 获取所有学生信息
+	http://172.16.0.5:7777/test/exam/manager/getAllStudents.action
+
+8. 保存学生信息
+	URL:
+		http://172.16.0.5:7777/test/exam/manager/saveStudent.action
+	params:
+		name
+		age
+		gender
+
+
+
+
+
+
+
+
+
+
+
+
+select没做完的   先做这一部分内容
+
+
+提交：  data     alert("提交成功")
+
+
+点击相应的选项   在相应的区域展示相应的题目
+
+

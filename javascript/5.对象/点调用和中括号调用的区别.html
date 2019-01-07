@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var obj = new Object();
+			obj.name = "terry";
+			//属性的访问
+			var a = "name";
+			console.log(obj.name);
+			console.log(obj["name"]);//中括号访问加引号是当做常量进行解析,必须加引号
+			console.log(obj[a]);//中括号可以进行访问变量
+		</script>
+	</body>
+</html>

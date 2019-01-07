@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>父子组件的通信</title>
+	<script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+	<div>{{name}}{{msg}}</div>
+	<my-son :name='name'></my-son>
+	</div>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				name:'hello parent'
+			},
+			components:{
+				'my-son':{
+					props:['name'],
+					data:function(){
+						return {msg:'hello son'}
+					},
+					template:"<div>子组件{{msg}},{{name}}</div>"
+				}
+			}
+		})		
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script type="text/javascript">
+/*将输入的字符串反转输出，并将首位字母大写，其他小写*/
+	var s1 = prompt("请输入字符串");
+	var array = [];
+	for(var i = s1.length-1,k=0;i>=0;i--,k++){
+		array[k] = s1.charAt(i);
+	}
+	for(var i=0;i<array.length;i++){
+		if(i==0||i==array.length-1){
+			array[i] = array[i].toUpperCase();
+		}else{
+			array[i] = array[i].toLowerCase();
+		}
+	}
+	var str = array.join("");
+	document.write("处理后的字符串为:"+str);
+</script>
+</head>
+<body>
+	
+</body>
+</html>

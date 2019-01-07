@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>IE中的事件</title>
+	<style type="text/css">
+		div{
+			margin: 0 auto;
+		}
+		#one{
+			width: 300px;
+			height: 300px;
+			border: 2px solid red;
+		}
+		#two{
+			width: 200px;
+			height: 200px;
+			border: 2px solid red;
+		}
+		#three{
+			width: 100px;
+			height: 100px;
+			border: 2px solid red;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			//直接绑定事件中this始终指向事件调用者
+			var btn1 = document.getElementById("btn1");
+			btn1.onclick = function(event){
+				alert(event);
+				alert(this);
+				alert(window.event);
+			}
+			//attachEvent中的this始终指向window
+			var btn2 = document.getElementById("btn2");
+			btn2.attachEvent("onclick",function(event){
+				alert(event);
+				alert(this);
+				alert(window.event);
+			})
+	//阻止事件冒泡
+			var div = document.getElementsByTagName("div");
+			div[0].onclick=function(event){
+				alert("out");
+				var event = window.event;
+				//拿到事件源(即为最大的div)
+				alert(event.srcElement);
+				//拿到事件源中的属性
+				alert(event.srcElement.id);//one
+				//阻止事件冒泡
+				event.cancelBubble=true;
+			}
+			div[1].onclick=function(event){
+				alert("cent");
+				var event = window.event;
+				alert(event.srcElement);
+				//阻止事件冒泡
+				event.cancelBubble=true;
+			}
+			div[2].onclick=function(event){
+				alert("inner");
+				var event = window.event;
+				alert(event.srcElement);
+				//阻止事件冒泡
+				event.cancelBubble=true;
+			}
+		}
+	</script>
+</head>
+<body>
+	<button id="btn1">按钮1</button>
+	<button id="btn2">按钮2</button>
+	<div id="one">
+		我是最大的div
+		<div id="two">
+			我是中间的div
+			<div id="three">
+				我是最里面的div
+			</div>
+		</div>
+	</div>
+</body>
+</html>

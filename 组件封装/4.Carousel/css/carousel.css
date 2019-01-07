@@ -1,0 +1,56 @@
+@charset "utf-8";
+section {
+  background-color: skyblue;
+  width: 900px;
+  border: 1px solid green;
+  margin:0 auto;
+}
+.carousel {
+  width: 780px;
+  height: 350px;
+  margin: 50px auto;
+  position: relative;
+  overflow: hidden;
+}
+.carousel .circles {
+  position: absolute;
+  bottom: 0px;
+  width: 200px;
+  height: 17px;
+  left: 50%;
+  margin-left: -100px;
+}
+.carousel .circles ol {
+  list-style: none;
+}
+.carousel .circles ol li {
+  float: left;
+  width: 17px;
+  height: 17px;
+  line-height: 17px;
+  margin-right: 13px;
+  border-radius: 50%;
+  cursor: pointer;
+  text-align: center;
+  font-size: 10px;
+}
+.carousel .circles ol li.current {
+  background-color: purple;
+}
+.carousel span {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  top: 130px;
+  cursor: pointer;
+
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 30px;
+}
+.carousel .leftBtn {
+  left: 10px;
+}
+.carousel .rightBtn {
+  right: 3px;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>阻止事件冒泡和阻止默认</title>
+	<style type="text/css">
+		#outter{
+			width: 300px;
+			height: 300px;
+			border: 2px solid red;
+		}
+		#center{
+			width: 200px;
+			height: 200px;
+			border: 2px solid red;
+		}
+		#inner{
+			width: 100px;
+			height: 100px;
+			border: 2px solid red;
+		}
+		div{
+			margin: auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="outter">
+	outter
+		<div id="center">
+		center
+			<div id="inner">
+			inner
+			</div>
+		</div>
+	</div>
+	<a href="#">点我</a>
+	<script type="text/javascript">
+		window.onload=function(){
+			var div = document.getElementsByTagName("div");
+			div[0].onclick=function(event){
+				alert("outter");
+			}
+			div[1].onclick=function(event){
+				alert("center");
+				//IE浏览器
+				window.event.cancelBubble=true;
+			}
+			div[2].onclick=function(event){
+				alert("inner");
+				//非IE浏览器
+				event.stopPropagation();
+			}
+			var a = document.getElementsByTagName("a")[0];
+			/*a.onclick=function(event){
+				//非IE浏览器的阻止默认事件
+				event.preventDefault()
+			}*/
+			a.onclick=function(event){
+				//IE浏览器的阻止默认事件
+				window.event.returnValue = false;
+			}
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../js/velocity.min.js"></script>
+	<script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<transition-group tag="ul" @enter="enter" @leave="leave">  <li v-for='name in nameList' :key='name'>{{name}}</li>   
+	 	</transition-group>
+	</div>
+	<script type="text/javascript">
+		new Vue{
+			el:"#app",
+			data:{
+				show:true
+			},
+			methods:{
+				enter:function(el,done){    
+					Velocity(el,{ opacity: 1, height: '1.6em' },{ complete: done })},        
+				leave:function(el,done){         
+					Velocity(el,{ opacity: 0, height: 0 },{ complete: done })}   
+			}
+		}
+	</script>
+</body>
+</html>

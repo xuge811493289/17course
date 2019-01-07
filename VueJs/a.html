@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var str = location.search;
+		var str = str.substring(1,str.length);
+		str = str.split("=");
+		console.log(str[1]);
+		console.log(decodeURI(str[1]))
+	</script>
+</body>
+</html>

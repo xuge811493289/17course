@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>正则表达式中的方法</title>
+	<script type="text/javascript">
+/*pattern.exec(某字符串);
+	返回值是一个类数组
+		1.指匹配到的字符串
+		2.表示匹配到的字符的下标
+		3.表示对比的源字符串
+*/
+	var str="abcdefghigklmnopqsrtuvwxyz";
+	var reg=/d/ig;
+	var val=reg.exec(str);
+	console.log(val);
+
+	//打印出类数组
+	console.log(val.input);//字符串abcdefghigklmnopqsrtuvwxyz
+	console.log(val.index);//3
+
+//pattern.lastIndex 匹配模式代g,这个属性存储在整个字符串中下一次检索的开始位置，这个属性会被exec()test()方法调用到
+	console.log(reg.lastIndex); //4	
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>get和post提交</title>
+		<script>
+			window.onload = function(){
+				//失去焦点的时候向后台发送一个请求
+				var inp = document.getElementsByTagName("input")[0];
+				inp.onblur = function(){
+//					var request = new XMLHttpRequest();
+//					request.open("GET","");
+					//attributes拿到该标签的所有属性 [type="text", name="lisi"]
+					var name = inp.attributes;
+//					console.log(name);// name="lisi"
+//					console.log(typeof name);//Object
+//					console.log(name.name);//name
+					var val = inp.name;
+//					console.log(val);//lisi
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<!--测试get和post在form表单中的提交-->
+		<!--
+			get方式请求
+				1.get会将请求信息参数携带在请求体里面
+				2.url中会携带参数
+					？name=""
+			post方式请求
+				1.
+				2.
+			enctype:
+				表示请求时，携带的参数需要如何处理
+				有三种：
+					application/x=www-form-urlencoded做了编码操作 
+					multipart/form-data表单中有图片或者文件上传，必须使用该格式
+					text/plain 原样提交
+		-->
+		<form action="#" method="" enctype="multipart/form-data">
+			username:<input type="text" name="lisi" />
+			<input type="submit" value="按钮"/>
+		</form>
+	</body>
+</html>

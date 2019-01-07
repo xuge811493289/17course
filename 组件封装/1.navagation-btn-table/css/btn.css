@@ -1,0 +1,37 @@
+@charset "utf-8";
+.btn{
+  display: inline-block;
+  padding: 6px 12px;
+  margin:10px;
+  font-size: 14px;
+  line-height: 1.12857143;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.btn-primary{
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+.btn-info{
+  color: #fff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+.btn-success{
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+.btn-default{
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+.btn-warning{
+  color: #fff;
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}

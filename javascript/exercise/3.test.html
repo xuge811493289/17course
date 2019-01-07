@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<script type="text/javascript">
+/*编写一个函数，在页面上输出1-1000之间所有能同时被3,5,7整除打印，每行打印6个数*/
+		//判断能否同时被整除
+		function IsThatNumber(x){
+			return x%3==0 && x%5 == 0 && x%7 ==0;
+		}	
+		var n,nb=0;
+		for(n=1;n<1000;n++){
+			if(IsThatNumber(n)){
+				if(nb%6 > 0){
+					document.write(",");
+				}
+				nb++;
+				document.write(n); 
+				if(nb%6 == 0){
+					document.write("\n");
+				}
+			}
+			
+		}
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

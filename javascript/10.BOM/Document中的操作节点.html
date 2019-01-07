@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>操作节点</title>
+	<style type="text/css">
+		 div{
+         height: 100px;
+         width: 100px;
+         border: 1px solid   red;
+         float: left;
+         margin: 2px;
+		 }
+		 #two{
+		 	background-color: #FFAC2D;
+		 }
+		  #three{
+		 	background-color: #B6EA29;
+		 }
+		  #four{
+		 	background-color: #00FFFF;
+		 }
+      #one{
+      	width: 100%;
+      	height: auto;
+      	  overflow: hidden;
+      }
+	</style>
+</head>
+<body>
+	<div id="one">
+		<div id="two">第一个div</div>
+		<div id="three">第二个div</div>
+		<div id="four">第三个div</div>
+	</div>
+	<button  id="but">点我点我</button>
+</body>
+<script type="text/javascript">
+//1.appendChild()	在childNode列表末尾添加一个节点，返回新增的节点
+	var one = document.getElementById("one");
+	var two = document.getElementById("two");
+	var three = document.getElementById("three");
+	var four = document.getElementById("four");
+	var but = document.getElementById("but");
+	/*but.onclick = function(){
+		var div2 = two.cloneNode(true);
+		var newdiv = one.appendChild(div2);
+		console.log(newdiv);
+	}*/
+//2.insertBefore(要插入的节点,作为参照的节点) 被插入的节点会变成参照节点的
+	/*but.onclick = function(){
+		var div = two.cloneNode(true);
+		var xx = one.insertBefore(div,four);
+		console.log(xx);
+	}*/
+//3.replaceChild(要插入的节点，要替换的节点)
+	/*but.onclick=function(){
+		var div = two.cloneNode(true);
+		var xx = one.replaceChild(div,three);
+		console.log(xx);
+	}*/
+//4.removeChild(即要移除的节点) 
+	/*but.onclick = function(){
+		var xx = one.removeChild(two);
+		console.log(xx);
+	}*/
+//5.cloneNode() 
+	//true表示深复制，复制节点以及整个子节点数
+	var div = one.cloneNode(true);
+	//false表示浅复制，不会赋值节点，以及添加到DOM节点中的js属性
+	var div = one.cloneNode(false);
+	console.log(div);
+//5.normalize()处理文档树中的文本节点，由于解析器的实现或DOM操作等原因，可能会出现文本节点不包含文本，或者接连出现两个文本节点，当在某个节点上调用了该方法，会删除空白节点，会找到相邻的两个文本节点，并将他们合并为一个文本节点。
+	
+
+
+
+
+
+
+	
+</script>	
+</html>

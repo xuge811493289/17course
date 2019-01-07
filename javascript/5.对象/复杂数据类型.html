@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>复杂数据类型</title>
+	<script type="text/javascript">
+//创建Object实例
+	//1.使用构造函数创建new Object
+	var person = new Object();
+	person.name = "briup";
+	person.age = 21;
+	//2.使用对象字面量表示法
+	var person = {
+		name:"briup",
+		age:21
+	}
+//访问对象属性
+	//1.点表示法
+		// console.log(person.name);
+		// console.log(person.age);
+	//2.中括号表示法(中括号中的属性名字一定要加上引号)
+		// console.log(person["name"]);
+		// console.log(person["age"]);
+//删除属性
+		// delete person.name;
+		// console.log(person["name"]);
+		// console.log(person["age"]);
+//检测属性
+	//1.用in(可以检测到到继承的属性)
+		// console.log("toString" in person);//true
+		// console.log("age" in person);//true
+	//2.用hasOwnProperty 检测是否为自身的属性
+		// console.log(person.hasOwnProperty("a"));//false
+		// console.log(person.hasOwnProperty("age"));//true
+		// console.log(person.hasOwnProperty("toString"));//false
+		// console.log(person.hasOwnProperty("name"));//true
+	//3.propertyIsEnumerable()检测给定的属性是否是该对象的自身属性，并且该属性是可枚举的
+		// var val1 = person.propertyIsEnumerable("name");
+		// console.log(val1);//true
+
+		// var val2 = person.propertyIsEnumerable("age");
+		// console.log(val2);//true
+
+		// var val3 = person.propertyIsEnumerable("gender");
+		// console.log(val3);//false
+
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

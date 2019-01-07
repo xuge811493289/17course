@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>过滤选择器可见性</title>
+		<style>
+			div{
+				width: 200px;
+				height: 200px;
+				border: 2px solid red;
+				display: none;
+			}
+			#p1{
+				width: 0px;
+				height:0px;
+			}
+		</style>
+		<script src="../jquery.min.js"></script>
+		<script>
+//可见性过滤选择器
+//:hidden和:visible
+			$(function(){
+				$("div:hidden").show(2000);
+				$("p:hidden").css("background-color","azure");
+			})
+		</script>
+	</head>
+	<body>
+		<div id="one"></div>
+		<p id="p1">p1</p>
+		<p id="p2">p2</p>
+	</body>
+</html>

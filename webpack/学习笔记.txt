@@ -1,0 +1,28 @@
+1.webpack全局安装
+	npm i webpack -g
+	npm install i webpack -g
+2.打包
+	webpack [输入文件] [输出文件]
+3.监视模式
+	webpack [输入文件] [输出文件] --watch
+
+
+1.环境介绍
+	node+git
+2.https://github.com/zce/music-player
+3.npm install
+4.npm install --registry=https://registry.npm.taobao.org
+5.npm run serve		启动服务器
+6.npm run client	启动客户端
+	npm install strip-bom
+7.将准备好的uploads放在www中
+
+
+
+
+
+
+
+
+
+

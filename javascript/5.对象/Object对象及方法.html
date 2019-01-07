@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Object对象及方法</title>
+	<script type="text/javascript">
+//toLocaleString()根据系统当前环境，返回一个对象的字符串表示
+	// var xx = new Date();
+	// console.log(xx);//Mon Mar 06 2017 15:28:31 
+	// var time = xx.toLocaleString();
+	// console.log(time);//2017/3/6 下午3:28:31
+
+	// var arr = ["mary","terry","larry"];
+	// console.log(arr)//["mary", "terry", "larry"]
+	// var arr = arr.toLocaleString();
+	// console.log(arr);//mary,terry,larry
+//constructor()方法，保存用户创建当前对象的函数
+	// var person = new Object();	// person.name = "张三";
+	// person.age = 21;
+	// person.jump = function(){
+	// 	console.log("jump");
+	// }
+	// console.log(person.constructor);//function Object() { [native code] }
+
+
+	//自己定义构造器
+	// function People(name,age,gender){
+	// 	this.name = name;
+	// 	this.age = age;
+	// 	this.gender = gender;
+	// 	this.say = function(){
+	// 		console.log("hello world");
+	// 		return this;
+	// 	}
+	// }
+
+	// var person = new People("张三",21,"男");
+	// console.log(person);//People {name: "张三", age: 21, gender: "男"}
+	// console.log(person.name);
+	// console.log(person.age);
+	// console.log(person.gender);
+	// console.log(person.say());
+//constructor检测一个对象使用的哪个构造器去创建
+	// var person = {
+	// 	name:"zs",
+	// 	age:21,
+	// 	gender:"male"
+	// }	
+	// console.log(person.constructor);//function Object() { [native code] }
+
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

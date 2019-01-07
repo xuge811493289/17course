@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>基本选择器</title>
+		<script src="../jquery.min.js"></script>
+		<script>
+			$(function(){
+				//#	id选择器
+				$("#one").css("background-color","palevioletred");
+				$("#one").css("width","200px");
+				$("#one").css("height","200px");
+				//. 类选择器
+				$(".one").css("border","2px solid red");
+				$(".one").css("width","50px");
+				$(".one").css("height","50px");
+				//标签选择器
+				$("body").css("border","2px solid red");
+				//*所有元素
+				$("*").css("background-color","#C4DAF5");
+				//组合选择器
+				$("div,p").css("color","#FF0000");
+			})
+		</script>
+	</head>
+	<body>
+		<div id="one">
+			<div class="one">
+				<p>你好</p>
+			</div>
+			<div class="one">
+				你好
+			</div>
+		</div>
+	</body>
+</html>

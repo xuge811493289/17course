@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>作用域</title>
+	<script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<my-list :list='students'>
+      <dt slot='header'>姓名,年龄,性别</dt>
+     <!--  prop是一个临时对象，接受子组件中props对象 -->
+      <template slot-scope='prop'>
+        <dd>{{prop.text.name}},{{prop.text.age}},{{prop.text.gender}}</dd>
+      </template>
+    </my-list>
+
+    <my-list :list="courses">
+    	<dt slot='header'>课程名称,学分</dt>
+    	<template slot-scope="prop">
+    		<dd>{{prop.text.name}},{{prop.text.credit}}</dd>
+    	</template>
+    </my-list>
+
+		<h2>学生</h2>
+		<my-tbl :list="students">
+			<template slot="header">
+				<tr>
+					<th>姓名</th>
+					<th>年龄</th>
+					<th>性别</th>
+				</tr>
+			</template>
+			<template slot-scope='prop' slot="content">
+				<tr>
+					<td>{{prop.text.name}}</td>
+					<td>{{prop.text.age}}</td>
+					<td>{{prop.text.gender}}</td>
+				</tr>
+			</template>
+		</my-tbl>
+
+		<my-tbl :list="courses">
+			<template slot="header">
+				<tr>
+					<th>课程名称</th>
+					<th>学分</th>
+				</tr>
+			</template>
+			<template slot-scope="prop" slot="content">
+				<tr>
+					<td>{{prop.text.name}}</td>
+					<td>{{prop.text.credit}}</td>
+				</tr>
+			</template>
+		</my-tbl>
+	</div>
+<script>
+    Vue.component('my-tbl',{
+      props:['list'],
+      template:`
+        <table>
+          <thead>
+            <!--普通插槽-->
+            <slot name='header'>默认</slot>
+          </thead>
+          <tbody>
+            <!--作用域插槽-->
+            <slot name='content' v-for='item in list' :text='item'></slot>
+          </tbody>
+        </table>
+      `
+    });
+
+    new Vue({
+      el:'#app',
+      components:{
+        'my-list':{
+          props:['list'],
+          template:`
+            <dl>
+              <slot name='header'>默认值</slot>
+              <slot v-for='item in list' :text='item'>{{item.name}}</slot>
+            </dl>
+          `
+        }
+      },
+      data:{
+        courses:[{
+          name:'Java',
+          credit:4
+        },{
+          name:'Javascript',
+          credit:4
+        },{
+          name:'Html',
+          credit:2
+        }],
+        students:[{
+          name:'terry',
+          age:12,
+          gender:'男'
+        },{
+          name:'larry',
+          age:13,
+          gender:'男'
+        },{
+          name:'vicky',
+          age:12,
+          gender:'女'
+        }]
+      }
+    });
+  </script>
+</body>
+</html>

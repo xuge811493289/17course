@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+</head>
+<body>
+
+	<script type="text/javascript">
+/*Element元素中的属性*/
+//1.继承了所有的Node类型中的属性
+	var name = document.nodeName;
+	console.log(name);//#document
+	var val = document.nodeValue;
+	console.log(val);//null
+	/*....*/
+//2.documentElement 始终指向html页面中的<html>元素
+	var html = document.documentElement;// <html lang="en">
+	console.log(html);
+//3.body 直接指向<body>元素
+	var body = document.body;
+	console.log(body);// <body>
+//4.doctype  访问<!DOCTYPE>, 浏览器支持不一致，很少使用title获取文档的标题
+	var doc = document.doctype;
+	console.log(doc);
+//5.URL取得完整的URL
+	var url = document.URL;
+	console.log(url);// file:///F:/2.JS%E8%AF%BE%E7%A8%8B/js%E6%80%BB%E7%BB%93/10.BOM/Document.html
+//6.domain 取得域名，并且可以进行设置，在跨域访问中经常会用到。    也可以进行域名的设置
+	var domain = document.domain;
+	console.log(domain);//空字符串
+//7.referrer 链接到来源页面的URL
+
+//8.images获取所有的img对象，返回HTMLCollection类数组对象 
+
+//9.forms获取所有的form对象，返回HTMLCollection类数组对象
+
+//10.links获取文档中所有带href属性的<a>元素
+	    	
+	</script>
+</body>
+</html>

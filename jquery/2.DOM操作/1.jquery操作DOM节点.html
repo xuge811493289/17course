@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jquery操作DOM节点</title>
+		<style type="text/css">
+		div{
+			border: 1px  solid  gray;
+			text-align: center;
+		}
+		#one{
+			height: 600px;
+			width: 600px;
+			margin: auto;
+		}
+    	#two{
+			height: 400px;
+			width: 400px;
+			margin: auto;
+		}
+		#three{
+			height: 200px;
+			width: 200px;
+			margin: auto;
+		}
+		#four{
+			height: 50px;
+			width: 50px;
+			margin: auto;
+		}
+	</style>
+	<script type="text/javascript" src="../jquery.min.js" ></script>
+	<script>
+		$(function(){
+			var value = 123;
+			var $span = $("<span>"+value+"</span>");
+			var $div =$("<div style='background-color:red;height:50px;width:50px;'>"+value+"</div>");
+			//append(selector)在元素中间追加元素     appendTo(selector)反追加
+			$("#four").append($span);
+			//$span.appendTo("#four");
+//1.插入节点			
+			//prepend将参数内容插入到每个匹配元素的前面   prependTo反之
+			//$(".one").prepend($span);
+			//$span.prependTo(".one");
+				
+			//before()在匹配元素的前面插入内容
+			//$("#three").before($div);
+			//$div.insertBefore("#three");
+			
+			//after() 在匹配元素的后面插入内容
+			//$("#two").after($div);
+			//$div.insertAfter("#two");
+//2.删除节点
+			//empty()  移除.three中的所有子节点
+			//$(".three").empty();
+			
+			//remove()  移除连同.three的所有节点
+			//$(".three").remove();
+			
+			//detach()	移除连同.three的所有节点
+			//$(".three").detach();
+		
+			/*remove()和detach()
+			 * .remove()移除元素内部所有的一切，包括绑定的事件以及与该元素相关的jquery元素
+			 * .detach()会保留所有jquery数据和被移走的元素相关联事件
+			 * */
+//3.复制节点
+		//clone(true)	深复制
+			//var $four = $(".four").clone(true);
+			//$(".one").append($four);
+		
+		
+		
+		
+		
+		})
+	</script>
+	</head>
+	<body>
+		<div id="one" class="one">
+			父亲
+			<div id="two" class="two">
+				儿子
+				<div id="three" class="three">
+					孙子
+					<div id="four" class="four">
+						曾孙
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

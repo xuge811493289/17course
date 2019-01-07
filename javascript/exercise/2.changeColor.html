@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>changeColor</title>
+	<style type="text/css">
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: #C9C4F5;
+			margin: auto;
+			border: 2px solid red;
+		}		
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var arr = ["#00FFFF", "#FFF500" ,"#FFCCCC", "#EDFAC8" ,"#F8C6E2", "#CB8DEB","#EC66FF"];
+			var div = document.getElementById("one");
+			div.addEventListener("click",function(){
+				var num = Math.floor(Math.random()*7);
+				div.style.backgroundColor = arr[num];
+			});
+		}
+	</script>
+</head>
+<body>
+	<div id="one"></div>
+</body>
+</html>

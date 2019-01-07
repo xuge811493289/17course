@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Element</title>
+	<style type="text/css">
+		#two{
+		  	height:100px;
+		  	width:200px;
+		  	background-color:red
+		}
+	</style>
+</head>
+<body>
+	<div id="one" title="这是个div" class="one" name="one" style="height:100px;width:200px;background-color:red">
+   	  你好
+   	  你好
+    </div>
+    <div id="two"  class="two" name="two"  onclick="test()" >
+   	  你好
+   	  你好
+    </div>
+	<script type="text/javascript">
+	function test(){
+		alert("你好");
+	}
+//1.Element:所有的html标签都看作一个element对象，使用该对象能够调用标签内部的属性		
+	var one = document.getElementById("one");
+	// console.log(one.id);//one
+	// console.log(one.className);//one
+	// console.log(one.title);//这是个div
+	// console.log(one.lang);//空字符串
+	// console.log(one.dir);//空字符串
+//2.getAttribute() 取得自定义属性
+	var id = one.getAttribute("id");
+	// console.log(id);//one
+	//以字符串的形式返回所有style属性
+	var style = one.getAttribute("style");
+	// console.log(style);//height:100px;width:200px;background-color:red
+//3.设置属性
+	//1.setAttribute()
+	one.setAttribute("id","div");
+	one.setAttribute("class","div");
+	one.setAttribute("title","div");
+	// console.log(one.id);//div
+	// console.log(one.className);//div
+	// console.log(one.title);//div
+	//2.直接设置
+	one.id = "one";
+	one.class = "one";
+	// console.log(one.id);//one
+	// console.log(one.class);//one
+//4.移除属性removeAttribute
+	one.removeAttribute("id");
+	// console.log(one.id);//空字符串
+	one.id ="one";
+//5.attributes属性
+	//attributes属性包含了一个NamedNodeMap,与NodeList类似
+	var div2 = document.getElementById("two");
+	var attr = div2.attributes;
+	// console.log(attr);//[onclick="test()", name="two", class="two", id="two"]
+	// console.log(attr.id);//id="two"
+	// console.log(attr.name);//name="two"
+	
+	// console.log(div2.onclick);// onclick(event)
+	// console.log(div2.getAttribute("onclick"));//test()
+//6.getNamedItem(name)返回nodeName属性等于name的节点
+	var id = attr.getNamedItem("id");
+	console.log(id);//id="two"
+	//(1).removeNamedItem(name)从列表中删除nodeName属性等于name的值
+		attr.removeNamedItem("class");
+		var attr1 = div2.attributes;
+		console.log(attr1);// [onclick="test()", name="two", id="two"]
+	//(2).setNamedItem(node)向列表中添加一个属性节点
+		var cla=document.createAttribute("class");
+		cla.nodeValue="democlass";
+		attr1.setNamedItem(cla);
+		var attr2 = div2.attributes;
+		console.log(attr2);//  [onclick="test()", name="two", id="two", class="democlass"]
+	//(3).item(pos)返回位于pos位置处的节点
+		var item = attr2.item(0);
+		console.log(item);// onclick="test()"
+		var item1 = attr2.item(1);
+		console.log(item1);// name="two"
+		var item2 = attr2.item(2);
+		console.log(item2);// id="two"
+		var item3 = attr2.item(3);
+		console.log(item3);// class="democlass"
+	</script>
+</body>
+</html>

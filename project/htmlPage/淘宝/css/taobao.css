@@ -1,0 +1,280 @@
+*{
+	margin: 0;
+	padding: 0;
+	color:black;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+.clear{
+	clear: both;
+}
+/*-------------头部开始---------------*/
+#head{
+	/*背景高不可去，否则无背景效果*/
+	height: 37px;  
+	background: RGB(245,245,245);
+	font-size: 12px;
+	position:relative;
+}
+#head #headMid{
+	margin: 0 auto;
+	border: 1px solid black;
+	height: 37px;
+}
+#head #headLeft ul{
+	/*border: 1px solid red;*/
+	/*display: inline-block;*/
+	float: left;
+	line-height: 37px;
+	margin-left: 70px;
+}
+#head #headLeft li{
+	display: inline-block;
+}
+#head #headRight ul{
+	/*border: 1px solid yellow;*/
+	/*display: inline-block;*/
+	float:left;
+	line-height: 37px;
+	position: absolute;
+	top: 0;
+	left: 720px;
+}
+#head #headRight li{
+	display: inline-block;
+	margin-right: 10px;
+}
+#head #headRight img{
+	vertical-align: middle;
+}
+/*-------------头部结束---------------*/
+
+
+/*-------------身体开始---------------*/
+/*#logoSearch_1开始*/
+#Tbody{
+	/*border: 1px solid red;*/
+	margin:25px auto;
+	width: 1170px;
+}
+#Tbody #logoSearch_1{
+	/*border: 1px solid black;*/
+}
+#Tbody #logoSearch_1 #logo{
+	/*border: 1px solid yellow;*/
+	margin-right: 96px;
+	display: inline-block;
+}
+#Tbody #logoSearch_1 #search{
+	/*border: 1px solid cadetblue;*/
+	display: inline-block;
+	vertical-align: sub;
+}
+#Tbody #logoSearch_1 #search input{
+	border: 5px solid RGB(255,68,0);
+	height: 45px;
+	/*vertical-align: middle;*/
+	/*是不是内联块级元素不能用？内联元素可以用*/
+}
+#Tbody #logoSearch_1 #search #text{
+	width: 576px;
+	/*position: relative;*/
+}
+#Tbody #logoSearch_1 #search ul li:first-child{
+	position: relative;
+}
+
+#Tbody #logoSearch_1 #search span{
+	border-right: 1px solid RGB(229,229,229);
+	background: RGB(246,246,246);
+	line-height: 45px;
+	text-align: center;
+	width: 74px;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+}
+#Tbody #logoSearch_1 #search #submit{
+	color:white;
+	font-size: 24px;
+	/*font-weight: bold;*/
+	letter-spacing: 7px;
+	height: 55px;
+	width: 90px;
+	/*font-family: "宋体";*/
+	background: RGB(255,68,0);
+	margin-left: -8px;
+	vertical-align:bottom;
+}
+#Tbody #logoSearch_1 #search li a{
+	font-size: 12px;
+}
+/*#logoSearch_1结束*/
+
+
+/*#main_2开始*/
+#Tbody #main_2{
+	/*height: 611px;*/
+	width: 100%;
+	margin-top: 27px;
+	position: relative;
+}
+#Tbody #main_2 #leftCategory {
+	display: inline-block;
+}
+#Tbody #main_2 #leftCategory ul{
+	border: 1px solid RGB(187,187,187);
+	/*display: inline-block;*/
+	width: 150px;
+}
+#Tbody #main_2 #leftCategory ul li{
+	border-bottom: 1px solid RGB(222,222,222);
+	width: 140px;
+	height: 34px;
+	background: RGB(248,248,248);
+	margin: 3px auto;
+}
+#Tbody #main_2 #leftCategory ul li:first-child{
+	background: RGB(255,68,0);  
+	text-align: center;
+	margin: 0;
+	width: 150px;
+}
+#Tbody #main_2 #leftCategory ul li:first-child span{
+	color: white;
+	font-weight: bold;
+	line-height: 34px;
+}
+#Tbody #main_2 #leftCategory ul li img{
+	vertical-align: middle;
+}
+#Tbody #main_2 #leftCategory ul li a{
+	font-size: 14px;
+	font-weight: bold;
+}
+#Tbody #main_2 #rightPicLogin{
+	/*border: 1px solid royalblue;*/
+	display: inline-block;
+	width: 1007px;
+	height: 645px;
+	position: absolute;
+	top: 0;
+	right: 4px;
+}
+#Tbody #main_2 #rightPicLogin #topNav{
+	border-bottom: 3px solid red;
+	height: 40px;
+	position: relative;
+}
+#Tbody #main_2 #rightPicLogin #topNav ul{
+	display: inline-block;
+}
+#Tbody #main_2 #rightPicLogin #topNav li{
+	display: inline-block;
+	font-weight: bold;
+}
+#Tbody #main_2 #rightPicLogin #topNav #topNav_left li{
+	font-size: 20px;
+	color: RGB(255,68,0);
+	margin: 5px 25px;
+}
+#Tbody #main_2 #rightPicLogin #topNav #topNav_center li{
+	font-size: 16px;
+	margin-left: 20px;
+}
+#Tbody #main_2 #rightPicLogin #topNav #topNav_right{
+	font-size: 14px;
+	position: absolute;
+	top: 10px;
+	right: 1px;
+}
+#Tbody #main_2 #rightPicLogin #leftPic{
+	font-size: 0;
+	display: inline-block;
+}
+#Tbody #main_2 #rightPicLogin #leftPic #Pic1_2{
+	/*border: 1px solid red;*/
+	/*display: inline-block;*/
+	height: 290px;
+	width: 710px;
+	margin-top: 20px;
+}
+#Tbody #main_2 #rightPicLogin #rightLogin{
+	/*border: 1px solid chocolate;*/
+	width: 290px;
+	height: 600px;
+	margin-top: 20px;
+	/*display: inline-block;*/
+	float: right;
+}
+#Tbody #main_2 #rightPicLogin #rightLogin #annou{
+	border: 2px solid RGB(247,247,247);
+	/*border: 2px solid palevioletred;*/
+	height: 102px;
+	width: 286px;
+}
+#Tbody #main_2 #rightPicLogin #rightLogin #annou ul{
+	background: RGB(247,247,247);
+	height: 25px;
+}
+#Tbody #main_2 #rightPicLogin #rightLogin #annou ul li{
+	font-weight: bold;
+	font-size: 14px;
+	display: inline-block;
+	margin: 2px 4px 2px 15px;
+}
+#Tbody #main_2 #rightPicLogin #rightLogin #login{
+	border: 4px solid RGB(247,247,247);;
+	width: 286px;
+	height: 142px;
+	margin-top: 10px;
+}
+#Tbody #main_2 #rightPicLogin #rightLogin #login ul{
+	margin: 10px 11px;
+}
+#Tbody #main_2 #rightPicLogin #rightLogin #login li{
+	display: inline-block;
+}
+#Tbody #main_2 #rightPicLogin #rightLogin #conven{
+	/*border: 1px solid green;*/
+	background: RGB(247,247,247);;
+	height: 295px;
+	width: 255px;
+	padding: 10px 20px;
+}
+#Tbody #main_2 #rightPicLogin #rightLogin #conven p{
+	font-weight: bold;
+	line-height: 60px;
+}
+#Tbody #main_2 #rightPicLogin #rightLogin #conven li{
+	display: inline-block;
+}
+/*#main_2结束*/
+
+/*#bottom_3开始*/
+#Tbody #bottom_3 ul{
+	/*border: 1px solid cadetblue;*/
+	display: inline-block;
+	/*height: 60px;*/
+	width: 280px;
+	margin-top: 31px;
+}
+#Tbody #bottom_3 ul:first-child{
+	margin-left: 10px;
+}
+#Tbody #bottom_3 li{
+	display: inline-block;
+	margin: 5px;
+	font-size: 14px;
+}
+#Tbody #bottom_3 li:first-child{
+	display: block;
+	font-size: 22px;
+}
+/*#bottom_3结束*/
+/*-------------身体结束---------------*/
+

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>axios</title>
+	<script src='../js/axios.min.js'></script>
+	<script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+    <form  @submit.prevent='handleSubmit'>
+      姓名:  <input type="text" v-model='form.name'> 
+      <br>
+      年龄:  <input type="text" v-model='form.age'>
+      <br>
+      爱好:  <input type="checkbox" value='run' v-model='form.hobbies'>跑步
+      <input type="checkbox" value='basketball' v-model='form.hobbies'>篮球
+      <input type="checkbox" value='program'    v-model='form.hobbies'>编程
+      <br>
+
+      班级: <select v-model='form.classId'>
+        <option v-for='c in classes' :value="c.id">{{c.name}}</option>
+      </select>
+      <br>
+      <input type="submit" value='保存'>
+    </form>
+    {{form}}
+  </div>
+
+  <script>
+  	new Vue({
+  		el:'#app',
+      data:{
+        classes:[{
+          id:1001,
+          name:'web1701'
+        },{
+          id:1002,
+          name:'web1702'
+        },{
+          id:1003,
+          name:'web1703'
+        }],
+        form:{
+          name:'张三',
+          age:12,
+          hobbies:['program','run'],
+          classId:1002
+        }
+      },
+  		methods:{
+  			handleSubmit:function(){
+  				var vm = this;
+  				/*//1.创建axios实例
+  				var obj = axios.create({
+  					baseURL:'http://127.0.0.1:3000',
+  					params:vm.form
+  				})
+  				//2.调用实例方法进行ajax请求
+  				obj.get("/users/save").then(function(data){
+  					console.log("success",data);
+  				}).catch(function(error){
+  					console.log("error",error);
+  				})*/
+
+  				// 1.get方式，传递参数使用查询字符串
+  				/*axios.get("http://127.0.0.1:3000/users/save",{
+  					params:vm.form
+  				}).then(function(data){
+  					console.log('success',data);
+  				}).catch(function(data){
+  					console.log('error',data);
+  				})*/
+
+  				// 2.post方式
+  				/*axios.defaults.baseURL = 'http://127.0.0.1:3000';
+          axios.interceptors.request.use(function(config){
+            console.log(config);
+            return config;
+          });
+          axios.post('/users/save',vm.form
+          )
+          .then(function(data){
+            console.log("success",data);
+          }).catch(function(error){
+            console.log("error",error);
+          });*/
+
+
+          //3.post方式
+          axios.post("http://127.0.0.1:3000/users/save",vm.form,{headers:{
+          		'content-type':'application/x-www-form-urlencoded;charset=UTF-8'
+	          }
+	        }).then(function(data){
+	        	console.log("success",data);
+	        }).catch(function(error){
+	        	console.log(error,error);
+	        })
+  			}
+  		}
+  	})
+  </script>
+</body>
+</html>

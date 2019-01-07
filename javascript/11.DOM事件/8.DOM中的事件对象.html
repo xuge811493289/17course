@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM中的事件对象</title>
+<script type="text/javascript">
+window.onload = function(){
+	var btn = document.getElementById("button");
+	btn.onclick=function(event){
+		//console.log(event);
+		//事件类型
+		//console.log(event.type);//click
+		//是否冒泡
+		//console.log(event.bubbles);//true
+		//是否可以取消事件默认行为
+		//console.log(event.cancelable);//true
+		//事件处理程序当前正在处理事件的那个元素
+		//console.log(event.currentTarget);//<button id="button">
+		//事件真正目标
+		//console.log(event.target);//<button id="button">
+		//事件处理程序内部，对象this始终等于currentTarget值
+		// console.log(this==event.currentTarget);//true
+	}
+	btn.addEventListener("click",function(){
+		console.log(this);//<button id="button">
+	},false)
+}
+</script>
+</head>
+<body>
+	<button id="button">按钮</button>
+</body>
+</html>

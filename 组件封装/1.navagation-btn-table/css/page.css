@@ -1,0 +1,8 @@
+@charset "utf-8";
+body{
+  background-color: RGB(236,250,235);
+}
+.page .center{
+  width:970px;
+  margin:0 auto;
+}

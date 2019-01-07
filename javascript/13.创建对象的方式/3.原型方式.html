@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原型模式:主要解决对象中方法放置的问题</title>
+</head>
+<body>
+	<script type="text/javascript">
+	//书写构造函数
+		function Student(num,name,address){
+			this.stuNum = num;
+			this.name = name;
+			this.address = address;
+		}
+	//在原型中写方法
+		Student.prototype.sayName = function(){
+			console.log(this.name);
+		}
+		var stu1 = new Student(1,"terry","江西");
+		var stu2 = new Student(2,"larry","兰州");
+		console.log(stu1,stu2);
+		stu1.sayName();//terry
+		stu2.sayName();//larry
+		console.log(stu1.sayName == stu2.sayName);//true
+
+
+		console.log(stu1.constructor);//function Student()
+
+		console.log(Student.prototype);//Object { sayName: Student.prototype.sayName(), 等 1 项… }
+
+	</script>
+</body>
+</html>

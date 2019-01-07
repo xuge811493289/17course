@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	function sum(){
+		var name="sum";
+		console.log(this.name);
+	}
+	var obj = {
+		name:"obj",
+		sum:1001
+	}
+	var obj2 = {
+		name:"obj2",
+		sum:1001
+	};
+	obj.sum = sum;
+	obj2.sum = obj.sum;
+
+
+	obj.sum();//obj
+	obj2.sum();//obj2
+</script>
+</body>
+</html>

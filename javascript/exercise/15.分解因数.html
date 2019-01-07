@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>分解因数</title>
+	<script type="text/javascript">
+/*
+       所谓的分解因数
+        就是让一个数  使用质数的表示形式
+        例如
+          4=2*2
+          8=2*2*3
+          15 = 3*5
+          思路为 让一个数从2开始
+           例如 18 除以2 取整   得到的结果为9
+           这时 变为  18 = 2*9	*/
+    function test(num){
+    	document.write(num+"=");
+    	for(var k=2;k<=num;k++){
+    		while(k!=num){
+    			if(num%k==0){
+    				document.write(k+"*");
+    				num = Math.floor(num/k);
+    			}else{
+    				break;
+    			}
+    		}
+    	}
+    	document.write(k-1);
+    }    
+    test(18);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

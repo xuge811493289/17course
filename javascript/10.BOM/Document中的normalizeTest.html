@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>normalizeTest</title>
+	
+</head>
+<body>
+	<div>你好</div>
+	<script type="text/javascript">
+	//1.normalize处理文档树中的文本节点，由于解析器的实现或DOM操作等原因，可能会出现文本节点不包含文本，或者链接出现两个文本节点，当在某个节点上调用了该方法，会删除空白节点，会找到相邻的两个文本节点，并将它们合并为一个文本节点。
+		var div1 = document.body.childNodes[1];
+		console.log(div1);
+		var child = div1.childNodes;
+		console.log(child);
+		var node = document.createTextNode("世界");
+		div1.appendChild(node);
+		console.log(div1.childNodes);
+		div1.normalize();
+		console.log(div1.childNodes);
+	</script>
+</body>
+</html>

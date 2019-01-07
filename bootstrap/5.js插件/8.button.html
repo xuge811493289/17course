@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.js"></script>
+    <link href="bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<br><br>
+    <div class="container">
+        <div class="btn btn-primary" data-toggle="button" data-loading-text="正在加载...">
+            加载数据
+        </div>
+    </div>
+    <script>
+        $('div.btn').on('click',function(){
+            var div = $(this);
+            div.button('loading');
+            setTimeout(function(){
+                div.button("reset");
+            },3000);
+        });
+    </script>
+</body>
+</html>

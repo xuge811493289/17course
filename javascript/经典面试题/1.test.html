@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /*1.范围:Scope*/
+    (function() {
+        var a = b = 5;
+    })();
+
+    console.log(b);//5
+    /*
+    * 这个问题的陷阱就是，在立即执行函数表达式（IIFE）中，有两个命名，但是其中变量是通过关键词var来声明的。这就意味着a是这个函数的本地变量。与此相反，b是属于这个函数的全局变量的。
+    * */
+    /*2.创建原生方法native：在String对象上定义一个repeatify函数。这个函数接受一个整数参数，来明确字符串需要重复几次。这个函数要求字符串重复指定的次数。举个例子`console.log('hello'.repeatify(3));应该打印出hellohellohello.*/
+    String.prototype.repeatify = String.prototype.repeatify || function(times) {
+        var str = '';
+
+        for (var i = 0; i < times; i++) {
+            str += this;
+        }
+
+        return str;
+    };
+    /*问题测试了开发人员对于javascript中继承的掌握，以及prototype这个属性*/
+    /*3.变量的提升*/
+    function test() {
+        console.log(a);//undefined
+        console.log(foo());//2
+
+        var a = 1;
+        function foo() {
+            return 2;
+        }
+    }
+
+    test();
+    /*4.this的使用*/
+    var fullname = 'John Doe';
+    var obj = {
+        fullname: 'Colin Ihrig',
+        prop: {
+            fullname: 'Aurelio De Rosa',
+            getFullname: function() {
+                return this.fullname;
+            }
+        }
+    };
+    //作为局部的
+    console.log(obj.prop.getFullname());//Aurelio De Rosa
+    var test = obj.prop.getFullname;
+    //作为全局函数
+    console.log(test());//John Doe
+    /*5.call()和apply(),修复问题四，让最后一个打印出Aurelio De Rosa*/
+    console.log(test.call(obj.prop));
+
+    
+
+
+</script>
+</body>
+</html>

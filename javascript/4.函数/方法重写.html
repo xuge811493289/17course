@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>方法重写</title>
+	<script type="text/javascript">
+		var person={
+			//属性
+			name:"张三",
+			age:21,
+			gender:"男",
+			//方法
+			say:function(){
+				console.log("say...");
+			}
+		}
+		//person.say();say...
+		var xx = person.toString();
+		console.log(xx);//[object Object]
+		person.toString=function(){
+			return "name："+this.name;
+		}
+
+		var xx = person.toString();
+		console.log(xx);//name：张三
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

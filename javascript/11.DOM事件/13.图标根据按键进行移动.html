@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图标根据按键进行移动</title>
+	<style type="text/css">
+		 #bg{
+		 	height: 1000px;
+		 	width: 1000px;
+		 	margin: auto;
+		 	background-color: #C4DAF5;
+		 	position: relative;
+		 }
+		 #move{
+		 	height: 40px;
+		 	width : 40px;
+		 	border: 1px  solid gray; 
+		 	background-color: #FF0000;
+            position: absolute;
+		 }
+	</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var div = document.getElementById("move");
+		var left1 = 0;
+		var top1 = 0;
+		var big = 0;
+		function goLeft(){
+			left1 = left1 - big;
+			div.style.left = left1+"px";
+		}
+		function goRight(){
+			left1 = left1 + big;
+			div.style.left = left1+"px";
+		}
+		function goTop(){
+			top1 = top1 - big;
+			div.style.top = top1 + "px";
+		}
+		function goDown(){
+			top1 = top1 + big;
+			div.style.top = top1 + "px";
+		}
+		document.onkeydown = function(event){
+			var code = event.keyCode;
+			if(event.shiftKey){
+				big = 100;
+			}else{
+				big = 10;
+			}
+			if(code == 38){
+				goTop(big);
+			}else if(code == 39){
+				goRight(big);
+			}else if(code == 40){
+				goDown(big);
+			}else if(code == 37){
+				goLeft(big);
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	<div id="bg">
+		<div id="move"></div>
+	</div>
+</body>
+</html>

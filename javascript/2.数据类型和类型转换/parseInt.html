@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+/*parseInt()*/
+/*1.如果转换的值是null,undefined,boolean,number*/
+	console.log(parseInt(true));//NaN
+	console.log(parseInt(null));//NaN
+	console.log(parseInt(false));//NaN
+	console.log(parseInt(undefined));//NaN
+	console.log(parseInt(10));//10
+	console.log(parseInt(10.3));//10
+	console.log(".....................")
+/*2.如果是字符串*/
+	console.log(parseInt("123"));//123		
+	console.log(parseInt("234"));//234
+	console.log(parseInt("+12.1"));//12
+	console.log(parseInt("0xa"));//10
+	console.log(parseInt("0101"));//101
+	console.log(parseInt(""));//NaN
+	console.log(parseInt("1+2.3"));//1
+	console.log(parseInt("123ac"));//123
+	console.log(Number("123ac"))//NaN
+
+
+
+
+
+
+
+
+
+
+
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

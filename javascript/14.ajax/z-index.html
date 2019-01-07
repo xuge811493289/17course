@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>z-index</title>
+		<style>
+			#one{
+				width:100px ;
+				height:100px;
+				background: red;
+				margin: auto;
+				z-index: 0;
+				position: absolute;
+				left: 10px;
+				top: 10px;
+			}
+			#two{
+				width:100px;
+				height:100px;
+				background: blue;
+				margin: auto;
+				z-index: 10;
+				position: absolute;
+				left: 10px;
+				top: 10px;
+				opacity: .33;/*相当于颜色的叠加*/
+			}
+		</style>	
+	</head>
+	<body>
+<!--
+z-index:
+	1.如果两个元素都没有定位发生位置重合现象或者两个都已定位元素且z-index相同发生位置重合现象，那么按文档流顺序，后面的覆盖前面的。
+	2.如果两个元素都没有设置z-index，使用默认值，一个定位一个没有定位，那么定位元素覆盖未定位元素
+	3.如果父元素z-index有效，那么子元素无论是否设置z-index都和父元素一致，会在父元素上方		
+-->
+		<div id="one">
+			hello
+		</div>
+		<div id="two">
+			hi~
+		</div>
+	</body>
+</html>

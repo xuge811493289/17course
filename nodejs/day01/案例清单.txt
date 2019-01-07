@@ -1,0 +1,9 @@
+1.helloworld.js    简单实用http模块
+2.static.js        是一个fs模块回写静态页面的案例
+3.http.js           引入(require),创建服务器(createServer),相应头部(res.writeHead(200,{"Content-Type":"text/html;charset=UTF8"})),写回数据的方式(write),结束请求的相应(res.end,每个请求都必须写一次，否则会请求超时),服务器的监听(server.listen(3000,"127.0.0.1"))
+4.url.js            (url.parse()),这个方法可以拿到url请求的查询字符串等信息
+5.urltest.js        接收表单get请求的模拟，可以得到表单提交上来的name,passwd,sex信息
+6.router            根据路由查询当前教职工以及学生的信息
+7.fs.js             读取文件,说明异步请求的道理
+8.fs.js             
+

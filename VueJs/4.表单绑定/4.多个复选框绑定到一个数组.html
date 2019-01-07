@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>多个复选框绑定到一个数组</title>
+	<script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<input type="checkbox" id="jack" value="jack" v-model="checkedNames">
+		<label for="jack">Jack</label>
+		
+		<input type="checkbox" id="john" value="john" v-model="checkedNames">
+		<label for="john">John</label>
+		
+		<input type="checkbox" id="mike" value="mike" v-model="checkedNames">
+		<label for="mike">Mike</label>
+
+		<span>Checked name:{{checkedNames}}</span>
+	</div>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				checkedNames:[]
+			}
+		})
+	</script>
+</body>
+</html>

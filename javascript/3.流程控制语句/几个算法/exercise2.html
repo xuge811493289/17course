@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	// 有1、2、3、4个数字，能组成多少个互不相同且无重复数字的三位数？都是多少？
+	for(var i=1;i<5;i++){
+		for(var j=2;j<5;j++){
+			for(var k=3;k<5;k++){
+				if(i!=j&&j!=k){
+					console.log(i*100+j*10+k);
+				}
+			}
+		}
+	}
+</script>
+</body>
+</html>

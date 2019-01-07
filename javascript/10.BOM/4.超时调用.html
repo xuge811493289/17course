@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>超时调用</title>
+	<script type="text/javascript">
+/*超时调用:setTimeout
+	参数一:需要执行的函数
+	参数二:多长时间执行(毫秒)
+	移除:clearTimeout()
+		参数:间歇调用方法的返回值
+*/
+//超时调用
+		var item = setTimeout(function(){
+			alert("你好")
+		},1000);
+		console.log(item);//2
+//清除超时调用
+		clearTimeout(2);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

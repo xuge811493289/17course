@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用超时调用来模拟间歇调用</title>
+	<script type="text/javascript">
+		var i = 0;
+		var item = setInterval(function(){
+			i++;
+			if(i>5){
+				clearInterval(item);
+			}
+		alert("你好");
+		},100);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

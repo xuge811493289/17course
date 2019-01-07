@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>跨浏览器的事件处理程序</title>
+<script type="text/javascript">
+	window.onload=function(){
+		var EventUtil = {
+	//添加事件
+	bind : function
+		(element,type,handler){
+		if(element.addEventListener){
+			element.addEventListener(type,handler,false);
+		}else if(element.attachEvent){
+			element.attachEvent("on"+type,handler)
+		}else{
+			element["on"+type]	= handler
+			
+		}
+	},
+	//移除事件
+	unbind : function(element,type,handler){
+		if(element.removeEventListener){
+			element.removeEventListener(type,handler,false);
+		} else if(element.detachEvent){
+			element.detachEvent("on"+type,handler)
+		} else{
+			element["on"+type] = null;
+		}
+	},
+	//返回事件对象
+	getEvent: function(event){
+		return event? event : window.event;
+	},
+	//获取目标
+	getTarget:function(event){
+		return event.target || event.srcElement;
+	},
+	//阻止默认行为
+	preventDefault : function(event){
+		if(event.preventDefault){
+			event.preventDefault();
+		}else{
+			event.returnValue = false;
+		}
+	},
+	//阻止事件冒泡
+	stopPropagation : function(event){
+		if(event.stopPropagation){
+			event.stopPropagation();
+		}else{
+			event.cancelBubble = true;
+		}
+	}
+	//
+}
+	}
+</script>
+</head>
+<body>
+	
+</body>
+</html>

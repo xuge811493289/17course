@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>get和post提交</title>
+		<script>
+/*用ajax模仿post提交方式*/
+			window.onload = function(){
+				//失去焦点的时候向后台发送一个请求
+				var inp = document.getElementsByTagName("input")[0];
+				inp.onblur = function(){
+					var request = new XMLHttpRequest();
+					request.open("POST","jumpTest.html");
+					//设置请求头
+					request.setRequestHeader("Content-type","text/plain;charset=UTF-8");
+					
+					var username = inp.getAttribute("name");
+					var value = inp.value;
+					//需要在send里面传入你需要请求地址的参数
+//					var json = {"name":"123"};
+//					request.send(json);
+					request.send(name="王五");
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form action="jumpTest.html" method="post" enctype="multipart/form-data">
+			username:<input type="text" name="lisi" />
+			<input type="submit" value="按钮"/>
+		</form>
+	</body>
+</html>
+
+
+
+

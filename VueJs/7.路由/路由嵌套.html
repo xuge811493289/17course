@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>路由嵌套</title>
+	<script type="text/javascript" src="../js/vue.min.js"></script>
+	<script type="text/javascript" src="../js/vue-router.js"></script>
+</head>
+<body>
+	<div id="app">
+		<router-link to='/home'>home</router-link>
+		<router-link to='/news'>news</router-link>
+
+		<div>
+			<router-view></router-view>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var News = {
+			template:`
+				<div>
+	        <h3>新闻</h3>
+	        <router-link to="/news/user">子路由</router-link>
+	        <div><router-view></router-view></div>
+	    	</div>
+    	`
+		}
+		var User = {
+			template:'<p>我是子路由</p>'
+		}
+		var Home = {
+	    template: '<h3>主页</h3>'
+	  };
+
+	  var jump = [
+	  	{
+	  		path:'/home',
+	  		component:Home
+	  	},{
+	  		path:'/news',
+	  		component:News,
+	  		children:[
+	  			{
+	  				path:'user',
+	  				component:User
+	  			}
+	  		]
+	  	},{
+	  		path:'*',
+	  		redirect:'/news/user'
+	  	}
+	  ];
+
+	  //创建实例
+	  var router = new VueRouter({
+	  	routes: jump
+	  })
+
+	  //挂载实例
+	  var app = new Vue({
+	  	el:'#app',
+	  	router:router
+	  })
+
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='../js/vue.min.js'></script>
+	<script src='../js/vuex-3.0.0.js'></script>
+</head>
+<body>
+	<div id="app">
+		<span>number</span>
+		<p>{{number}}</p>
+		<br>
+		<button @click='asc'>增加</button>
+		<button @click='desc'>减少</button>
+	</div>
+	<script>
+	//1.创建store对象管理数据
+		var store = new Vuex.Store({
+			//用来存储所有的数据状态
+			state:{
+				number:0,
+				name:'this is vuex',
+				students:[{
+					name:'larry',
+					gender:'male'
+				},{
+					name:'Terry',
+					gender:'female'
+				}]
+			},
+			//扩展了state,通常用来对state数据进行过滤
+			getter:{
+				girls:function(){
+					return state.students.filter(function(student){
+						return student.gender == 'female'
+					})
+				}
+			},
+			// 突变，只能出现同步操作,通过ajax的异步操作不能写在这里
+			mutations:{
+				alterNumber:function(state,val){
+					state.number = val
+				}
+			},
+			// 可以执行异步操作,但是不能直接访问state中的数据；要想访问必须执行mutations中的方法
+			actions:{
+				asc:function(context){
+					var val = context.state.number+1;
+					//执行突变
+					context.commit('alterNumber',val)
+				},
+				desc:function(context){
+					var val = context.state.number-1;
+					context.commit('alterNumber',val)
+				}
+			}
+		})
+		new Vue({
+			el:'#app',
+			// 2.把store集成到vue，就可以通过this.$store来访问store中的东西.store中的方法和数据都需要映射到vue的computed和methods..中才可以使用
+			store:store,
+			computed:{
+				...Vuex.mapState(['number','name'])
+				// number:function(){
+				// 	return this.$store.state.number;
+				// }
+			},
+			methods:{
+				//映射vuex中的actions
+				...Vuex.mapActions(['asc','desc'])
+				/*
+				asc:function(){
+					return this.$store.dispatch('asc')
+				},
+				desc:function(){
+					return this.$store.dispatch('desc')
+				}
+				*/
+			}
+		})
+	</script>
+</body>
+
+</html>

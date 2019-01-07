@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>IE事件处理程序</title>
+<script type="text/javascript">
+	window.onload=function(){
+		function test(){
+			//this->window
+			console.log(this);//[object Window]
+		}
+		var btn = document.getElementById("button");
+		btn.attachEvent("onclick",test);
+		// btn.detachEvent("onclick",test);
+	}
+</script>
+</head>
+<body>
+	<button id="button">按钮</button>
+</body>
+</html>

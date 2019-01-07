@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script type="text/javascript">
+/*1.hasOwnProperty:判断对象本身是否有某属性*/
+	var person={
+		name:"zhangsan",
+		age:21
+	}
+	console.log(person.hasOwnProperty("gender"));//false
+	console.log(person.hasOwnProperty("name"));//false
+
+/*2.constructor:保存用户创建当前对象的函数*/
+	console.log(person.constructor)//object
+
+/*3.isPrototypeOf:用于检查对象是否是原型*/
+	// console.log(isPrototypeof(person));
+
+/*4.propertyIsEnumerable(propertyName);	用于检查给定的属性在当前对象实例中是否存在*/
+	console.log(person.propertyIsEnumerable("name"))//true
+	console.log(person.propertyIsEnumerable("gender"))//false//false
+/*5.toLocaleString();返回对象的字符串表示，该字符串与执行环境的地区对应*/
+	var d = new Date()
+	console.log(d.toLocaleString())//2017/8/16 下午11:24:59 
+/*6.toString()返回对象的字符串表示*/
+	//数组
+	var array = ["CodePlayer", true, 12, -5];
+	document.write( array.toString() ); // CodePlayer,true,12,-5
+
+	// 日期
+	var date = new Date(2013, 7, 18, 23, 11, 59, 230);
+	document.write( date.toString() ); // Sun Aug 18 2013 23:11:59 GMT+0800 (中国标准时间)
+
+	// 日期2
+	var date2 = new Date(1099, 7, 18, 23, 11, 59, 230);
+	document.write( date2.toString() ); // Fri Aug 18 1099 23:11:59 GMT+0800 (中国标准时间)
+
+	// 数字
+	var num =  15.26540;
+	document.write( num.toString() ); // 15.2654
+
+	// 布尔
+	var bool = true;
+	document.write( bool.toString() ); // true
+
+	// Object
+	var obj = {name: "张三", age: 18};
+	document.write( obj.toString() ); // [object Object]
+
+	// HTML DOM 节点
+	var eles = document.getElementsByTagName("body");
+	document.write( eles.toString() ); // [object NodeList]
+	document.write( eles[0].toString() ); // [object HTMLBodyElement]
+
+
+
+</script>
+</head>
+<body>
+	
+</body>
+</html>

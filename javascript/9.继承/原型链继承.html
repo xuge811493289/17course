@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function Person(id,name){
+				this.id = id;
+				this.name = name;
+			}
+			console.log(Person.constructor == Object.constructor);
+			Person.prototype.sayName = function(){
+				console.log(this.name);
+			}
+			
+			function Man (id,name,gender){
+				this.id = id;
+				this.name = name;
+				this.gender = gender;
+			}
+			
+			//在添加原型方法之前去添加原型链
+			
+			Man.prototype = new Person();
+			Man.prototype.constructor = Man;
+			Man.prototype.sayGender = function(){
+				console.log(this.gender);
+			}
+			
+		 	var d1 = new Man (1001,"terry","male");
+		 	d1.sayGender();
+		 	d1.sayName();
+		 	
+		 	
+		</script>
+	</body>
+</html>

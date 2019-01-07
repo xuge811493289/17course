@@ -1,0 +1,25 @@
+[{
+   "id":1,
+  "name":"lisi",
+  "age":20,
+  "love":"sing  and dance"
+},
+{
+   "id":2,
+  "name":"wangwu",
+  "age":28,
+  "love":"eat"
+},
+{
+   "id":3,
+  "name":"zhaoer",
+  "age":21,
+  "love":"run"
+},
+{
+   "id":4,
+  "name":"maliu",
+  "age":20,
+  "love":"study"
+}
+]

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>节点遍历</title>
+		<script type="text/javascript" src="../jquery.min.js" ></script>
+		<script>
+			$(function(){
+		//children(selector)只获取子代元素，不获取后代元素
+				//var $span = $("#one").children("span");
+				//console.log($span);
+		//find(selector)   能够获取所有子代和后代元素
+				//var $span = $("#one").find("span");
+				//console.log($span);
+		//next(selector)取得匹配的元素集合中每一个元素紧邻的后面兄弟元素
+				//var $div = $("#one").next("div");
+				//console.log($div);
+		//nextAll(selector) 查找到当级元素的所有兄弟元素
+				//var $div = $("#one").nextAll("div"); 
+				//console.log($div);
+		//prev()取得前面的一个兄弟元素
+				//var $div = $(".brother:eq(3)").prev("div");
+				//console.log($div);
+		//prevAll()查找前面的所有兄弟元素
+				//var $div = $(".brother:eq(3)").prevAll("div");
+				//console.log($div);
+		//siblings()取得匹配元素前后所有的兄弟元素
+				//var $div = $(".brother:eq(2)").siblings("div");
+				//console.log($div);
+		//closest()取得和参数匹配的最近的元素，匹配不上就继续向上查找父级元素
+				//var $div = $(".brother:eq(1)").closest("div");
+				//console.log($div);
+		//filter()把当前所选择的所有元素再进行筛选过滤
+				//var $div = $("div").filter(":contains('one')");
+				//console.log($div);
+		//parent()取得匹配元素的父亲元素
+				//var $div = $("#two_two").parent();
+				//console.log($div);
+		//parents()取得集合中每个匹配元素的祖先元素
+				//var $div = $("#two_two").parents();
+				//console.log($div);
+			})
+		</script>
+	</head>
+	<body>
+		<div id="one">one
+			<div id="two">two
+				<div id="three">three
+					<div id="four">four
+						<span id="span">
+							span
+						</span>
+					</div>
+					<span id="span1">
+						three_span1
+					</span>
+				</div>
+			</div>
+			<span id="son_span">
+				son_span
+			</span>
+		</div>
+		
+		<div id="one_one">one_one
+			<div id="two_two">two_two
+				<div id="three_two">three_two
+					<div id="four_two">four_two
+						<span id="span_two">
+							span_two
+						</span>
+					</div>
+					<span id="span1_two">
+						span1_two
+					</span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="brother">
+			brother1
+		</div>
+		<div class="brother">
+			brother2
+		</div>
+		<div class="brother">
+			brother3
+		</div>
+		<div class="brother">
+			brother4
+		</div>
+	</body>
+</html>

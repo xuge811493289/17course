@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>跨域访问</title>
+		<script>
+			window.onload=function(){
+				var btn = document.getElementsByTagName("button")[0];	
+				btn.onclick=function(){
+					var req = new XMLHttpRequest();
+					req.open("GET","http://172.16.21.184/web1605/day1/stus.json");
+					req.send(null);
+					req.onreadystatechange=function(){
+						if(req.readyState===4 && req.status ===200){
+							var val = req.responseText;
+							console.log(val);
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<button>按钮</button>
+	</body>
+</html>

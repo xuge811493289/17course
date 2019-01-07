@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>内容过滤选择器</title>
+		<style>
+			#three{
+				width: 10px;
+				height: 10px;
+				border: 2px solid red;
+			}
+		</style>
+		<script src="../jquery.min.js"></script>
+		<script>
+			$(function(){
+			//:contains 选取到内容中有'我'的整个div
+				$("div:contains(我)").css("text-decoration","underline");
+			//:empty   选中div为空的元素 为其添加内容
+				//$("div:empty").text("Was Empty");
+			//:has(selector)    选中的是有p标签的div元素
+				//$("div:has('p')").css("background-color","aquamarine");
+				//$("div").has("p").css("background-color","aquamarine");
+			//:parent 选取含有子元素或者文本的元素  
+				//$("div:parent").css("background-color","aquamarine");
+			//.parent()是选中当前元素的父级元素
+				//$("p").parent().css("background-color","salmon");
+			})
+		</script>
+	</head>
+	<body>
+		<div id="one">
+			abcdefghigklmnopqrstuvwxyz
+		</div>
+		<div id="two">
+			我是中国人
+		</div>
+		<div id="three"></div>
+		<div id="p">我是有p标签的div
+			<p>我是p标签中的元素</p>
+		</div>
+	</body>
+</html>

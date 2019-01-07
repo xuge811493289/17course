@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title></title>
+    <script src="./jquery.min.js"></script>
+    <script src="./frameworks/bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./frameworks/bootstrap-3.3.0-dist/dist/css/bootstrap.css"></head>
+</head>
+<body>
+    <div class="container">
+        <!--1.默认警告框-->
+        <div class="alert alert-warning">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Warning!</strong>Best check yo self,you're not looking to good.
+        </div>
+        <!--2.可关闭的警告框-->
+        <div class="alert alert-warning alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                &times;
+            </button>
+            <strong>Warning!</strong>
+            Best check yo self,you're not looking to good.
+        </div>
+        <!--3.多彩样式的警告框 alert-info alert-warning ...-->
+        <div class="alert alert-danger alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                &times;
+            </button>
+            <strong>Warning!</strong>
+            Best check yo self,you're not looking to good.
+        </div>
+        <!--4.警告框中的链接-->
+        <div class="alert alert-danger">
+            <a href="#" class="alert-link">
+                链接1
+            </a>
+        </div>
+        <div class="alert alert-info">
+            <a href="#" class="alert-link">
+                链接2
+            </a>
+        </div>
+        <div class="alert alert-success">
+            <a href="#" class="alert-link">
+                链接3
+            </a>
+        </div>
+
+    </div>
+</body>
+</html>

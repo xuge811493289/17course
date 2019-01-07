@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>素数</title>
+<script type="text/javascript">
+//素数:只能被1和它本身整除的数
+	var count = 0;	
+	for(var i=101;i<200;i+=2){
+		for(var j=2;j<=i;j++){
+			if(i%j==0 && i!=j){
+				break;
+			}else if(i%j ==0){
+				console.log(i+"");
+				count++;//19
+			}
+		}
+	}
+	console.log(count);
+</script>
+</head>
+<body>
+	
+</body>
+</html>

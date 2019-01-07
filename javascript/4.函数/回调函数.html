@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//数组的遍历
+		var arr = ["terry","larry","jack",true,18];
+		
+		//封装遍历数组的函数
+		function forEach(arr,handler){
+			for(var i<0;i<arr.length;i++){
+				var item = arr[i];
+				handler.call(this,item,i);
+			}
+		}
+		forEach(arr,function(item,index){
+			console.log(item,index);
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>modal-模态框</title>
+    <script src="./jquery.min.js"></script>
+    <script src="bootstrap.js"></script>
+    <link href="bootstrap.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!--1.用属性控制隐藏于显示的模态框-->
+        <button class="btn btn-danger" data-toggle="modal" data-target="#one">点击显示模态框</button>
+        <div class="modal" id="one">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        添加学生信息
+                    </div>
+                    <div class="modal-body">
+                        <form action="#" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="control-label col-sm-3">
+                                    用户名
+                                </label>
+                                <div class="has-feedback col-sm-6">
+                                    <input type="text" class="form-control"/>
+                                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-3">年龄</label>
+                                <div class="has-feedback col-sm-6">
+                                    <input type="number" class="form-control"/>
+                                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" data-dismiss="modal">
+                            取消
+                        </button>
+                        <button class="btn btn-primary">
+                            保存
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--2.用js控制隐藏与显示的模态框-->
+        <button id="twoBtn" class="btn btn-danger" data-toggle="modal">控制显示与隐藏</button>
+        <div class="modal" id="two">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">添加学生信息</div>
+                    <div class="modal-body">
+                        <form action="#" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="control-label col-sm-3">用户名</label>
+                                <div class="col-sm-6 has-feedback">
+                                    <input type="text" class="form-control"/>
+                                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-3">年龄</label>
+                                <div class="has-feedback col-sm-6">
+                                    <input type="number" class="form-control"/>
+                                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" id="twoCancelBtn">
+                            取消
+                        </button>
+                        <button class="btn btn-primary">
+                            保存
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $("#twoBtn").on("click",function(){
+                $("#two").modal("show");
+                $("#twoCancelBtn").on("click",function(){
+                    $("#two").modal("hide");
+                })
+            })
+        </script>
+
+
+        <!--3.用js控制显示-->
+        <button id="threeBtn" class="btn btn-danger" data-toggle="modal">点击显示模态框</button>
+        <div class="modal" id="three">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">添加学生信息</div>
+                    <div class="modal-body">
+                        <form action="#" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="control-label col-sm-3">用户名</label>
+                                <div class="col-sm-6 has-feedback">
+                                    <input type="text" class="form-control"/>
+                                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-3">年龄</label>
+                                <div class="has-feedback col-sm-6">
+                                    <input type="number" class="form-control"/>
+                                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" id="threeCancelBtn">
+                            取消
+                        </button>
+                        <button class="btn btn-primary">
+                            保存
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $("three").modal({
+                backdrop:false,
+                keyboard:true,
+                show:true,
+                remote:"content.html"
+            });
+            $("#threeBtn").on("click",function(){
+                $("#three").modal("show");
+                $("#threeCancelBtn").on("click",function(){
+                    console.log('...');
+                    $("#three").modal("hide");
+                })
+            })
+        </script>
+    </div>
+</body>
+</html>

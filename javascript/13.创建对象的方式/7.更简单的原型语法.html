@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//记录创建学生的个数
+		function Student(num,name,address){
+			this.stuNum = num;//this指向新的对象
+			this.name = name;
+			this.address = address;//实例中的属性
+			//维持学生的个数
+			Student.prototype.number++;//相当于静态变量，是公共的变量，每一个实例对象都可以访问的
+		}
+		//简便的原型语法
+		Student.prototype={
+			//必须指向原型对象
+			constructor:Student,
+			sayName:function(){
+				console.log(this.name);
+			},
+			sayAddress:function(){
+				console.log(this.address);
+			},
+			number:0
+		}
+		var stu1 = new Student(1,"terry","江西");
+		console.log(stu1);
+
+
+
+
+
+
+	</script>
+</body>
+</html>

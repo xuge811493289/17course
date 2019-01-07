@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>prototype创建自定义对象</title>
+	<script type="text/javascript">
+		function Person(name,age){
+			this.name = name;
+			this.age = age;
+		}
+		Person.prototype = {
+			getName:function(){
+				return this.name;
+			},
+			getAge:function(){
+				return this.age;
+			}
+		}
+		//实例化
+		var zhang = new Person("zhangsan","male");
+		console.log(zhang.getName());
+		var chun = new Person("chunhua","female");
+		console.log(chun.getName());
+
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

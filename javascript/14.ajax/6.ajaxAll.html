@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ajax封装</title>
+		<script>
+			window.onload = function(){
+				var btn = document.getElementsByTagName("button")[0];
+				btn.onclick=function(){
+					testAjax("stus.json",callback1);
+					xmlAjax("students.xml",callback2);
+				}
+				//ajax请求
+				function testAjax(url,function1){
+					var request = new XMLHttpRequest();
+					request.open("GET",url);
+					request.setRequestHeader("Content-type","text/plain;charset=UTF-8");
+					request.send(null);
+					request.onreadystatechange=function(){
+						if(request.status===200 && request.readyState === 4){
+							var val = request.responseText;
+							function1(val);
+						}
+					}
+				}
+				function xmlAjax(url,function1){
+					var request = new XMLHttpRequest();
+					request.open("GET",url);
+					request.send(null);
+					request.onreadystatechange=function(){
+						if(request.status===200 && request.readyState === 4){
+							var val = request.responseXML;
+							function1(val);
+						}
+					}
+				}
+			}
+			function callback1(val){
+				//对请求到的数据进行操作
+				var p = document.createElement("p");
+				p.innerHTML = val;
+				var body = document.body;
+				body.appendChild(p);
+			}
+			function callback2(val){
+				//对请求到的数据进行操作
+				var p = document.createElement("p");
+				val = val.children[0].children;
+				val = Array.prototype.slice.call(val,0);
+				p.innerHTML = val;
+				var body = document.body;
+				body.appendChild(p);
+			}
+		</script>
+	</head>
+	<body>
+		<button>按钮</button>
+	</body>
+</html>

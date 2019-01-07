@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>html事件处理程序</title>
+
+</head>
+<body>
+	<input type="button" value="clickMe" onclick = "showMsg()">
+	<script type="text/javascript">
+/*HTML事件处理程序，某个元素支持某个事件，都可以使用一个与响应时间处理程序同名的HTML特性来指定。特点是:
+1.时差问题(DOM加载完成,相应的js代码却并未加载)
+2.浏览器兼容问题
+3.HTML与javascript代码紧密耦合
+*/
+		function showMsg(){
+			alert("is clicked");
+		}	
+	</script>
+</body>
+</html>

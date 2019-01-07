@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>替换节点和包裹节点</title>
+		<script type="text/javascript" src="../jquery.min.js" ></script>
+		<script>
+			$(function(){
+//1.替换元素
+				var val = '我是将要替换的元素';
+				var $div = $("<div>"+val+"</div>");
+				//用提供的内容替换集合中所有匹配的元素并且返回被删除元素的集合  下面两种达到一样的效果
+				//$("#three").replaceWith($div);
+				//$div.replaceAll("#three");
+//2.包裹节点
+			var $div = $("<div style='height:100px;width:100px;border:1px solid red'></div>")
+			//在span标签的外面包裹了一个 div元素
+    	 	$("span").wrap($div);
+/* wrapAll([wrappingElement]):
+	将所有匹配的元素用一个元素来包裹，在所有匹配元素外面包一层HTML结构。这种结构可以嵌套多层，但是最内层只能有一个元素。所有匹配元素将会被当作是一个整体，在这个整体的外部用指定的 HTML 结构进行包裹。 
+wrapInner([wrappingElement]):
+	每个匹配元素里面内容(子元素)都会被这种结构包裹。*/
+			})
+		</script>
+	</head>
+	<body>
+		<div id="one">one
+			<div id="two">two
+				<div id="three">
+					three
+					<span id="span">
+						span
+					</span>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

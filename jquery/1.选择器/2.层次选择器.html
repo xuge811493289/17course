@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>层次选择器</title>
+		<script src="../jquery.min.js"></script>
+		<script>
+			$(function(){
+				//1.后代选择器
+//				$(".one p").css("background-color","purple");
+				//2.子代选择器 只能选择到第一级后代
+//				$(".two > span").css("background-color","palegreen");
+				//3.相邻兄弟选择器  选择到和a标签同父级的后兄弟,只能选择紧挨着的后兄弟
+//				$("a + p").css("background-color","palevioletred");
+//				$("a").next("p").css("background-color","peachpuff");
+				//4.一般兄弟选择器   
+				//只能选择到a标签后面的元素
+//				$("a ~ p").css("background-color","peru");
+				//可以选择到a标签所有的兄弟p标签
+				$("a").siblings("p").css("background-color","peru");
+			})
+		</script>
+	</head>
+	<body>
+		<div id="one">#one
+			<div class="one">class two
+				<p id="p">#p
+					
+				</p>
+			</div>
+			<div class="two">class two
+				<span id="2p">#2p
+					<p class="four">我是p</p>
+					<a href="#">点我点我</a>
+					<p class="three">我是第二代P</p>
+					<p class="three">我是第二代P</p>
+				</span>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>基本过滤选择器</title>
+		<script src="../jquery.min.js"></script>
+		<script>
+			$(function(){
+//基本过滤选择器
+			//过滤选择器	:first  :last
+				//$(".one:first").css("background-color","antiquewhite");
+				//$(".one:last").css("background-color","aquamarine");
+			//:not   not()
+				//$("input:not(:checked)").click(function(){alert()})
+				//$("input").not(":checked").click(function(){alert()})
+			//奇偶选择器  :even偶数 :odd奇数  
+				//$("li:even").css("background-color","aquamarine");
+				//$("li:odd").css("background-color","gainsboro");
+			//下标为多少的元素
+				//$("li:eq(0)").css("background-color","#00FFFF");
+				//$("li").eq(0).css("background-color","#C4DAF5");
+			//从索引大于2的开始
+				//$("li:gt(2)").css("background-color","#B6EA29");
+			//从索引为多少的元素 从2开始到结束
+				//$("li").slice(2).css("background-color","#00FFFF");
+			//索引小于index的元素
+				//$("li:lt(3)").css("background-color","aquamarine");
+			//从索引值为1到索引值为3的元素
+				//$("li").slice(1,3).css("background-color","chartreuse");
+			//选取所有的标题元素
+				//$(":header").css("background-color","#C4DAF5");
+			//
+			})
+		</script>
+	</head>
+	<body>
+		<div id="one">one
+			<div id="one_one" class="one">one_one</div>
+			<div id="one_two" class="one">one_two</div>
+		</div>
+		<div id="two" >two
+			<div id="two_one" class="two">two_one</div>
+			<div id="two_two" class="two">two_two</div>
+		</div>
+		<form action="#" method="get">
+			<input type="radio" name="gender"/>男
+			<input type="radio" name="gender"/>女
+			<input type="submit" value="提交"/>
+		</form>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+		<h1>h1</h1>
+		<h2>H2</h2>
+		<h3>H3</h3>
+	</body>
+</html>

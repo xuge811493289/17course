@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>nodeTest</title>
+	
+</head>
+<body>
+	<div id="one">
+		<div id="two">1</div>
+		<div id="three">2</div>
+		<div id="four">3</div>
+	</div>
+</body>
+<script type="text/javascript">
+/*测试node中的属性*/
+//1.previousSibling兄弟节点中的上一个节点
+		var three = document.getElementById("three");
+		console.log(three);
+		var two = three.previousSibling.previousSibling;
+		console.log(two);
+//2.nextSibling兄弟节点中的下一个节点
+		var four = three.nextSibling.nextSibling;
+		console.log(four);
+//3.firstChild:childNodes列表中的第一个节点
+		var one = document.getElementById("one");
+		var firstChild = one.firstChild;
+		console.log(firstChild);
+//4.lastChild:childNodes列表中的最后一个节点
+		var lastChild = two.lastChild;
+		console.log(lastChild);
+//5.ownerDocument指向表示整个文档的文档节点
+		var owner = two.ownerDocument;
+		console.log(owner);// Document nodeTest.html
+//6.hasChildNodes()
+		var node = one.hasChildNodes()
+		console.log(node);//true
+</script>
+</html>

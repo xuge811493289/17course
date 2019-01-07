@@ -1,0 +1,10 @@
+angular.module("app.infoClassMan",["ngRoute"])
+	.config(function($routeProvider){
+		$routeProvider.when("/infoClassMan",{
+			templateUrl:"loads/infoMan/infoClassMan.html",
+			controller:"infoClassManController"
+		})
+	})
+	.controller("infoClassManController",function($scope){
+		$scope.name="infoClassMan";
+	})

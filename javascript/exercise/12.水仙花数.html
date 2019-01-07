@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>水仙花数</title>
+	<script type="text/javascript">
+	//算法1
+		for(var i=100; i<=999;i++){
+			if(getSum(i)==i){
+				document.write("水仙花数为:"+i);
+			}
+		}
+		function getSum(num){
+			//将数字转换成一个字符串
+			var str = num+"";
+			//将字符串转换成整数数组
+			var num = [];
+			num[0] = parseInt(str.charAt(0));
+			num[1] = parseInt(str.charAt(1));
+			num[2] = parseInt(str.charAt(2));
+
+			//计算数组所有元素的立方和
+			var sum = 0;
+			for(var i=0;i<num.length;i++){
+				sum+=Math.pow(num[i],3);
+			}
+			return sum;
+		}
+	//算法2
+		var num = 0;
+		for(var i=1;i<10;i++){
+			for(var j=0;j<10;j++){
+				for(var k=0;k<10;k++){
+					if(i*100 + j*10 +k == (i*i*i)+(j*j*j)+(k*k*k)){
+						console.log(i*100+j*!0+k);
+						num++;
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

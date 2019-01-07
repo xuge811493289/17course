@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	//向原生的对象中添加原型
+		String.prototype.startWidth = function(text){
+			return this.indexOf(text) == 0;
+		}
+		var msg = "hello world";
+		alert(msg.startWidth("hello"))//true
+	//实例对象可以调用原型当中所有的方法和属性
+	</script>
+</body>
+</html>

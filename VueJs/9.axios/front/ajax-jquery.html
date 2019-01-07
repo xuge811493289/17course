@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery-ajax</title>
+	<script type="text/javascript" src="../js/jquery-3.0.0.min.js"></script>
+	<script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<form @submit.prevent="handleSubmit">
+			姓名: <input type="text" v-model="form.name"> <br>
+			年龄: <input type="text" v-model="form.age">
+			<br>
+			爱好: <input type="checkbox" value="run" v-model="form.bobbies">跑步
+					 	<input type="checkbox" value="backetball" v-model="form.bobbies">篮球
+						<input type="checkbox" value="program" v-model="form.bobbies">编程
+			<br>
+			班级： <select v-model="form.classId">
+				<option v-for="c in classes" :value="c.id">{{c.name}}</option>
+			</select>
+			<input type="submit" value="保存">
+		</form>
+		{{form}}
+	</div>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				classes:[{
+					id:1001,
+					name:'web1701'
+				},{
+					id:1002,
+					name:'web1702'
+				},{
+					id:1003,
+					name:'web1703'
+				}],
+				form:{
+					/*值为空时没有默认值*/
+					name:'张三',
+					age:12,
+					bobbies:['program','run'],
+					classId:1002
+				},
+			},
+			methods:{
+				handleSubmit:function(){
+					
+					var vm = this;
+					// 1.get返回值为json,默认格式为表单格式
+					/*$.getJSON('http://127.0.0.1:3000/users/save',vm.form,function(data){
+						console.log(data);
+					})*/
+
+					//2.以GET方式将form信息传递到后台
+					/*$.ajax({
+						url:'http://127.0.0.1:3000/users/save',
+						type:'get',
+						// 传递的数据为表单格式
+						data:vm.form,
+						// 解决数组传递到后台的数组数据带有中括号问题
+						// traditional:true,
+						// 成功之后执行的代码
+						success:function(data,text){
+							console.log(text,data);
+						},
+						// 失败之后要执行的代码
+						error:function(data,text){
+							console.log(text,data);
+						},
+						// 每次发送请求的最后都会执行该方法
+						complete:function(data){
+							console.log('complete');
+						}
+					})*/
+					//post
+					/*$.ajax({
+						url:'http://127.0.0.1:3000/users/save',
+						type:'post',
+						data:vm.form,
+						traditional:true,
+						success:function(data,text){
+							console.log(text,data);
+						},
+						error:function(data,text){
+							console.log(text,data);
+						},
+						complete:function(data){
+							console.log('complete');
+						}
+					})*/
+					//post json
+					/*$.ajaxSetup({
+            // contentType:'application/json'
+          });
+          $.post('http://127.0.0.1:3000/users/save',JSON.stringify(vm.form),function(data){
+            console.log(data);
+          });*/
+				}
+			}
+		})
+	</script>
+</body>
+</html>

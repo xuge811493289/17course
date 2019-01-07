@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件流</title>
+	<script type="text/javascript">
+	//1.事件
+		/*
+			是js与html进行交互
+
+			事件目标
+			事件处理程序
+			事件对象
+
+		*/
+	//2.事件流:描述的是从页面接收事件的顺序。
+		/*	
+		IE:
+			事件冒泡:IE的事件流叫做事件冒泡，由事件开始时由最具体的元素接收，然后逐级向上传播到较为不具体的节点。所有现代浏览器都支持事件冒泡。
+		其他浏览器:
+			事件捕获:Netscape提出的另一种事件流叫做事件捕获。
+		DOM事件流对象:
+			事件监测-->
+		*/
+	//3.事件处理程序
+		//1.如何绑定一个事件
+			// a.在html标签内部直接绑定，例如
+				//<div onclick="test()"></div>
+				//<script>
+					//function test(){
+					//	alert("你好");
+					//}
+		//2.通过元素绑定(DOM0级)，各种浏览器全部支持
+			// var div = document.getElementById("one");
+			// div.onclick=function(){}
+			//特点:简单，跨浏览器
+		//3.通过DOM2的方式进行绑定
+			/*其他浏览器
+				绑定事件:
+					addEventListener(要绑定的事件名(click)，作为事件处理的函数test()，true/false)
+						true:在捕获阶段调用事件处理函数
+						false:在冒泡阶段调用事件处理函数
+				解绑事件:
+					removeEventListener(要解绑的事件名，解绑的函数，boolean)
+			【注】绑定时候事件的boolean和解绑时候的boolean需要相同。
+			
+			IE8()
+				绑定事件
+					attachEvent(on绑定的属性,要绑定的函数)
+				解绑事件
+					detachEvent(on要解绑的属性,要解绑的函数)*/
+	//4.事件对象
+		/*(1)DOM中的事件对象
+			在触发DOM上的某个事件时，会产生一个事件对象event,这个对象包含着多有与事件相关的信息，包含导致事件的元素，事件的；类型以及其他与特定事件相关的信息。兼容的DOM的浏览器默认会将event对象传入到事件处理函数中
+			dom.onclick = function(event){
+				console.log(event);
+			}
+			dom.addEventListener("click",function(event){console.log(event)},false);*/
+			
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

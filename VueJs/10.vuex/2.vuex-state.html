@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>state</title>
+	<script src='../js/vue.min.js'></script>
+  <script src='../js/vuex-3.0.0.js'></script>
+</head>
+<body>
+	<div id="app">
+		<h2>{{title}}</h2>
+		<p>{{msg}}</p>
+  </div>
+	<script>
+		var store = new Vuex.Store({
+			state:{
+				title:'状态管理',
+				msg:'所有vue组件中的数据都可以在vuex中进行管理'
+			}
+		})
+		new Vue({
+			el:'#app',
+			store:store,
+			/*computed:{
+				title(){
+					return this.$store.state.title;
+				},
+				msg(){
+					return this.$store.state.msg;
+				}
+			}	,*/
+			/*computed:Vuex.mapState({
+				title(state){
+					return state.title;
+				},
+				msg(state){
+					return state.msg;
+				}
+			})*/
+			computed:{
+				...Vuex.mapState(['title','msg'])
+			}
+
+
+		})
+	</script>
+</body>
+</html>

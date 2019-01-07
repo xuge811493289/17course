@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>window</title>
+	<script type="text/javascript">
+
+		window.onload=function(){
+			var btn = document.getElementById("button");
+			btn.onclick=function(){
+//1.窗口位置
+			// screenX/screenY返回窗口相对于屏幕的X和Y坐标
+			// console.log(window.screenX);
+			// console.log(window.screenY);
+
+			//pageXOffset设置或返回当前页面相对于窗口显示区左上角的
+			// console.log(window.pageXOffset);
+			// console.log(window.pageYOffset);
+//2.窗口大小
+			//innerWidth页面视图区的宽度
+			// console.log(window.innerWidth);
+			// console.log(window.innerHeight);
+			
+			//outerWidth浏览器窗口的宽度
+			// console.log(window.outerWidth);
+			// console.log(window.outerHeight);
+//3.screen对象
+			//screen.width屏幕总宽度，固定不变
+			// console.log(screen.width);//1366
+			// console.log(screen.height);//768
+
+			//屏幕可用宽度/高度
+			// console.log(screen.availWidth);//1366
+			// console.log(screen.availHeight);//728
+			//屏幕颜色深度
+			// console.log(screen.colorDepth);//24
+			// 屏幕颜色分辨率:
+			//console.log(screen.pixelDepth);//24
+			}
+		}
+	</script>
+</head>
+<body>
+	<button id="button">点我</button>
+</body>
+</html>

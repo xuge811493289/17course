@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			var person={
+				name:"lisi",
+				age:21
+			}
+			/*in可以检测是自己的属性，也可以检测是否是继承属性*/
+			console.log("name" in person);			//true(自有属性)
+			console.log("constructor" in person);	//true(继承属性)
+			console.log("toString" in person);		//true(继承属性)
+			console.log("valueOf" in person);		//true(继承属性)
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

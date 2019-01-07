@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>按钮下拉菜单</title>
+    <script src="./jquery.min.js"></script>
+    <script src="./frameworks/bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./frameworks/bootstrap-3.3.0-dist/dist/css/bootstrap.css">
+    </head>
+</head>
+<body>
+    <div class="container">
+        <!--组合式下拉菜单-->
+       <div class="dropdown">
+           <button class="btn btn-default dropdown-toggle" type="button" id="dropdownmenu" data-toggle="dropdown">
+                Dropdown
+               <span class="caret"></span>
+           </button>
+           <ul class="dropdown-menu">
+               <li><a href="#">Action</a></li>
+               <li><a href="#">Action action</a></li>
+               <li><a href="#">something else here</a></li>
+               <li class="divider"></li>
+               <li><a href="#">more</a></li>
+           </ul>
+       </div>
+
+
+        <br/>
+        <br/>
+        <br/>
+        <!--分离式下拉菜单-->
+        <div class="btn-group">
+            <button class="btn btn-danger btn-xs">danger</button>
+            <div class="btn-group dropup">
+                <button class="btn btn-info ">info</button>
+                <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu ">
+                    <li><a href="#">one</a></li>
+                    <li><a href="#">two</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">three</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

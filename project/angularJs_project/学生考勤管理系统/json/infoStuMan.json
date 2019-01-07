@@ -1,0 +1,97 @@
+[{
+	"id":101,
+	"name":"薛佳凝",
+	"age":"18",
+	"gender":"男",
+	"telephone":"18900009999",
+	"clazz":"01班",
+	"dorm":"124"
+},{
+	"id":102,
+	"name":"李煜语",
+	"age":"19",
+	"gender":"男",
+	"telephone":"18912349999",
+	"clazz":"01班",
+	"dorm":"124"	
+},{
+	"id":103,
+	"name":"陈思成",
+	"age":"19",
+	"gender":"男",
+	"telephone":"18916012992",
+	"clazz":"01班",
+	"dorm":"124"	
+},{
+	"id":104,
+	"name":"李芳芳",
+	"age":"19",
+	"gender":"女",
+	"telephone":"18912349999",
+	"clazz":"01班",
+	"dorm":"312"	
+},{
+	"id":105,
+	"name":"刘乐",
+	"age":"19",
+	"gender":"女",
+	"telephone":"18914329999",
+	"clazz":"01班",
+	"dorm":"312"	
+},{
+	"id":106,
+	"name":"曹欣",
+	"age":"19",
+	"gender":"女",
+	"telephone":"13012349999",
+	"clazz":"01班",
+	"dorm":"312"	
+},{
+	"id":107,
+	"name":"薛佳凝",
+	"age":"18",
+	"gender":"男",
+	"telephone":"13601029999",
+	"clazz":"02班",
+	"dorm":"126"
+},{
+	"id":108,
+	"name":"李煜语",
+	"age":"19",
+	"gender":"男",
+	"telephone":"15900009999",
+	"clazz":"02班",
+	"dorm":"126"	
+},{
+	"id":109,
+	"name":"陈思成",
+	"age":"19",
+	"gender":"男",
+	"telephone":"1591601239",
+	"clazz":"02班",
+	"dorm":"126"	
+},{
+	"id":110,
+	"name":"李芳芳",
+	"age":"19",
+	"gender":"女",
+	"telephone":"18612349999",
+	"clazz":"02班",
+	"dorm":"315"	
+},{
+	"id":111,
+	"name":"刘乐",
+	"age":"19",
+	"gender":"女",
+	"telephone":"13914329999",
+	"clazz":"02班",
+	"dorm":"315"	
+},{
+	"id":112,
+	"name":"曹欣",
+	"age":"19",
+	"gender":"女",
+	"telephone":"13012349932",
+	"clazz":"02班",
+	"dorm":"315"	
+}]

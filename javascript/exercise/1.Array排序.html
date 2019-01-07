@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	/*按照姓名排序
+	按照年龄升序
+	按照薪资降序排列*/
+	var arr = [{
+			name:"larry",
+			age:12,
+			salary:5500
+		},{
+			name:"terry",
+			age:10,
+			salary:9000
+		},{
+			name:"vicky",
+			age:9,
+			salary:3500
+		}];
+	function comp(key){
+		return function(a,b){
+			if(a[key]<b[key]){
+				return -1;
+			}else if(a[key]>b[key]){
+				return 1;
+			}else{
+				return 0;
+			}
+		}
+	}
+	var arr_new = arr.sort(comp("name"));
+	console.log(arr);
+	console.log(arr_new);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

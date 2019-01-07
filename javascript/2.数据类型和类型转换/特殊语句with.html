@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	var person={
+		name:"terry",
+		age:12,
+		gender:"male"
+	}
+	//with将代码的作用域设置在一个对象中
+	//目的:简化多次访问同一个对象的工作
+	//缺点:大量使用with会导致性能下降，并且难易维护，所以不建议使用
+	with(person){
+		console.log(name);//terry
+		console.log(age);//12
+		console.log(gender);//male
+	}
+	
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

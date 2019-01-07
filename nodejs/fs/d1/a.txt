@@ -1,0 +1,7 @@
+function (err){
+  if(!err){
+    console.log("创建成功");
+  }else{
+    console.log(err);
+  }
+}

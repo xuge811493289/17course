@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>间歇调用</title>
+<script type="text/javascript">
+/*间歇调用:setInterval
+	参数一:需要执行的函数
+	参数二:多长时间执行(毫秒)
+	移除:clearInterval()
+		参数:超时调用方法的返回值
+*/
+//间歇调用
+	var item = setInterval(function(){
+		alert("间歇调用");
+	},2000);
+	clearInterval(item);
+	
+</script>
+</head>
+<body>
+	
+</body>
+</html>

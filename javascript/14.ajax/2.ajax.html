@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ajax</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			table{
+				text-align: center;
+				barder:1px solid grey;
+				width:500px;
+				margin: auto;
+			}
+			td{
+				border:1px solid grey;
+				width:120px;
+				text-align: center;
+			}
+		</style>
+		<script>
+		window.onload=function(){
+			function getData(){
+				//1.创建XMLHttpRequest()对象
+					var request = new XMLHttpRequest();
+					//console.log(request);
+				//2.打开
+					request.open("GET","stus.json");
+				//3.设定请求的细节
+					request.send(null);
+				//4.请求响应成功后的操作
+					request.onreadystatechange=function(){
+						if(request.readyState === 4 && request.status ===200){
+							//取到响应文件
+							var xx = request.responseText;
+							//做追加操作 将响应到的数据放到表格中
+							showNum(xx);
+						}
+					}
+			}
+			var tbody = document.getElementsByTagName("tbody")[0];
+			function showNum(stus){
+				//json转换为对象
+				var arr = JSON.parse(stus);
+				//将数据添加到页面上
+				arr.forEach(function(item){
+					//拿到每一个对象都创建一行
+					var tr = document.createElement("tr");
+					//遍历每一个对象中的属性
+					for(var attr in item){
+						//对于每一个属性都要创建一个td
+						var td = document.createElement("td");
+						//并以此添加属性
+						td.innerHTML = item[attr];
+						//将td追加在tr上面
+						tr.appendChild(td);
+					}
+					tbody.appendChild(tr);
+				});
+			}
+			getData();
+		}
+		</script>
+	</head>
+	<body>
+		<table>
+			<thead>
+				<tr>
+					<td>id</td>
+					<td>name</td>
+					<td>age</td>
+					<td>hobby</td>
+				</tr>
+			</thead>
+			<tbody>
+				
+			</tbody>
+			<tfoot>
+				
+			</tfoot>
+			
+		</table>
+	</body>
+</html>

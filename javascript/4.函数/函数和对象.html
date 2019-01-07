@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function sayHello(name){
+				console.log(this);
+				console.log("hello "+name);
+			}
+			var obj = {
+				name:"terry",
+				sayHello:sayHello
+			}
+			sayHello();
+			obj.sayHello("obj");
+		</script>
+	</body>
+</html>

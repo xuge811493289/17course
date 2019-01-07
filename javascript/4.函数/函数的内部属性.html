@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数的内部属性</title>
+	<link rel="stylesheet" href="">
+	<script type="text/javascript">
+//函数的内部属性:只能在函数内部使用
+//1.arguments能够去接受传递的参数
+	/*求n的阶乘*/
+	/*function test(num){
+		if(num ==1){
+			return 1;
+		}else{
+			return num*test(num-1);
+		}
+	}
+	console.log(test(5));//120
+	*/
+
+	/*function test1(){
+		var val = arguments[0];
+		console.log(typeof val);
+		if(val == 1){
+			return 1;
+		}else{
+			return val*arguments.callee(val-1);//callee指向的是当前拥有arguments的函数
+		}
+	}
+	var val2 = test1(5);
+	console.log(val2);*/
+
+/*2.this提供了某些方法，其中一个方法叫做调用它本身
+	(1)this指向的是函数来一执行的环境对象
+	(2)this值不固定，跟你调用方法的方式有关
+*/
+	/*var val = 10;
+	function test(){
+		var val = 20;
+		console.log(val);
+	}
+	test();//20*/
+
+	/*var val = 10;
+	function test(){
+		var val = 20;
+		console.log(this.val);//10
+		console.log(this);//window
+	}
+	test();*/
+
+	/*//这里的this全部指向的是window
+	var val = 10;
+	function test2(){
+		var val = 20;
+		console.log(val);
+		console.log(this);
+		function test3(){
+			var val = 30;
+			console.log(val);
+			console.log(this);
+		}
+		test3();
+		console.log(this);
+	}
+	test2();*/
+
+/*	//this的第一种判断方式：看看调用这个方法的前面有没有调用的内容，如果有那么this执行的是前面调用的内容，如果没有，指向的是window
+	var val = 10;
+	function test2(){
+		var val = 20;
+		console.log(this.val);
+		function test3(){
+			var val = 30;
+			console.log(this.val);
+		}
+		test3();
+	}
+	test2();
+
+	function test(){
+		var val = 20;
+	}
+*/
+
+/*3.length:arguments.length:返回的是arguments实际接收到的参数的个数*/
+	/*function test(){
+		var num = arguments.length;
+		for(var i=0;i<num;i++){
+			console.log(arguments[i])
+		}
+		console.log(num);
+	}
+	test(1,2,3);*/
+
+/*4.this指向问题*/
+	var person = {
+		name:"lisi",
+		age:21,
+		classRoom:"web1605",
+		sayClassRoom:function(){
+			console.log("sayClassRoom");
+		}
+	}
+
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

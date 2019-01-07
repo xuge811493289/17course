@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>路由</title>
+	<script type="text/javascript" src="../js/vue.min.js"></script>
+	<script type="text/javascript" src="../js/vue-router.js"></script>
+	<style type="text/css">
+		body,ul{padding: 0;margin:0;}
+    ul{
+      list-style: none;
+      padding: 20px;
+    }
+    header.header {
+      border-bottom: 2px solid #ccc;
+    }
+    .content {
+
+    }
+    .content .left{
+      float: left;
+      width: 120px;
+      min-height: 300px;
+      border-right: 2px solid #ccc;
+    }
+    .content .right {
+      margin-left: 125px;
+      padding: 10px;
+    }
+	</style>
+</head>
+<body>
+	<div id="app">
+		<header class="header">
+			<h2>智慧校园</h2>
+		</header>
+		<article class="content">
+			<section class="left">
+				<ul>
+					<li><a href="#/student">学生管理</a></li>
+					<li><a href="#/course">课程管理</a></li>
+					<li><a href="#/studentCourse">选课管理</a></li>
+				</ul>
+			</section>
+			<section class="right">
+				<router-view></router-view>
+			</section>
+		</article>
+		<footer class="footer"></footer>
+	</div>
+	<script type="text/javascript">
+		//1.定义组件
+		var Student = {
+			template:`
+				<div>
+					<h2>{{title}}</h2>
+					</hr>
+					<p>这个模块正在开发...</p>
+				</div>
+			`,
+			data:function(){
+				return {
+					title:'学生管理模块'
+				}
+			}
+		}
+		var Course = {
+      template:`
+        <div>
+          <h2>{{title}}</h2>
+          <hr />
+          <p>这个模块正在开发中...</p>
+        </div>
+      `,
+      data:function(){
+        return {
+          title:'课程管理模块'
+        }
+      }
+    };
+    var StudentCourse = {
+      template:`
+        <div>
+          <h2>{{title}}</h2>
+          <hr />
+          <p>这个模块正在开发中...</p>
+        </div>
+      `,
+      data:function(){
+        return {
+          title:'选课模块'
+        }
+      }
+    };
+    //2.定义路由
+    var router = new VueRouter({
+    	routes:[{
+    		path:'/student',
+    		component:Student
+    	},{
+    		path:'/course',
+    		component:Course
+    	},{
+    		path:'/studentCourse',
+    		component:StudentCourse
+    	}]
+    })
+    //3.使用路由
+    new Vue({
+    	el:'#app',
+    	router:router
+    })
+	</script>
+</body>
+</html>

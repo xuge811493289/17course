@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象的序列化和反序列化</title>
+	<script type="text/javascript">
+		// var person = new Object();
+		// person.name = "zs";
+		// person.age = 21;
+		// console.log(person);//Object {name: "zs", age: 21}
+//转换为JSON格式stringify
+		// var personJson = JSON.stringify(person);
+		// console.log(personJson);//{"name":"zs","age":21}
+		// console.log(typeof personJson);//string
+//将JSON格式转换为字符串形式  parse
+		// var Json = JSON.parse(personJson); 
+		// console.log(Json);//Object {name: "zs", age: 21}
+
+
+		var str = '{"name":"lisi","age":21}';
+		var obj = JSON.parse(str);
+		console.log(obj);//Object {name: "lisi", age: 21}
+
+//错误写法，双引号必须写在里面，单引号嵌套双引号
+		//var str = "{'name':'lisi','age':21}";
+		// var obj = JSON.parse(str);
+		// console.log(obj);
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

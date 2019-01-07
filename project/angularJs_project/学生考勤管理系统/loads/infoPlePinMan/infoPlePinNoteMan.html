@@ -1,0 +1,61 @@
+<style type="text/css">
+	#div{
+		margin-top:20px;
+	}
+	.table{
+		margin-top:20px;
+		margin-left:30px;
+		font-size:16px;
+	}
+	.input-group{
+		margin-top:18px;
+	}
+	.frame{
+		margin-left:50px;
+	}
+	.frame1{
+		margin-left:0px;
+	}
+</style>
+<div class="row" id="div">
+	<div class="col-xs-8">		
+	<div class="table" >
+			<div >
+				<div>
+					<span style="letter-spacing:49px">姓名</span>
+					<input type="text" ng-model="newUser.name" class="frame1"></input>
+				</div>
+				<div>
+					<span style="letter-spacing:49px;">班级</span>
+					<select ng-model="newUser.clazz" style="width:180px;height:28px" class="frame1">
+						<option value="">请选择</option>
+						<option value="01班" >01班</option>
+						<option value="02班" >02班</option>
+					</select>
+				</div>
+				<div>
+					<span>主联系方式</span>
+					<input type="text" ng-model="newUser.telephone1" class="frame"></input>
+				</div>
+				<div>
+					<span>辅联系方式</span>
+					<input type="text" ng-model="newUser.telephone2" class="frame"></input>
+				</div>
+				<div>
+					<span style="letter-spacing:4px">请假类型</span>
+					<select  ng-model="newUser.type" style="width:180px;height:28px" class="frame">
+						<option value="">请选择</option>
+						<option value="事假" >事假</option>
+						<option value="病假" >病假</option>
+						<option value="其他情况" >其他情况</option>
+					</select>
+				</div>
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon">详细原因</span>
+				<textarea rows="6" class="form-control" ng-model="newUser.content"></textarea>
+			</div>
+			<button class="btn btn-primary btn-block" ng-click="Data.addinfoPlePinNSMan()">提交</button>
+	</div>
+	</div>
+</div>

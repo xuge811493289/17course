@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>数据类型转换</title>
+		<script>
+//1.其他数据类型到Boolean类型转换
+//	console.log(Boolean(""));//false
+//	console.log(Boolean("abc"));//true
+//	console.log(Boolean(123));//true
+//	console.log(Boolean(0));//false
+//	console.log(Boolean(0.0));//false
+//	console.log(Boolean(2.0001));//true
+//	console.log(Boolean(undefined));//false
+//	console.log(Boolean(null));//false
+//	console.log(Boolean(NaN));//false
+//2.其他数据类型到数值类型转换
+//	console.log(Number(""));//0
+//	console.log(Number("abc"));//NaN
+//	console.log(Number("123"))//123
+//	console.log(Number(123));//123
+//	console.log(Number(0));//0
+//	console.log(Number(0.0));//0
+//	console.log(Number(2.0001));//2.0001
+//	console.log(Number(undefined));//NaN
+//	console.log(Number(null));//0
+//	console.log(Number(NaN));//NaN
+//	console.log(Number(true));//1
+//	console.log(Number(false));//0
+//	console.log(Number("123.1"))//123.1
+//	console.log(Number("+12.1"))//12.1
+//	console.log(Number("1+2.1"))//NaN
+//2.parseInt()
+	//如果是浮点数那么久抹去小数点后面的，如果是整数，原样输出
+//	console.log(parseInt(10));//10
+//	console.log(parseInt(10.22));//10
+//	console.log(parseInt(0));//0
+//	console.log(parseInt(0.00));//0
+	//Boolean类型，null,undefined都转化为NaN
+//	console.log(parseInt(true));//NaN
+//	console.log(parseInt(false));//NaN
+//	console.log(parseInt(null));//NaN
+//	console.log(parseInt(undefined))//NaN
+	//如果是字符串
+	//如果字符串可以转换为数字，那么取整数部分
+//	console.log(parseInt("123"));//123
+//	console.log(parseInt("123.11"));//123
+//	console.log(parseInt("123.89"))//123
+//	console.log(parseInt("+12.1"));//12
+	//16进制   8进制
+//	console.log(parseInt("010"));//10
+//	console.log(parseInt("0xa"));//10
+//	console.log(parseInt(""));//NaN
+//2.parseFloat()
+//	console.log(parseFloat(12));//12
+//	console.log(parseFloat(12.2));//12.2
+//3.其他类型数据转换为字符串 toString()  String()构造函数
+	var num = 10;
+	//默认转换为十进制的有效字符串
+	// console.log(num.toString())//10
+	// console.log(num.toString(2))//1010
+	// console.log(num.toString(8));//12
+	// console.log(num.toString(16));//a
+	// var str = "abc"
+	// console.log(str.toString());//abc
+
+	console.log(String(null));
+	console.log(String(undefined));	
+	
+	
+	
+	
+	
+	
+	
+	
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

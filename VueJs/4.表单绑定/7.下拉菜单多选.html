@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>多选列表</title>
+	<script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+	<div id="demo" class="demo">
+		<select v-model="selected" multiple="" style="width:500px">
+			<option>A</option>
+			<option>B</option>
+			<option>C</option>
+		</select>
+		<span>Select:{{selected}}</span>
+	</div>
+	<script type="text/javascript">
+		new Vue({
+			el:"#demo",
+			data:{
+				selected:[]
+			}
+		})
+	</script>
+</body>
+</html>

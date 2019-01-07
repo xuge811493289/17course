@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+<script>
+	/*parseFloat()*/
+/*1.如果转换的值是null,undefined,boolean,number*/
+	console.log(parseFloat(true));//NaN
+	console.log(parseFloat(null));//NaN
+	console.log(parseFloat(false));//NaN
+	console.log(parseFloat(undefined));//NaN
+	console.log(parseFloat(10));//10
+	console.log(parseFloat(10.3));//10
+	console.log(".....................")
+/*2.如果是字符串*/
+	console.log(parseFloat("123"));//123		
+	console.log(parseFloat("234"));//234
+	console.log(parseFloat("+12.1"));//12.1
+	console.log(parseFloat("0xa"));//10
+	console.log(parseFloat("0101"));//101
+	console.log(parseFloat(""));//NaN
+	console.log(parseFloat("1+2.3"));//1
+	console.log(parseFloat("123ac"));//123
+	console.log(Number("123ac"))//NaN
+/*与parseInt的不同之处
+ 	1.字符串中的第一个小数点是有效的，而第二个小数点则无效，其后的内容会被忽略
+ 	2.始终忽略前导0
+ * */
+	
+	
+	
+	
+</script>
+	</head>
+	<body>
+	</body>
+</html>

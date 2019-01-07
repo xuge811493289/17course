@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>文档树模型测试</title>
+	<style type="text/css">
+		#three{
+			border: 2px solid red;
+		}
+		#three_in{
+			border:  1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<div id="one">
+		<div id="two">2</div>
+		<div id="three">3</div>
+		<div id="four">4</div>
+		<div id="five">5</div>
+	</div>
+	<script type="text/javascript">
+/*作为文档树的文档*/
+	//1.children类似于childNodes,返回NodeList对象，但是该对象中仅包含Element对象
+		var one = document.getElementById("one");
+		console.log(one.children);// HTMLCollection[div#two, div#three, div#four, div#five]
+	//2.firstElementChild\lastElementChild\childElementCount\children.length
+		console.log(one.firstElementChild);// <div id="two">
+		console.log(one.lastElementChild);// <div id="five">
+		console.log(one.childElementCount);//4
+		console.log(one.children.length);//4
+	//3.nextElementSibling\previousElementSibling
+		var three = document.getElementById("three")
+		console.log(three.nextElementSibling);// <div id="four">
+		console.log(three.previousElementSibling);// <div id="two">
+/*元素内容*/
+	//innerHTML  返回元素内容
+		console.log(one.innerHTML);
+		/*字符串形式的
+		<div id="two">2</div>
+		<div id="three">3</div>
+		<div id="four">4</div>
+		<div id="five">5</div>*/
+		console.log(three.innerHTML);//字符串形式的:3
+	//2.textContent  非ie浏览器
+		console.log(three.textContent);//字符串形式的:3
+	//3.innerText:ie浏览器(火狐也可，谷歌也可)
+		console.log(three.innerText);//字符串形式的:3
+	//4.insertAdjacentHTML(位置[beforeBegin,afterBegin,beforeEnd,afterEnd],要插入的内容);
+		three.insertAdjacentHTML("beforeEnd","<div id='three_in'>this is element html</div>");
+
+	</script>
+
+</body>
+</html>

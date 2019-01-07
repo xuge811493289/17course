@@ -1,0 +1,26 @@
+1.前端使用jquery实现
+	(1)请求方式如何使用
+	get()请求:一般用于向服务器请求数据
+	post()请求:一般用于向服务器发送数据
+	getJSON()请求:请求json格式的数据
+
+2.什么是跨域：协议、端口号、域名任一不同就是跨域
+		1.baidu.com和google.com即为跨域
+		2.:3000和:8000是不同的端口号
+		3.http协议和ftp协议是不同的协议
+3.express框架搭建
+	1)express-generator
+		npm install -g express				仅仅是安装了框架，可以使用express框架
+		npm install -g express-generator	约定大于配置的项目生成器
+		express exam 						创建exam项目
+		npm install							安装所需依赖
+	2)es6转码
+		npm init -y
+		npm install --save-dev babel-cli
+		npm install --save-dev babel-preset-latest
+		vim .babelrc
+			"presets":["latest"]
+		vim package.json
+		"build":"babel src --out-dir dist"
+
+

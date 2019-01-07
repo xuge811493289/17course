@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件冒泡</title>
+	<style type="text/css">
+		#one{
+			width: 300px;
+			height: 300px;
+			border: 2px solid red;
+		}
+		#two{
+			width: 200px;
+			height: 200px;
+			border: 2px solid red;
+		}
+		#three{
+			width: 100px;
+			height: 100px;
+			border: 2px solid red;
+		}
+		div{
+			margin: auto;
+		}
+	</style>
+<script type="text/javascript">
+/*事件冒泡:由最具体的元素一次往最不具体的元素冒泡*/
+	window.onload = function(){
+		var div = document.getElementsByTagName("div");
+		div[0].onclick = function(){
+			alert("out");
+		}
+		div[1].onclick = function(){
+			alert("center");
+		}
+		div[2].onclick = function(){
+			alert("inner");
+		}
+	}
+</script>
+</head>
+<body>
+	<div id="one">
+		我是最大的div
+		<div id="two">
+			我是中间的div
+			<div id="three">
+				我是最里面的div
+			</div>
+		</div>
+	</div>
+</body>
+</html>

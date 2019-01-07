@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	数据类型:
+		ECMAScript有6中数据类型:
+		五种基本数据类型
+			1、Undefined
+				未定义的数据类型，对未声明和未初始化的变量执行typeof都会返回undefined
+				var message;
+				console.log(a);
+				console.log(message);
+				console.log(typeof a);
+				console.log(typeof meassage);
+			2、Null
+				null可以表示一个空对象的指针，该类型只有一个值Null
+				var a=null;//可以清空变量
+				console.log(typeof a);
+				[使用情景]如果一个变量准备将来保存对象，可以将该变量初始化null而不是其他，这样可以通过检查null值就可以知道相应的变量是否已经保存了一个对象的引用。
+				if(car!=null){
+					//car执行一些操作
+				}
+				实际上undefined派生自null值
+				console.log(undefined == null);
+null与undefined不同之处:
+		null与undefined用途不同，null可以用来表示一个空对象，但是没有必要把一个变量的值显示设置为undefined
+			// 3、Boolean 
+				布尔类型  常用在条件测试中		
+				false和true
+					if(true){
+
+					}else{
+
+					}
+				该类型只有两个值,true,false虽然boolean类型的取值只有两个，但是ECMAScript中所有的类型的值都有与这两个Boolean值等价的值
+			// 4、String	
+				字符串  是存储字符的变量,它可以是引号中的任意文本,可以是双引号或者单引号
+				(1)字符字面量
+					\n 	换行
+					\t  制表
+					\b	退格
+		      		\r	回车
+		      		\\	斜杠
+		      		\'	单引号
+		      		\"	双引号
+					var a="name1";
+					var b='name2';
+					typeof(a);
+					typeof(b);
+				(2)字符串长度
+					通过length属性获取字符长度
+			5、Number
+				(1)表示方法:
+					十进制数据:
+						var a=10;
+						var b=20.2222;
+					八进制数据:
+						var a1=070;
+						console.log(070);
+						var b1=079;//无效，解析为十进制的79
+						var c1=08;//解析为08；
+					十六进制数据:
+						var a2=oxA;
+						console.log(a2);
+					在进行算术计算时，所有八进制和十六进制表示的数值最终都被转换为十进制
+					浮点数值
+						该数值中必须包含一个小数点
+						var floatNum=1.1;
+						var floatNumNum1-0.1;
+						[注]由于保存浮点数值需要的内存空间是保存整数的两倍，因此ECMAScript在保存数值时，会不时的将浮点数值转换为整数值。如:1.0会被转换为1进行存储。
+					极大和极小数:
+						科学计数法:默认情况下，ECMAScript会将那些小数点后面带有6个以上的浮点数值转换为以e表示的数值
+						var floatNum=3.14e8; 	//表示的是314000000
+
+						[注]浮点数最高精度是17位小数，但在进行计算是，有些时候结果并不是我们想象的那样
+				(2)数值范围
+					由于内存的限制，ECMAScript不能保存世界上所有的数值。ECMAScript能表示的最小数值保存在Number.MIN_VALUE中，能表示的最大的数值保存在Number.MAX_VALUE中。如果某次计算的结果超过了JavaScript数值范围，将会返回Infinity(正无极)或者-Infinity(负无极)使用 isFinite()函数可以判断参数是否在最大值和最小值之间，如果在，返回true
+
+					如果某次计算反悔了正的或者负的Infinity，那么该值无法继续参与下一次计算。可以使用isFinite(para)函数判断para是否在最大数最小数之间。
+				(3)isNaN非数值
+					该数值表示一个本来要返回数值的操作数未返回数据的情况
+					var a=10/a;
+					console.log(a);//NaN
+
+					isNaN ,判断参数是否"不是数值",当参数para不是数值的时候返回true
+						isNaN(NaN)
+						isNaN("a"); true
+						isNaN(10); false
+						isNaN("10"); false将字符串进行了强制类型转换为了数值
+						isNaN(true);//false 强制转换为1
+					[isNaN注]
+						在基于对象调用isNaN()函数时，会首先调用对象的valueOf()方法,然后确定该方法返回的值是否可以转换为数值，如果不能，则基于这个返回值再调用toString()方法，再测试返回值
+
+					Number[注]
+						(1)默认情况下，ECMAScript会将那些小数点后面带有6个以上的浮点数值转换为以e表示的数值
+						(2)在进行算术计算时，所有八进制和十六进制表示的数值最终都被转换为十进制
+						(3)保存浮点数需要的内存是整数的两倍,因此ECMAScript会不失时机的将浮点转换为整数
+							例:
+								var a=1.0会被转换为1进行存储。
+						(4) 避免测试某个特点的浮点数值,是使用IEEE754数值的浮点计算的通病
+							例如:
+								0.1+0.2结果不是0.3，而是0.30000000000000004
+		一种复杂数据类型
+			Object类型
+			ECMAScript中的对象其实就是一组数据和功能的集合。
+			对象可以通过执行new 对象类型来创建
+			var o=new Object();
+
+			Object对象:
+				属性:
+					constructor:返回对象的构造函数,可以判断一个对象的类型，引用的书对象的构造函数
+					
+						var myObject=new Object();
+						console.log(myObject.constructor);//function Object() { [native code] }
+				方法:
+					toString():返回对象的额字符串表示股
+					toLocaleString():返回对象的本地字符串表示
+					propertyIsEnumerable()方法:是否对象自有属性
+					hasOwnProperty(propertyName);用于检查给定的属性是否在当前对象实例中
+					valueOf();返回对象的字符串，数值，布尔值的表示
+					isPrototypeOf(object);用于检查传入的对象是否是原型
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

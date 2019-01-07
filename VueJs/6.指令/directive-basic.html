@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>指令</title>
+	<script type="text/javascript" src="../js/vue.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		<button v-test='one'></button>
+		<button v-test='two'></button>
+
+		<ul>
+			<li v-for="item in students">{{item}}</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		new Vue({
+			el:'#app',
+			data:{
+				one:'第一个按钮',
+				two:'第二个按钮',
+				students:['terry','larry','tom','jacky']
+			},
+			directives:{
+				//v-test 自定义指令
+				test:{
+					bind:function(el,binding){
+						//dom底层操作
+						el.innerText = binding.value;
+						console.log(el);
+						console.log(binding.value);
+						el.onclick = function(){
+							alert(this.innerText);
+						}
+					}
+				}
+			}
+		})
+	</script>
+</body>
+</html>

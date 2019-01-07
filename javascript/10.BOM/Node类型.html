@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>node</title>
+</head>
+<body>
+<!-- 这是一个注释 -->
+	<div id="one">
+		<div id="two">第一个div</div>
+		<div id="three">第二个div</div>
+		<div id="four">第四个div</div>
+	</div>
+</body>
+<script type="text/javascript">
+/*测试node中的属性*/
+//1.拿到文档流中的body
+	var body = document.body;
+//2.nodeType拿到节点类型
+	console.log(body.nodeType);//1
+	//body是Element所生成的实例对象
+	// console.log(body);//<body>
+	// console.log(body.toString())//[object HTMLBodyElement]
+//3.nodeName   取决于节点类型如果是元素类型，值为元素的标签名的大写
+	var name = body.nodeName;
+	// console.log(name);//BODY
+	// console.log(typeof name);//string
+	// console.log(name.toLowerCase());//body
+//4.nodeValue 该属性取决于节点类型，如果是元素类型，值有null
+	var val = body.nodeValue;
+	console.log(val);//null
+	var div2 = document.getElementById("two");
+	var type = div2.nodeName;
+	// console.log(type);//DIV
+	var div1 = document.getElementById("one");
+	var arrObj = div1.childNodes;
+	//console.log(arrObj);// NodeList类数组
+	//将得到的类数组进行遍历
+	//1.第一种遍历方法
+	// console.log(arrObj.length);//7
+	// for(var i=0;i<arrObj.length;i++){
+	// 	console.log(arrObj[i]);
+	// }
+	//2.第二种遍历方法
+	// for(var i in arrObj){
+	// 	console.log(arrObj[i]);
+	// }
+	//3.第三种遍历方法
+		console.log(arrObj);
+		//arrObj不是数组，不能用forEach进行遍历
+		/*出错
+		arrObj.forEach(function(arr,index){
+	        console.log(arr)
+	        console.log(index)
+	    });*/
+	    //将类数组转换为一个数组  后再进行遍历
+	    var arr = Array.prototype.slice.call(arrObj,0);
+	    arr.forEach(function(item,index){
+	    	console.log(item);
+	    })
+
+</script>
+</html>

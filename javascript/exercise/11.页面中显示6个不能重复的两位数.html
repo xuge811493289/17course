@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script type="text/javascript">
+/*写一段程序，要求每次刷新页面就会在页面中显示6个两位数的整数，这6个数不能重复*/
+	var number = [];
+	for(var i=0;i<6;i++){
+		while(true){
+			//控制在10-99之间
+			var ran = Math.floor(Math.random()*(98-10+1)+10);
+			if(!iterator(number,ran)){
+				number[i] = ran;
+				break;
+			}
+		}
+	}
+	document.write(number+"</br>");
+	function iterator(arr,num){
+		for(var i=0;i<arr.length;i++){
+			if(arr[i] == num){
+				return true;
+			}
+		}
+	}
+	document.write("<br />")
+
+
+	//http://blog.sina.com.cn/s/blog_13747cae80102uzei.html
+</script>
+</head>
+<body>
+	
+</body>
+</html>

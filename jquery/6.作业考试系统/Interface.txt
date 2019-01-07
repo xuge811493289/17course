@@ -1,0 +1,95 @@
+1. 获取所有题目类型
+	URL:
+		http://localhost:8080/test/exam/manager/getAllSubjectType.action
+	params:
+		none
+	return:
+		[{
+			"id":1,
+			"name":"radio",
+			"realName":"单选题"
+		}]
+2. 获取所有题目难度级别
+	URL:
+		http://localhost:8080/test/exam/manager/getAllSubjectLevel.action
+	params:
+		none
+	return:
+		[{
+			"id":1,
+			"name":"easy",
+			"realName":"简单"
+		}]
+3. 获取所有的方向
+	URL:
+		http://localhost:8080/test/exam/mangetAllDepartmentesager/.action
+	params:
+		none
+	return:
+		[{
+			"id":1,"
+			name":"WebUI"
+		}]
+4. 获取所有的知识点
+	URL:
+		http://localhost:8080/test/exam/manager/getAllTopics.action
+	params:
+		none
+	return:
+		[{
+			"id":1,
+			"title":"HTML"
+		}]
+5. 根据方向id获取该方向下的所有知识点
+	URL:
+		http://localhost:8080/test/exam/manager/getDepartmentTopics.action
+	params:
+		topic.department.id
+	return:
+		[{
+			"id":1,
+			"title":"HTML"
+		}]
+6. 保存题目信息
+	URL:
+		http://localhost:8080/test/exam/manager/saveSubject.action
+	params:
+	 	subject.department.id
+	 	subject.topic.id
+	 	subject.subjectType.id
+	 	subject.subjectLevel.id
+	 	subject.stem
+	 	subject.answer
+	 	subject.analysis
+	 	
+	 	choiceContent[]	:	["choice1","choice2","choice3"]
+	 	choiceCorrect[]:	[true,true,false]
+                   
+	return:
+		none
+		
+6. 查询所有题目信息
+	
+
+7. 获取所有学生信息
+	http://localhost:8080/test/exam/manager/getAllStudents.action
+
+8. 保存学生信息
+	http://localhost:8080/test/exam/manager/saveStudent.action
+	name
+	age
+	gender
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='../js/vue.min.js'></script>
+  <script src='../js/vuex-3.0.0.js'></script>
+</head>
+<body>
+	<div id="app">
+    <div>
+      <span>number:</span>
+      <b>{{number}}</b>
+    </div>
+    <p>{{name}}</p>
+    <button @click='asc'>增加</button>
+    <button @click='desc'>减少</button>
+  </div>
+	<script>
+		var store = new Vuex.Store({
+			//用于存储所有的数据状态
+			 state:{
+        number:0,
+        name:'this is vuex',
+        students:[{name:'terry',gender:'male'},{name:'lucy',gender:'female'}]
+      },
+			//扩展了state,通常用来对student进行过滤
+			getters:{
+        girls:function(state){
+          return state.students.filter(function(student){ 
+              return student.gender == 'female'
+          })
+        }
+      },
+			//突变用来更改state的值
+			mutations:{
+        alterNumber:function(state,val){
+          state.number = val;
+        }
+      },
+			// 可以执行异步操作，但是不能直接访问state
+			actions:{
+				asc:function(context){
+					var val = context.state.number+1;
+					//commit,执行突变
+					context.commit('alterNumber',val);
+				},
+				desc:function(context){
+					var val = context.state.number-1;
+					context.commit('alterNumber',val);
+				}
+			}
+		});
+
+		new Vue({
+			el:"#app",
+			store:store,
+			computed:{
+				/*number:function(){
+					return this.$store.state.number;
+				}*/
+				...Vuex.mapState(['number','name'])
+			},
+			methods:{
+				/*建立一个映射将这里的方法给出去*/
+				...Vuex.mapActions(['asc','desc'])
+			}
+		})
+	</script>
+</body>
+</html>

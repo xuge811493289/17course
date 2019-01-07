@@ -1,0 +1,35 @@
+@charset "utf-8";
+section.one{
+  height: 55px;
+}
+section.one .nav{
+  width:970px;
+  margin:0 auto;
+  height: 55px;
+  display: flex;
+  background:url("../images/nav_bg.png") repeat-x top;
+}
+section.one .nav .item{
+  width: 20px;
+  flex:1;
+}
+section.one .nav .item .item-a{
+  color:#fff;
+  height:55px;
+  display:block;
+}
+section.one .nav .item .item-a{
+  line-height:55px;
+  text-align: center;
+}
+section.one .nav div.current .item-a,section.one .nav .item .item-a:hover{
+  background:url("../images/nav_li_current.png") no-repeat bottom;
+  display:block;
+  color:#000;
+}
+.page{
+  display: none;
+  width:100%;
+  height: 400px;
+  background-color: RGB(236,250,235);
+}

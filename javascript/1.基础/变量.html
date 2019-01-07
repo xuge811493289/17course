@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	js中变量:
+		变量:
+			用于存放值，它给出了瞬间的值。当使用该变量时，实际是用它所代表的的数据。每个变量仅仅是一个用于保存值的占位符而	
+		ECMAScript的变量是弱类型(松散类型)，可以用来保存任何类型的数据。定义变量时使var操作符:
+		声明:
+			var value;	单个声明
+			var value1,value2;	//多个声明
+
+			变量名字是一个标识符，遵循标识符命名规则
+			
+			命名规则
+			
+			1、变量必须以字母,下划线，$开头
+				var 12a=10;//错误示范
+			2、变量名称对大小写敏感（y 和 Y 是不同的变量）
+				var a;
+				A=10;
+				console.log(a);//错误示范
+			3、采用驼峰式命名,并且在命名中使其有特定的含义。
+				firstName 小驼峰
+				LastName 大驼峰
+		初始化(赋值):
+			message="hello";
+		声明并初始化：
+			var message="hello";	//声明并初始化单个变量
+			var message1=1,message2=2,a3=3;	//声明并初始化多个变量
+		定义多个变量:
+			var msg1="hello";
+			var msg2="hi";
+
+			var msg1="hello",msg2="hi";
+			【注意】
+				1、变量要先定义再使用;
+				2、允许重复定义变量，定义变量以后，后面的变量会覆盖前面的变量。
+					var value=10;
+					var value=20;
+					console.log(value);
+		局部变量与全局变量:
+			作用域:变量或函数起作用的区域。
+			(1)使用var操作符定义的变量将成为定义该作用域中的局部变量
+				function test(){
+					var message="hello";//局部变量
+				}
+				console.log(message);
+			(2)如果在函数中定义变量没有加var，该变量为全局变量
+				function test(){
+					message="hello";//全局变量
+				}
+				console.log(message);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

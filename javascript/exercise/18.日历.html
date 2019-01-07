@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>日历</title>
+	<style type="text/css">
+* { padding: 0; margin: 0; }
+li { list-style: none; }
+body { background: #f6f9fc; font-family: arial; }
+
+.calendar { width: 210px; margin: 0 auto; padding: 10px 10px 20px 20px; background: #eae9e9; }
+.calendar ul { width: 210px; overflow: hidden; padding-bottom: 10px; }
+.calendar li { float: left; width: 58px; height: 54px; margin: 10px 10px 0 0; border: 1px solid #fff; background: #424242; color: #fff; text-align: center; cursor: pointer; }
+.calendar li h2 { font-size: 20px; padding-top: 5px; }
+.calendar li p { font-size: 14px; }
+
+.calendar .active { border: 1px solid #424242; background: #fff; color: #e84a7e; }
+.calendar .active h2 { }
+.calendar .active p { font-weight: bold; }
+
+.calendar .text { width: 178px; padding: 0 10px 10px; border: 1px solid #fff; padding-top: 10px; background: #f1f1f1; color: #555; }
+.calendar .text h2 {font-size: 14px; margin-bottom: 10px; }
+.calendar .text p { font-size: 12px; line-height: 18px; }
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			//获取所需元素
+			var aLis=document.getElementsByTagName("li");
+			var oDiv=document.getElementsByTagName("div")[1];
+			var aPlays=["1月计划","2月计划","3月计划","4月计划","5月计划","6月计划","7月计划","8月计划","9月计划","10月计划","11月计划","12月计划",];
+		//为每一个li添加mouseover事件
+		for(var i=0;i<aLis.length;i++){
+			//自定义属性index
+			aLis[i].index=i;
+			aLis[i].onmouseover=function(){
+			//设置所有元素为初始颜色	
+			for(var j=0;j<aLis.length;j++){
+				aLis[j].className="";
+			}
+			//设置当前元素的class为active
+			this.className="active";
+			//设置下方div显示当前月的编号
+			oDiv.innerHTML="<h2>"+(this.index+1)+"月活动</h2>";
+			//根据当前索引获取数组中对应的文字内容
+			oDiv.innerHTML+="<p>"+aPlays[this.index]+"</p>";
+			}
+		}
+}
+		
+	</script>
+</head>
+<body>
+<div id="tab" class="calendar">
+
+    <ul>
+        <li class="active"><h2>1</h2><p>JAN</p></li>
+        <li><h2>2</h2><p>FER</p></li>
+        <li><h2>3</h2><p>MAR</p></li>
+        <li><h2>4</h2><p>APR</p></li>
+        <li><h2>5</h2><p>MAY</p></li>
+        <li><h2>6</h2><p>JUN</p></li>
+        <li><h2>7</h2><p>JUL</p></li>
+        <li><h2>8</h2><p>AUG</p></li>
+        <li><h2>9</h2><p>SEP</p></li>
+        <li><h2>10</h2><p>OCT</p></li>
+        <li><h2>11</h2><p>NOV</p></li>
+        <li><h2>12</h2><p>DEC</p></li>
+    </ul>
+    
+    <div class="text">
+        <h2>1月活动</h2>
+        <p>快过年了，大家可以商量着去哪玩吧～</p>
+    </div>
+
+</div>
+</body>
+</html>
